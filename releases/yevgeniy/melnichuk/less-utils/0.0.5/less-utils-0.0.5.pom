@@ -9,15 +9,15 @@
 	<distributionManagement>
 		<repository>
 			<id>achingbrain-releases</id>
-			<url>file:///Users/alex/Sites/maven-repo/releases</url>
+			<url>file:///${basedir}/../maven-repo/releases</url>
 		</repository>
 		<snapshotRepository>
 			<uniqueVersion>false</uniqueVersion>
 			<id>achingbrain-snapshots</id>
-			<url>file:///Users/alex/Sites/maven-repo/snapshots</url>
+			<url>file:///${basedir}/../maven-repo/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>rhino</groupId>
