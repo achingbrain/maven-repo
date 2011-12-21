@@ -6,5 +6,20 @@
       <prefix>bbq</prefix>
       <artifactId>bbq-maven-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>bbq-test-maven-plugin</name>
+      <prefix>bbq-test</prefix>
+      <artifactId>bbq-test-maven-plugin</artifactId>
+    </plugin>
+    <plugin>
+      <name>bbq-resources-maven-plugin</name>
+      <prefix>bbq-resources</prefix>
+      <artifactId>bbq-resources-maven-plugin</artifactId>
+    </plugin>
+    <plugin>
+      <name>bbq-compiler-maven-plugin</name>
+      <prefix>bbq-compiler</prefix>
+      <artifactId>bbq-compiler-maven-plugin</artifactId>
+    </plugin>
   </plugins>
 </metadata>
