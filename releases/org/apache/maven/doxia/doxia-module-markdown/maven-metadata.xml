@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.apache.maven.doxia</groupId>
+  <artifactId>doxia-module-markdown</artifactId>
+  <versioning>
+    <release>1.1.4</release>
+    <versions>
+      <version>1.1.4</version>
+    </versions>
+    <lastUpdated>20120106180347</lastUpdated>
+  </versioning>
+</metadata>
