@@ -3,7 +3,7 @@
 # This script creates a directory index for every subdirectory in this repository,
 # ignoring hidden files and the root directory
 
-for DIR in $(find . \( ! -regex '.*/\..*' \)  -type d); do (
+for DIR in $(find . \( ! -regex '.*/\..*' \) \( ! -regex '.*documentation/.*' \) -type d); do (
 	echo -e "<html>\n<body>\n<h1>Directory listing</h1>\n<hr/>\n<pre>"
 	
 	# only provide a ../ link if we are not in the root directory

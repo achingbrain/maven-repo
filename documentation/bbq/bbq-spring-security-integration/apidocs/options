@@ -1,0 +1,26 @@
+-classpath
+'/Users/alex/Sites/bbq/bbq-spring-security-integration/target/classes:/Users/alex/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar:/Users/alex/.m2/repository/commons-lang/commons-lang/2.3/commons-lang-2.3.jar:/Users/alex/.m2/repository/org/springframework/spring-beans/3.0.6.RELEASE/spring-beans-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/alex/.m2/repository/commons-beanutils/commons-beanutils/1.8.0/commons-beanutils-1.8.0.jar:/Users/alex/.m2/repository/org/springframework/spring-asm/3.0.6.RELEASE/spring-asm-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/org/springframework/spring-core/3.0.6.RELEASE/spring-core-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/org/springframework/spring-context-support/3.0.6.RELEASE/spring-context-support-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar:/Users/alex/.m2/repository/org/springframework/security/spring-security-core/3.1.0.RC3/spring-security-core-3.1.0.RC3.jar:/Users/alex/.m2/repository/commons-io/commons-io/1.4/commons-io-1.4.jar:/Users/alex/.m2/repository/org/springframework/spring-aop/3.0.6.RELEASE/spring-aop-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/org/springframework/spring-expression/3.0.6.RELEASE/spring-expression-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/org/springframework/spring-jdbc/3.0.6.RELEASE/spring-jdbc-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/alex/.m2/repository/org/springframework/spring-context/3.0.6.RELEASE/spring-context-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar:/Users/alex/.m2/repository/org/springframework/spring-web/3.0.6.RELEASE/spring-web-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/org/springframework/spring-webmvc/3.0.6.RELEASE/spring-webmvc-3.0.6.RELEASE.jar:/Users/alex/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/Users/alex/.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar:/Users/alex/.m2/repository/net/sf/ezmorph/ezmorph/1.0.6/ezmorph-1.0.6.jar:/Users/alex/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/alex/.m2/repository/org/springframework/security/spring-security-web/3.1.0.RC3/spring-security-web-3.1.0.RC3.jar:/Users/alex/Sites/bbq/bbq-compiler/target/bbq-compiler-1.1.4-SNAPSHOT.jar:/Users/alex/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar:/Users/alex/Sites/bbq/bbq-spring-integration/target/bbq-spring-integration-1.1.4-SNAPSHOT.jar:/Users/alex/.m2/repository/org/springframework/security/spring-security-crypto/3.1.0.RC3/spring-security-crypto-3.1.0.RC3.jar:/Users/alex/.m2/repository/org/springframework/spring-tx/3.0.6.RELEASE/spring-tx-3.0.6.RELEASE.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/alex/Sites/bbq/bbq-spring-security-integration/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2012. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/alex/Sites/bbq/bbq-spring-security-integration/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'bbq-spring-security-integration 1.1.4-SNAPSHOT API'
+-linkoffline
+'http://download.oracle.com/javase/6/docs/api' '/Users/alex/Sites/bbq/bbq-spring-security-integration/target/javadoc-bundle-options'
+-linkoffline
+'http://www.bbqjs.org/apidocs' '/Users/alex/Sites/bbq/bbq-spring-integration/target/site/apidocs'
+-use
+-version
+-windowtitle
+'bbq-spring-security-integration 1.1.4-SNAPSHOT API'
