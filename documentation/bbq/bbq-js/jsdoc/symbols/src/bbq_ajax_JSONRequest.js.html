@@ -1,0 +1,87 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="NAME">include</span><span class="PUNC">(</span><span class="NAME">bbq.ajax.AJAXRequest</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  2</span> </span><span class="NAME">include</span><span class="PUNC">(</span><span class="NAME">bbq.gui.error.ServerError</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  3</span> </span><span class="NAME">include</span><span class="PUNC">(</span><span class="NAME">bbq.lang.TreeWalker</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  4</span> 
+<span class='line'>  5</span> </span><span class="NAME">bbq.ajax.JSONRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Class.create</span><span class="PUNC">(</span><span class="NAME">bbq.ajax.AJAXRequest</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="COMM">/** @lends bbq.ajax.JSONRequest.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  6</span> 
+<span class='line'>  7</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'>  8</span> 	 * Sends an asynchronous HTTP request to a server.  The passed arguments are serialized to a
+<span class='line'>  9</span> 	 * JSON string and the response is also expected to be a JSON string.  The request goes out
+<span class='line'> 10</span> 	 * as a POST request and the JSON string is sent as the request body.
+<span class='line'> 11</span> 	 *
+<span class='line'> 12</span> 	 * @example
+<span class='line'> 13</span> 	 *&lt;pre>&lt;code class="language-javascript">
+<span class='line'> 14</span> 	 * new bbq.ajax.JSONRequest({
+<span class='line'> 15</span> 	 *     // The URL to send the request to - can be relative
+<span class='line'> 16</span> 	 *     url: "/some/path",
+<span class='line'> 17</span> 	 *
+<span class='line'> 18</span> 	 *     // The arguments to send - N.B. will be JSON serialized
+<span class='line'> 19</span> 	 *     args: {
+<span class='line'> 20</span> 	 *          foo: "bar"
+<span class='line'> 21</span> 	 *     }
+<span class='line'> 22</span> 	 *
+<span class='line'> 23</span> 	 *     // Invoked on success.
+<span class='line'> 24</span> 	 *      // The first argument is the XMLHTTPRequest object,
+<span class='line'> 25</span> 	 *      // the second is the deserialized server response
+<span class='line'> 26</span> 	 *     onSuccess: function(serverResponse, json) {
+<span class='line'> 27</span> 	 *
+<span class='line'> 28</span> 	 *     },
+<span class='line'> 29</span> 	 *
+<span class='line'> 30</span> 	 *     // Invoked when the request fails - eg. a X-BBQ-ResponseCode
+<span class='line'> 31</span> 	 *     // header is sent with a negative value
+<span class='line'> 32</span> 	 *     onFailure: function() {
+<span class='line'> 33</span> 	 *
+<span class='line'> 34</span> 	 *     }
+<span class='line'> 35</span> 	 * });
+<span class='line'> 36</span> 	 * &lt;/code>&lt;/pre>
+<span class='line'> 37</span> 	 *
+<span class='line'> 38</span> 	 * @constructs
+<span class='line'> 39</span> 	 * @param {Object} options
+<span class='line'> 40</span> 	 * @extends bbq.ajax.AJAXRequest
+<span class='line'> 41</span> 	 */</span><span class="WHIT">
+<span class='line'> 42</span> </span><span class="WHIT">	</span><span class="NAME">initialize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">$super</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 43</span> </span><span class="WHIT">		</span><span class="COMM">// override content type</span><span class="WHIT">
+<span class='line'> 44</span> </span><span class="WHIT">		</span><span class="NAME">options.contentType</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"application/json"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 45</span> </span><span class="WHIT">		
+<span class='line'> 46</span> 		</span><span class="NAME">$super</span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 47</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 48</span> 
+<span class='line'> 49</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'> 50</span> 	 * @param {String} handlerName
+<span class='line'> 51</span> 	 * @param {Object} args
+<span class='line'> 52</span> 	 */</span><span class="WHIT">
+<span class='line'> 53</span> </span><span class="WHIT">	</span><span class="NAME">_callHandler</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">$super</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">handlerName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 54</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">serverResponse</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">[</span><span class="NUMB">0</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 55</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">json</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 56</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">contentType</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">serverResponse.getHeader</span><span class="PUNC">(</span><span class="STRN">"Content-Type"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 57</span> 
+<span class='line'> 58</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">contentType</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">contentType.indexOf</span><span class="PUNC">(</span><span class="STRN">"application/json"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">1</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">serverResponse.responseText</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="STRN">""</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 59</span> </span><span class="WHIT">			</span><span class="COMM">// only attempt decode JSON if the response content type is application/json</span><span class="WHIT">
+<span class='line'> 60</span> </span><span class="WHIT">			</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 61</span> </span><span class="WHIT">				</span><span class="NAME">json</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">serverResponse.responseText.evalJSON</span><span class="PUNC">(</span><span class="KEYW">true</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 62</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 63</span> </span><span class="WHIT">				</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error de-escaping JSON"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 64</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 65</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 66</span> 
+<span class='line'> 67</span> </span><span class="WHIT">		</span><span class="NAME">$super</span><span class="PUNC">(</span><span class="NAME">handlerName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="NAME">serverResponse</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">json</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 68</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 69</span> 
+<span class='line'> 70</span> </span><span class="WHIT">	</span><span class="NAME">_getPostBody</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 71</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">Object.toJSON</span><span class="PUNC">(</span><span class="NAME">this.options.args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 72</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 73</span> 
+<span class='line'> 74</span> </span><span class="WHIT">	</span><span class="NAME">_createRequestHeaders</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 75</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 76</span> </span><span class="WHIT">			</span><span class="STRN">"Accept"</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"application/json;charset=UTF-8"</span><span class="WHIT">
+<span class='line'> 77</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 78</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 79</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 80</span> </span></pre></body></html>
