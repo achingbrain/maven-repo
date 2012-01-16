@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -277,70 +283,17 @@ ul.inheritsList
 <!-- ============================== class summary ========================== -->			
 			<p class="description">
 				
-				<br />Extends
+				Extends
 					<a href="../symbols/bbq.ajax.SoapRequest.html">bbq.ajax.SoapRequest</a>.<br />
 				
-			
-				bbq.ajax.ForwardingJSONRequest
 				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_ajax_ForwardingSoapRequest.js.html">ForwardingSoapRequest.js</a>.
-				
-			</p>
-
-<!-- ============================== constructor summary ==================== -->			
-			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.ajax.ForwardingSoapRequest.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/bbq.ajax.ForwardingSoapRequest.html#constructor">bbq.ajax.ForwardingSoapRequest</a></b>()
-							</div>
-							<div class="description">This class is designed to be used with the org.bbqjs.spring.ajax.RequestForwarder class
-and attepts to work around the same origin policy of most browsers in terms of AJAX.</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			
-
-<!-- ============================== properties summary ===================== -->
-			
+					<em>Defined in: </em> <a href="../symbols/src/bbq_ajax_ForwardingSoapRequest.js.html">ForwardingSoapRequest.js</a>.<br />
 				
 				
 				
-				
-				<dl class="inheritsList">
-				<dt>Fields borrowed from class <a href="../symbols/bbq.ajax.AJAXRequest.html">bbq.ajax.AJAXRequest</a>: </dt><dd><a href="../symbols/bbq.ajax.AJAXRequest.html#options">options</a></dd>
-				</dl>
-				
-			
-
-<!-- ============================== methods summary ======================== -->
-			
-<!-- ============================== events summary ======================== -->
-			
-
-<!-- ============================== constructor details ==================== -->		
-			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>bbq.ajax.ForwardingSoapRequest</em>()
-				</h3>
 				
 				<div class="description">
-					This class is designed to be used with the org.bbqjs.spring.ajax.RequestForwarder class
+	This class is designed to be used with the org.bbqjs.spring.ajax.RequestForwarder class
 and attepts to work around the same origin policy of most browsers in terms of AJAX.
 
 The policy means that you can only dispatch an AJAX request to the server from which
@@ -351,9 +304,11 @@ The RequestForwarder class will forward on the request to the location specified
 url property of the options argument, even if it's a different domain.
 
 Other than that it behaves in the same way as bbq.ajax.SoapRequest
-
-<pre>
-<code class="language-javascript">
+	
+	
+</div>
+	
+		<pre><code class="language-javascript">
 
 var request = new bbq.ajax.ForwardingSoapRequest({
     url: "http://api.google.com",
@@ -363,39 +318,103 @@ var request = new bbq.ajax.ForwardingSoapRequest({
     ... // more args similar to bbq.ajax.SoapRequest
 });
 
-</code>
-</pre>
-					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+</code></pre>
+	
 
-			</div>
-		
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.ajax.ForwardingSoapRequest.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/bbq.ajax.ForwardingSoapRequest.html#constructor">bbq.ajax.ForwardingSoapRequest</a></b>(options, options)
+								</div>
+								<div class="description">This class is designed to be used with the org.bbqjs.spring.ajax.RequestForwarder class
+and attepts to work around the same origin policy of most browsers in terms of AJAX.</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+				
+				
+				
+				
+					<dl class="inheritsList">
+					<dt>Fields borrowed from class <a href="../symbols/bbq.ajax.AJAXRequest.html">bbq.ajax.AJAXRequest</a>: </dt><dd><a href="../symbols/bbq.ajax.AJAXRequest.html#options">options</a></dd>
+					</dl>
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							bbq.ajax.ForwardingSoapRequest(options, options)
+					</h3>
+					
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
+			
 
 <!-- ============================== method details ========================= -->		
 			
-			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:06 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:57 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -277,39 +283,55 @@ ul.inheritsList
 <!-- ============================== class summary ========================== -->			
 			<p class="description">
 				
-				<br />Extends
-					bbq.lang.Watchable.<br />
-				
-			
-				bbq.domain.BBQEntity
+				Extends
+					<a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>.<br />
 				
 				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_domain_BBQEntity.js.html">BBQEntity.js</a>.
+					<em>Defined in: </em> <a href="../symbols/src/bbq_domain_BBQEntity.js.html">BBQEntity.js</a>.<br />
 				
+				
+				
+				
+				<div class="description">
+	<p>Base class for domain objects.  Supports being partially loaded - that is, properties can be asked for from
+this object in advance of them being loaded.  If an unloaded property is requested, a full object load
+will be trigged.</p>
+
+<p>Extending classes should implement:</p>
+
+<ol>
+  <li>The _retrieveURL property.  This should be a URL that will answer to a JSON request of the
+   form {id: value} where value is returned from getId() being called on this object</li>
+  <li>The _getDefaultObject method.  This should return an object with keys for every property this
+     object expects to have filled after a call to _retrieveURL.</li>
+ </ol>
+	
+	
+</div>
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.domain.BBQEntity.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/bbq.domain.BBQEntity.html#constructor">bbq.domain.BBQEntity</a></b>()
-							</div>
-							<div class="description">Base class for domain objects.</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.domain.BBQEntity.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/bbq.domain.BBQEntity.html#constructor">bbq.domain.BBQEntity</a></b>(options, options)
+								</div>
+								<div class="description"><p>Base class for domain objects.</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			
 
 <!-- ============================== properties summary ===================== -->
@@ -317,61 +339,344 @@ ul.inheritsList
 
 <!-- ============================== methods summary ======================== -->
 			
+				
+				
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class bbq.domain.BBQEntity.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.domain.BBQEntity.html#getProperty">getProperty</a></b>(String)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.domain.BBQEntity.html#getPropertyDisplay">getPropertyDisplay</a></b>(Object)
+									</div>
+									<div class="description">Returns a DOM element (by default a SPAN) that contains a textual representation of the requested property of this element.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.domain.BBQEntity.html#loadData">loadData</a></b>()
+									</div>
+									<div class="description">Makes an entity load it's data.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.domain.BBQEntity.html#processData">processData</a></b>(data)
+									</div>
+									<div class="description">Sets properties on this object and creates getters/setters for accessing them
+
+Also used by child classes to replace IDs with references to the actual objects</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.domain.BBQEntity.html#registerListener">registerListener</a></b>($super, type, callback)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				
+				
+				
+					<dl class="inheritsList">
+					<dt>Methods borrowed from class <a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>: </dt><dd><a href="../symbols/bbq.lang.Watchable.html#deRegisterListener">deRegisterListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListener">notifyListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListeners">notifyListeners</a>, <a href="../symbols/bbq.lang.Watchable.html#registerOneTimeListener">registerOneTimeListener</a></dd>
+					</dl>
+				
+			
 <!-- ============================== events summary ======================== -->
 			
 
 <!-- ============================== constructor details ==================== -->		
 			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>bbq.domain.BBQEntity</em>()
-				</h3>
-				
-				<div class="description">
-					Base class for domain objects.  Supports being partially loaded - that is, properties can be asked for from
-this object in advance of them being loaded.  If an unloaded property is requested, a full object load
-will be trigged.
-
-Extending classes should implement:
-
-1.  The _retrieveURL property.  This should be a URL that will answer to a JSON request of the
-     form {id: value} where value is returned from getId() being called on this object
-
-2.  The _getDefaultObject method.  This should return an object with keys for every property this
-     object expects to have filled after a call to _retrieveURL.
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							bbq.domain.BBQEntity(options, options)
+					</h3>
 					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
 
-			</div>
-		
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
+			
 
 <!-- ============================== method details ========================= -->		
 			
+				<article>
+					<h2>Method Detail</h2>
+					
+						<a name="getProperty"> </a>
+						<h3>
+
+							
+							<b>getProperty</b>(String)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
 			
+				<tr>
+					<td>String </td>
+					<td></td>
+					<td>property		A property on this object</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="getPropertyDisplay"> </a>
+						<h3>
+
+							
+							<b>getPropertyDisplay</b>(Object)
+						</h3>
+
+						<div class="description">
+	Returns a DOM element (by default a SPAN) that contains a textual representation of the requested property of this element.
+
+Will be updated automatically to contain the current value.
+
+Supports getting properties of sub objects.  For example, if we want the name of this objects's creator, we can do:
+
+<code>
+object.getPropertyDisplay({property: "creator.fullname"});
+</code>
+
+This will have the same effect as:
+
+<code>
+var creator = object.getCreator();
+creator.getPropertyDisplay({property: "fullname"});
+</code>
+
+Supports the following options:
+
+options: {
+		property: String				// The name of the property that is to be displayed
+		formatter: Function			// Optional.  A function that takes the property value as an argument and returns a String or a Node
+		nodeName: String			// Optional.  Will be used in place of SPAN
+		className: String			// Optional.  Will be applied to the node
+		createNode: Function		// Optional.  Should return a DOM node.  Omit this to use a SPAN.  If passed you should also pass a function for updateNode
+		updateNode: Function		// Optional.  Expect two arguments - a node and the property value.  Return nothing.  If passed you should also pass a function for createNode
+}
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>Object </td>
+					<td></td>
+					<td>options</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="loadData"> </a>
+						<h3>
+
+							
+							<b>loadData</b>()
+						</h3>
+
+						<div class="description">
+	Makes an entity load it's data.
+
+Register for listener "onDataLoaded" to interact with this object after data has been loaded.
+	
+	
+</div>
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd>void</dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name="processData"> </a>
+						<h3>
+
+							
+							<b>processData</b>(data)
+						</h3>
+
+						<div class="description">
+	Sets properties on this object and creates getters/setters for accessing them
+
+Also used by child classes to replace IDs with references to the actual objects
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>data </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd>void</dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name="registerListener"> </a>
+						<h3>
+
+							
+							<b>registerListener</b>($super, type, callback)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>$super </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>type </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>callback </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						
+					
+				</article>
+			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:06 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:57 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

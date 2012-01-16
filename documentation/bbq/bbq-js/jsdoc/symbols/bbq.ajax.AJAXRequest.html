@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -278,74 +284,88 @@ ul.inheritsList
 			<p class="description">
 				
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_ajax_AJAXRequest.js.html">AJAXRequest.js</a>.<br />
 				
 				
 				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_ajax_AJAXRequest.js.html">AJAXRequest.js</a>.
 				
+				<div class="description">
+	<p>Wrapper for Prototype Ajax class which dds extras such as an independent server timeout and error handling.</p>
+
+<p>Typically you would use a subclass such as <code class="language-javascript">bbq.ajax.JSONRequest</code>.</p>
+	
+	
+</div>
+	<dl class="detailList">
+		<dt class="heading">See:</dt>
+		
+			<dd><a href="../symbols/bbq.ajax.JSONRequest.html">bbq.ajax.JSONRequest</a></dd>
+		
+	</dl>
+
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.ajax.AJAXRequest.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/bbq.ajax.AJAXRequest.html#constructor">bbq.ajax.AJAXRequest</a></b>(options)
-							</div>
-							<div class="description"><p>Wrapper for Prototype Ajax class which dds extras such as an independent server timeout and error handling.</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.ajax.AJAXRequest.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/bbq.ajax.AJAXRequest.html#constructor">bbq.ajax.AJAXRequest</a></b>(options)
+								</div>
+								<div class="description"><p>Wrapper for Prototype Ajax class which dds extras such as an independent server timeout and error handling.</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			
 
 <!-- ============================== properties summary ===================== -->
 			
 				
 				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the fields documented in the class bbq.ajax.AJAXRequest.">
-					<caption>Field Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Field Attributes</th>
-							<th scope="col">Field Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">
-								bbq.ajax.AJAXRequest.<b><a href="../symbols/bbq.ajax.AJAXRequest.html#.errorHandlers">errorHandlers</a></b>
-								</div>
-								<div class="description">Add custom error handlers to this map.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">
-								<b><a href="../symbols/bbq.ajax.AJAXRequest.html#options">options</a></b>
-								</div>
-								<div class="description">Holds the options for this object.</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the fields documented in the class bbq.ajax.AJAXRequest.">
+						<caption>Field Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Field Attributes</th>
+								<th scope="col">Field Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">
+									bbq.ajax.AJAXRequest.<b><a href="../symbols/bbq.ajax.AJAXRequest.html#.errorHandlers">errorHandlers</a></b>
+									</div>
+									<div class="description">Add custom error handlers to this map.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">
+									<b><a href="../symbols/bbq.ajax.AJAXRequest.html#options">options</a></b>
+									</div>
+									<div class="description">Holds the options for this object.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
 				
 				
 				
@@ -358,194 +378,156 @@ ul.inheritsList
 
 <!-- ============================== constructor details ==================== -->		
 			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>bbq.ajax.AJAXRequest</em>(options)
-				</h3>
-				
-				<div class="description">
-					<p>Wrapper for Prototype Ajax class which dds extras such as an independent server timeout and error handling.</p>
-
-<p>Typically you would use a subclass such as <code class="language-javascript">bbq.ajax.JSONRequest</code>.</p>
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							bbq.ajax.AJAXRequest(options)
+					</h3>
 					
-				</div>
-				
-				
-				
-				
-					<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>options </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>options.url </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>Where to send the request to.</td>
-								</tr>
-							
-								<tr>
-									<td>options.method <br /><em>Optional, Default: "post"</em></td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>"post" or "get".</td>
-								</tr>
-							
-								<tr>
-									<td>options.args <br /><em>Optional</em></td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td>key/value pairs.</td>
-								</tr>
-							
-								<tr>
-									<td>options.onSuccess <br /><em>Optional</em></td>
-									<td><span class="light fixedFont">{Function}</span> </td>
-									<td>Everything went as expected - eg. received HTTP 200.</td>
-								</tr>
-							
-								<tr>
-									<td>options.onFailure <br /><em>Optional</em></td>
-									<td><span class="light fixedFont">{Function}</span> </td>
-									<td>The call failed - eg. did not receive HTTP 200.</td>
-								</tr>
-							
-								<tr>
-									<td>options.onException <br /><em>Optional</em></td>
-									<td><span class="light fixedFont">{Function}</span> </td>
-									<td>An exception was thrown while attempting to make the call.</td>
-								</tr>
-							
-								<tr>
-									<td>options.postBody <br /><em>Optional</em></td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>A string to send as the body of the request.  Subclasses will tend to use options.args over this value.</td>
-								</tr>
-							
-								<tr>
-									<td>options.headers <br /><em>Optional</em></td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td>A list of key/value pairs to send as request headers.</td>
-								</tr>
-							
-								<tr>
-									<td>options.contentType <br /><em>Optional</em></td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>The request content-type.</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-				
-				
-				
-				
-				
-				
-				
-					<dl class="detailList">
-						<dt class="heading">See:</dt>
-						
-							<dd><a href="../symbols/bbq.ajax.JSONRequest.html">bbq.ajax.JSONRequest</a></dd>
-						
-					</dl>
-				
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options.url </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>Where to send the request to.</td>
+				</tr>
+			
+				<tr>
+					<td>options.method <br /><em>Optional, Default: "post"</em></td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>"post" or "get".</td>
+				</tr>
+			
+				<tr>
+					<td>options.args <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>key/value pairs.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onSuccess <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>Everything went as expected - eg. received HTTP 200.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onFailure <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>The call failed - eg. did not receive HTTP 200.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onException <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>An exception was thrown while attempting to make the call.</td>
+				</tr>
+			
+				<tr>
+					<td>options.postBody <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>A string to send as the body of the request.  Subclasses will tend to use options.args over this value.</td>
+				</tr>
+			
+				<tr>
+					<td>options.headers <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>A list of key/value pairs to send as request headers.</td>
+				</tr>
+			
+				<tr>
+					<td>options.contentType <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>The request content-type.</td>
+				</tr>
+			
+		</tbody>
+	</table>
 
-			</div>
+	<dl class="detailList">
+		<dt class="heading">See:</dt>
 		
+			<dd><a href="../symbols/bbq.ajax.JSONRequest.html">bbq.ajax.JSONRequest</a></dd>
+		
+	</dl>
+
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
-			<div class="sectionTitle">Field Detail</div>
 			
-				<a name=".errorHandlers"> </a>
-				<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Field Detail</h2>
 					
-					
-					<span class="light">bbq.ajax.AJAXRequest.</span><b>errorHandlers</b>
-				</div>
-				<div class="description">
-					Add custom error handlers to this map.  Error handlers should
+						<a name=".errorHandlers"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">bbq.ajax.AJAXRequest.</span><b>errorHandlers</b>
+						</h3>
+
+						<div class="description">
+	Add custom error handlers to this map.  Error handlers should
 be a function with the following signature:
 
 <pre><code class="language-javascript">
 function(bbq.ajax.AJAXRequest, XMLHttpRequest);
 </code></pre>
-					
-					
-						<br />
-						<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_ajax_AJAXRequest.js.html">AJAXRequest.js</a>.
-					
-					
-				</div>
-					
-				
+	
+	
+</div>
+	<dl class="detailList">
+		<dt class="heading">See:</dt>
+		
+			<dd><a href="../symbols/bbq.ajax.AJAXRequest.html">bbq.ajax.AJAXRequest</a></dd>
+		
+	</dl>
 
-						
-						
-						
-							<dl class="detailList">
-							<dt class="heading">See:</dt>
+
+						<hr />
+					
+						<a name="options"> </a>
+						<h3>
+
 							
-							<dd><a href="../symbols/bbq.ajax.AJAXRequest.html">bbq.ajax.AJAXRequest</a></dd>
-							
-							</dl>
-						
-						
+							<b>options</b>
+						</h3>
 
-					<hr />
-				
-				<a name="options"> </a>
-				<div class="fixedFont">
-					
-					
-					<b>options</b>
-				</div>
-				<div class="description">
-					Holds the options for this object.
-					
-					
-						<br />
-						<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_ajax_AJAXRequest.js.html">AJAXRequest.js</a>.
-					
-					
-				</div>
-					
-				
+						<div class="description">
+	Holds the options for this object.
+	
+	
+</div>
 
 						
-						
-						
-						
-
 					
-				
+				</article>
 			
 
 <!-- ============================== method details ========================= -->		
 			
-			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:06 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:57 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

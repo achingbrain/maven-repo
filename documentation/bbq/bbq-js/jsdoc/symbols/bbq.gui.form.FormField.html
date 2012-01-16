@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -277,77 +283,17 @@ ul.inheritsList
 <!-- ============================== class summary ========================== -->			
 			<p class="description">
 				
-				<br />Extends
+				Extends
 					<a href="../symbols/bbq.gui.GUIWidget.html">bbq.gui.GUIWidget</a>.<br />
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_gui_form_FormField.js.html">FormField.js</a>.<br />
+				
+				
 				bbq.gui.form.FormField
 				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_gui_form_FormField.js.html">FormField.js</a>.
-				
-			</p>
-
-<!-- ============================== constructor summary ==================== -->			
-			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.gui.form.FormField.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/bbq.gui.form.FormField.html#constructor">bbq.gui.form.FormField</a></b>()
-							</div>
-							<div class="description">Supports the following options:
-
-options: {
-     value:  Object      // an initial value
-}
-
-Dispatches the following notifications:
-
-onError</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			
-
-<!-- ============================== properties summary ===================== -->
-			
-
-<!-- ============================== methods summary ======================== -->
-			
-				
-				
-				
-				
-				<dl class="inheritsList">
-				<dt>Methods borrowed from class <a href="../symbols/bbq.gui.GUIWidget.html">bbq.gui.GUIWidget</a>: </dt><dd><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a>, <a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#render">render</a>, <a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd>
-				</dl>
-				
-			
-<!-- ============================== events summary ======================== -->
-			
-
-<!-- ============================== constructor details ==================== -->		
-			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>bbq.gui.form.FormField</em>()
-				</h3>
-				
 				<div class="description">
-					Supports the following options:
+	Supports the following options:
 
 options: {
      value:  Object      // an initial value
@@ -356,37 +302,93 @@ options: {
 Dispatches the following notifications:
 
 onError
-					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+	
+	
+</div>
+			</p>
 
-			</div>
-		
+<!-- ============================== constructor summary ==================== -->			
+			
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.gui.form.FormField.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/bbq.gui.form.FormField.html#constructor">bbq.gui.form.FormField</a></b>()
+								</div>
+								<div class="description">Supports the following options:
+
+options: {
+     value:  Object      // an initial value
+}
+
+Dispatches the following notifications:
+
+onError</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+				
+				
+				
+				
+					<dl class="inheritsList">
+					<dt>Fields borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#options">options</a></dd>
+					</dl>
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				
+				
+					<dl class="inheritsList">
+					<dt>Methods borrowed from class <a href="../symbols/bbq.gui.GUIWidget.html">bbq.gui.GUIWidget</a>: </dt><dd><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a>, <a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#render">render</a>, <a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>: </dt><dd><a href="../symbols/bbq.lang.Watchable.html#deRegisterListener">deRegisterListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListener">notifyListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListeners">notifyListeners</a>, <a href="../symbols/bbq.lang.Watchable.html#registerListener">registerListener</a>, <a href="../symbols/bbq.lang.Watchable.html#registerOneTimeListener">registerOneTimeListener</a></dd>
+					</dl>
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							bbq.gui.form.FormField()
+					</h3>
+					
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
+			
 
 <!-- ============================== method details ========================= -->		
 			
-			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:07 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:57 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

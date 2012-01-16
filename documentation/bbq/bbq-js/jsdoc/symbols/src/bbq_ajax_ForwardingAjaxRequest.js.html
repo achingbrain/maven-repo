@@ -7,37 +7,38 @@
 	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
 	</style></head><body><pre><span class='line'>  1</span> <span class="NAME">include</span><span class="PUNC">(</span><span class="NAME">bbq.ajax.AJAXRequest</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>  2</span> 
-<span class='line'>  3</span> </span><span class="COMM">/**
-<span class='line'>  4</span>  * Expects response type to be arbitrary data.
-<span class='line'>  5</span>  *
-<span class='line'>  6</span>  * Designed to be used with the org.bbqjs.spring.ajax.RequestForwarder class
-<span class='line'>  7</span>  * from the bbq-spring-integration module.
-<span class='line'>  8</span>  * 
-<span class='line'>  9</span>  * @class bbq.ajax.ForwardingAjaxRequest is a subclass of bbq.ajax.AJAXRequest
-<span class='line'> 10</span>  * @extends bbq.ajax.AJAXRequest
-<span class='line'> 11</span>  * @see bbq.ajax.ForwardingJSONRequest
-<span class='line'> 12</span>  * @see bbq.ajax.ForwardingSoapRequest
-<span class='line'> 13</span>  */</span><span class="WHIT">
-<span class='line'> 14</span> </span><span class="NAME">bbq.ajax.ForwardingAjaxRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Class.create</span><span class="PUNC">(</span><span class="NAME">bbq.ajax.AJAXRequest</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 15</span> </span><span class="WHIT">	</span><span class="NAME">initialize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">$super</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 16</span> </span><span class="WHIT">		</span><span class="NAME">options.forwardTo</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options.url</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 17</span> </span><span class="WHIT">		</span><span class="NAME">options.url</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"/forward"</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 18</span> </span><span class="WHIT">		
-<span class='line'> 19</span> 		</span><span class="NAME">$super</span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 20</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'> 21</span> </span><span class="WHIT">	
-<span class='line'> 22</span> 	</span><span class="NAME">_createRequestHeaders</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 23</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 24</span> </span><span class="WHIT">			</span><span class="STRN">"X-BBQ-Forward-To"</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">this.options.forwardTo</span><span class="WHIT">
-<span class='line'> 25</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 26</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'> 27</span> </span><span class="WHIT">	
-<span class='line'> 28</span> 	</span><span class="NAME">onSuccess</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">serverResponse</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 29</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">serverResponse.getResponseHeader</span><span class="PUNC">(</span><span class="STRN">"X-responseType"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">100</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 30</span> </span><span class="WHIT">			</span><span class="NAME">this._callHandler</span><span class="PUNC">(</span><span class="STRN">"onError"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">$A</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 31</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 32</span> </span><span class="WHIT">			</span><span class="NAME">this._callHandler</span><span class="PUNC">(</span><span class="STRN">"onSuccess"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">$A</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 33</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 34</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 35</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 36</span> </span></pre></body></html>
+<span class='line'>  3</span> </span><span class="NAME">bbq.ajax.ForwardingAjaxRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Class.create</span><span class="PUNC">(</span><span class="NAME">bbq.ajax.AJAXRequest</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="COMM">/** @lends bbq.ajax.ForwardingAjaxRequest.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'>  5</span> 	 * Expects response type to be arbitrary data.
+<span class='line'>  6</span> 	 *
+<span class='line'>  7</span> 	 * Designed to be used with the org.bbqjs.spring.ajax.RequestForwarder class
+<span class='line'>  8</span> 	 * from the bbq-spring-integration module.
+<span class='line'>  9</span> 	 *
+<span class='line'> 10</span> 	 * @constructs
+<span class='line'> 11</span> 	 * @extends bbq.ajax.AJAXRequest
+<span class='line'> 12</span> 	 * @param {Object} options
+<span class='line'> 13</span> 	 * @see bbq.ajax.ForwardingJSONRequest
+<span class='line'> 14</span> 	 * @see bbq.ajax.ForwardingSoapRequest
+<span class='line'> 15</span> 	 */</span><span class="WHIT">
+<span class='line'> 16</span> </span><span class="WHIT">	</span><span class="NAME">initialize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">$super</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 17</span> </span><span class="WHIT">		</span><span class="NAME">options.forwardTo</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options.url</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 18</span> </span><span class="WHIT">		</span><span class="NAME">options.url</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"/forward"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 19</span> </span><span class="WHIT">		
+<span class='line'> 20</span> 		</span><span class="NAME">$super</span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 21</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 22</span> </span><span class="WHIT">	
+<span class='line'> 23</span> 	</span><span class="NAME">_createRequestHeaders</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 24</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 25</span> </span><span class="WHIT">			</span><span class="STRN">"X-BBQ-Forward-To"</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NAME">this.options.forwardTo</span><span class="WHIT">
+<span class='line'> 26</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 27</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 28</span> </span><span class="WHIT">	
+<span class='line'> 29</span> 	</span><span class="NAME">onSuccess</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">serverResponse</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 30</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">serverResponse.getResponseHeader</span><span class="PUNC">(</span><span class="STRN">"X-responseType"</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="NUMB">100</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 31</span> </span><span class="WHIT">			</span><span class="NAME">this._callHandler</span><span class="PUNC">(</span><span class="STRN">"onError"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">$A</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 32</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 33</span> </span><span class="WHIT">			</span><span class="NAME">this._callHandler</span><span class="PUNC">(</span><span class="STRN">"onSuccess"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">$A</span><span class="PUNC">(</span><span class="NAME">arguments</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 34</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 35</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 36</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 37</span> </span></pre></body></html>

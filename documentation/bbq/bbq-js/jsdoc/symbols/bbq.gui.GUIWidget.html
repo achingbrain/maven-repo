@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -277,274 +283,17 @@ ul.inheritsList
 <!-- ============================== class summary ========================== -->			
 			<p class="description">
 				
-				<br />Extends
+				Extends
 					<a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>.<br />
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.<br />
 				
 				
 				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-				
-			</p>
-
-<!-- ============================== constructor summary ==================== -->			
-			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.gui.GUIWidget.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/bbq.gui.GUIWidget.html#constructor">bbq.gui.GUIWidget</a></b>(options)
-							</div>
-							<div class="description"><p>This class is used as a base for all objects that have GUI representations.</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			
-
-<!-- ============================== properties summary ===================== -->
-			
-
-<!-- ============================== methods summary ======================== -->
-			
-				
-				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class bbq.gui.GUIWidget.">
-					<caption>Method Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Method Attributes</th>
-							<th scope="col">Method Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a></b>(className)
-								</div>
-								<div class="description">Adds a class to the root node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a></b>(Node)
-								</div>
-								<div class="description">Adds this GUIWidget to the DOM in front of the passed node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a></b>(childNode)
-								</div>
-								<div class="description">Adds a node or GUIWidget to the root node of this element</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a></b>(pageNode)
-								</div>
-								<div class="description">Attaches the root node to the passed node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a></b>()
-								</div>
-								<div class="description">Removes all nodes attached to this GUIWidgets rootNode</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a></b>(attributeName)
-								</div>
-								<div class="description">Returns the requested attribute from the root node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a></b>()
-								</div>
-								<div class="description">Returns the id of the root node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a></b>(styleName)
-								</div>
-								<div class="description">Returns the requested CSS style property</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a></b>(A)
-								</div>
-								<div class="description">Makes the passed node the first child of this object.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a></b>(A, A)
-								</div>
-								<div class="description">Inserts the first passed node before the second.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a></b>(className)
-								</div>
-								<div class="description">Returns whether or not the root node of this object is of the passed CSS class</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a></b>()
-								</div>
-								<div class="description">Sets a reference to this object on the rootNode DOM node.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a></b>(A)
-								</div>
-								<div class="description">Attempts to remove the passed node if it is a child of this._rootNode
-
-The passed argument can be either a DOM Node object, or a GUIWidget object.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a></b>(className, recursively)
-								</div>
-								<div class="description">Removes a class from the root node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#render">render</a></b>()
-								</div>
-								<div class="description">This method should be overridden by child classes and called explicitly by the overriding method if they make use of the 
-childWidgets array, which they should, haha.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a></b>(oldNode, newNode)
-								</div>
-								<div class="description">Replaces a DOM node or GUIWidget that is a child of the root node of this object</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a></b>()
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a></b>(attributeName, attributeValue)
-								</div>
-								<div class="description">Sets an attribute on the root node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a></b>(id)
-								</div>
-								<div class="description">Sets the id attribute on the root node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a></b>(rootNode)
-								</div>
-								<div class="description">Sets the root node and registers this object for retrieval from the root node.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a></b>(styleName, styleValue)
-								</div>
-								<div class="description">Sets a CSS style property to the passed value on the root node</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
-				
-				
-				
-				<dl class="inheritsList">
-				<dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd>
-				</dl>
-				
-			
-<!-- ============================== events summary ======================== -->
-			
-
-<!-- ============================== constructor details ==================== -->		
-			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>bbq.gui.GUIWidget</em>(options)
-				</h3>
 				
 				<div class="description">
-					<p>This class is used as a base for all objects that have GUI representations.</p>
+	<p>This class is used as a base for all objects that have GUI representations.</p>
 
 <p>The constructor method of this class should always be called explicitly by child classes.</p>
 
@@ -565,766 +314,801 @@ com.myapp.MyWidget = new Class.create(bbq.gui.GUIWidget, {
 var widget = new com.myapp.MyWidget({attributes: { className: "Foo" }});
 widget.appendTo(document.body);
 </code></pre>
-					
-				</div>
+	
+	
+</div>
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class bbq.gui.GUIWidget.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/bbq.gui.GUIWidget.html#constructor">bbq.gui.GUIWidget</a></b>(options)
+								</div>
+								<div class="description"><p>This class is used as a base for all objects that have GUI representations.</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
 				
 				
 				
 				
-					<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
+					<dl class="inheritsList">
+					<dt>Fields borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#options">options</a></dd>
+					</dl>
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class bbq.gui.GUIWidget.">
+						<caption>Method Summary</caption>
 						<thead>
 							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
 							</tr>
 						</thead>
 						<tbody>
-							
-								<tr>
-									<td>options </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>options.attributes <br /><em>Optional</em></td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td>A key/value object of attributes to be applied to the root node</td>
-								</tr>
-							
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a></b>(className)
+									</div>
+									<div class="description">Adds a class to the root node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a></b>(Node)
+									</div>
+									<div class="description">Adds this GUIWidget to the DOM in front of the passed node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a></b>(childNode)
+									</div>
+									<div class="description">Adds a node or GUIWidget to the root node of this element</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a></b>(pageNode)
+									</div>
+									<div class="description">Attaches the root node to the passed node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a></b>()
+									</div>
+									<div class="description">Removes all nodes attached to this GUIWidgets rootNode</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a></b>(attributeName)
+									</div>
+									<div class="description">Returns the requested attribute from the root node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a></b>()
+									</div>
+									<div class="description">Returns the id of the root node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a></b>(styleName)
+									</div>
+									<div class="description">Returns the requested CSS style property</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a></b>(A)
+									</div>
+									<div class="description">Makes the passed node the first child of this object.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a></b>(A, A)
+									</div>
+									<div class="description">Inserts the first passed node before the second.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a></b>(className)
+									</div>
+									<div class="description">Returns whether or not the root node of this object is of the passed CSS class</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a></b>()
+									</div>
+									<div class="description">Sets a reference to this object on the rootNode DOM node.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a></b>(A)
+									</div>
+									<div class="description">Attempts to remove the passed node if it is a child of this._rootNode
+
+The passed argument can be either a DOM Node object, or a GUIWidget object.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a></b>(className, recursively)
+									</div>
+									<div class="description">Removes a class from the root node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#render">render</a></b>()
+									</div>
+									<div class="description">This method should be overridden by child classes and called explicitly by the overriding method if they make use of the 
+childWidgets array, which they should, haha.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a></b>(oldNode, newNode)
+									</div>
+									<div class="description">Replaces a DOM node or GUIWidget that is a child of the root node of this object</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a></b>()
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a></b>(attributeName, attributeValue)
+									</div>
+									<div class="description">Sets an attribute on the root node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a></b>(id)
+									</div>
+									<div class="description">Sets the id attribute on the root node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a></b>(rootNode)
+									</div>
+									<div class="description">Sets the root node and registers this object for retrieval from the root node.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a></b>(styleName, styleValue)
+									</div>
+									<div class="description">Sets a CSS style property to the passed value on the root node</div>
+								</td>
+							</tr>
+						
 						</tbody>
 					</table>
 				
 				
 				
+					<dl class="inheritsList">
+					<dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>: </dt><dd><a href="../symbols/bbq.lang.Watchable.html#deRegisterListener">deRegisterListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListener">notifyListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListeners">notifyListeners</a>, <a href="../symbols/bbq.lang.Watchable.html#registerListener">registerListener</a>, <a href="../symbols/bbq.lang.Watchable.html#registerOneTimeListener">registerOneTimeListener</a></dd>
+					</dl>
 				
-				
-				
-				
-				
+			
+<!-- ============================== events summary ======================== -->
+			
 
-			</div>
-		
+<!-- ============================== constructor details ==================== -->		
+			
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							bbq.gui.GUIWidget(options)
+					</h3>
+					
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options.attributes <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>A key/value object of attributes to be applied to the root node</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
+			
 
 <!-- ============================== method details ========================= -->		
 			
-				<div class="sectionTitle">
-					Method Detail
-				</div>
-				
-					<a name="addClass"> </a>
-					<div class="fixedFont">
+				<article>
+					<h2>Method Detail</h2>
 					
-					
-					<b>addClass</b>(className)
-					
-					</div>
-					<div class="description">
-						Adds a class to the root node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>className </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>The name of the class to add</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+						<a name="addClass"> </a>
+						<h3>
 
-					<hr />
-				
-					<a name="appendBefore"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>appendBefore</b>(Node)
-					
-					</div>
-					<div class="description">
-						Adds this GUIWidget to the DOM in front of the passed node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
 							
-								<tr>
-									<td>Node </td>
-									<td></td>
-									<td>node</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+							<b>addClass</b>(className)
+						</h3>
 
-					<hr />
-				
-					<a name="appendChild"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>appendChild</b>(childNode)
-					
-					</div>
-					<div class="description">
-						Adds a node or GUIWidget to the root node of this element
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>childNode </td>
-									<td><span class="light fixedFont">{Mixed}</span> </td>
-									<td>A Node, GUIWidget or array of Node and/or GUIWidget objects</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+						<div class="description">
+	Adds a class to the root node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>className </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>The name of the class to add</td>
+				</tr>
+			
+		</tbody>
+	</table>
 
-					<hr />
-				
-					<a name="appendTo"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>appendTo</b>(pageNode)
-					
-					</div>
-					<div class="description">
-						Attaches the root node to the passed node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>pageNode </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td>The node to attach the root node to</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
 
-					<hr />
-				
-					<a name="empty"> </a>
-					<div class="fixedFont">
+						<hr />
 					
-					
-					<b>empty</b>()
-					
-					</div>
-					<div class="description">
-						Removes all nodes attached to this GUIWidgets rootNode
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-						
-						
+						<a name="appendBefore"> </a>
+						<h3>
 
-					<hr />
-				
-					<a name="getAttribute"> </a>
-					<div class="fixedFont">
-					
-					<span class="light">{String}</span>
-					<b>getAttribute</b>(attributeName)
-					
-					</div>
-					<div class="description">
-						Returns the requested attribute from the root node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
 							
-								<tr>
-									<td>attributeName </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>e.g. "id"</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> </dd>
-							
-							</dl>
-						
-						
-						
+							<b>appendBefore</b>(Node)
+						</h3>
 
-					<hr />
-				
-					<a name="getID"> </a>
-					<div class="fixedFont">
-					
-					<span class="light">{string}</span>
-					<b>getID</b>()
-					
-					</div>
-					<div class="description">
-						Returns the id of the root node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{string}</span> </dd>
-							
-							</dl>
-						
-						
-						
+						<div class="description">
+	Adds this GUIWidget to the DOM in front of the passed node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>Node </td>
+					<td></td>
+					<td>node</td>
+				</tr>
+			
+		</tbody>
+	</table>
 
-					<hr />
-				
-					<a name="getStyle"> </a>
-					<div class="fixedFont">
-					
-					<span class="light">{string}</span>
-					<b>getStyle</b>(styleName)
-					
-					</div>
-					<div class="description">
-						Returns the requested CSS style property
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>styleName </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td>e.g. "font"</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{string}</span> </dd>
-							
-							</dl>
-						
-						
-						
 
-					<hr />
-				
-					<a name="insertAtTop"> </a>
-					<div class="fixedFont">
+						<hr />
 					
-					
-					<b>insertAtTop</b>(A)
-					
-					</div>
-					<div class="description">
-						Makes the passed node the first child of this object.
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>A </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td>GUIWidget or DOM Node</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+						<a name="appendChild"> </a>
+						<h3>
 
-					<hr />
-				
-					<a name="insertBefore"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>insertBefore</b>(A, A)
-					
-					</div>
-					<div class="description">
-						Inserts the first passed node before the second.
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
 							
-								<tr>
-									<td>A </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td>GUIWidget or DOM Node</td>
-								</tr>
-							
-								<tr>
-									<td>A </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td>GUIWidget or DOM Node - should be a child of this element</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+							<b>appendChild</b>(childNode)
+						</h3>
 
-					<hr />
-				
-					<a name="isClass"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>isClass</b>(className)
-					
-					</div>
-					<div class="description">
-						Returns whether or not the root node of this object is of the passed CSS class
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>className </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd>boolean</dd>
-							
-							</dl>
-						
-						
-						
+						<div class="description">
+	Adds a node or GUIWidget to the root node of this element
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>childNode </td>
+					<td><span class="light fixedFont">{Mixed}</span> </td>
+					<td>A Node, GUIWidget or array of Node and/or GUIWidget objects</td>
+				</tr>
+			
+		</tbody>
+	</table>
 
-					<hr />
-				
-					<a name="registerObject"> </a>
-					<div class="fixedFont">
+
+						<hr />
 					
+						<a name="appendTo"> </a>
+						<h3>
+
+							
+							<b>appendTo</b>(pageNode)
+						</h3>
+
+						<div class="description">
+	Attaches the root node to the passed node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>pageNode </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td>The node to attach the root node to</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
 					
-					<b>registerObject</b>()
+						<a name="empty"> </a>
+						<h3>
+
+							
+							<b>empty</b>()
+						</h3>
+
+						<div class="description">
+	Removes all nodes attached to this GUIWidgets rootNode
+	
+	
+</div>
+
+						<hr />
 					
-					</div>
-					<div class="description">
-						Sets a reference to this object on the rootNode DOM node.  This allows us to take a DOM node from the document tree and 
+						<a name="getAttribute"> </a>
+						<h3>
+
+							<span class="light">{String}</span>
+							<b>getAttribute</b>(attributeName)
+						</h3>
+
+						<div class="description">
+	Returns the requested attribute from the root node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>attributeName </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>e.g. "id"</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{String}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name="getID"> </a>
+						<h3>
+
+							<span class="light">{string}</span>
+							<b>getID</b>()
+						</h3>
+
+						<div class="description">
+	Returns the id of the root node
+	
+	
+</div>
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{string}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name="getStyle"> </a>
+						<h3>
+
+							<span class="light">{string}</span>
+							<b>getStyle</b>(styleName)
+						</h3>
+
+						<div class="description">
+	Returns the requested CSS style property
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>styleName </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td>e.g. "font"</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{string}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name="insertAtTop"> </a>
+						<h3>
+
+							
+							<b>insertAtTop</b>(A)
+						</h3>
+
+						<div class="description">
+	Makes the passed node the first child of this object.
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>A </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>GUIWidget or DOM Node</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="insertBefore"> </a>
+						<h3>
+
+							
+							<b>insertBefore</b>(A, A)
+						</h3>
+
+						<div class="description">
+	Inserts the first passed node before the second.
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>A </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>GUIWidget or DOM Node</td>
+				</tr>
+			
+				<tr>
+					<td>A </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>GUIWidget or DOM Node - should be a child of this element</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="isClass"> </a>
+						<h3>
+
+							
+							<b>isClass</b>(className)
+						</h3>
+
+						<div class="description">
+	Returns whether or not the root node of this object is of the passed CSS class
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>className </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd>boolean</dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name="registerObject"> </a>
+						<h3>
+
+							
+							<b>registerObject</b>()
+						</h3>
+
+						<div class="description">
+	Sets a reference to this object on the rootNode DOM node.  This allows us to take a DOM node from the document tree and 
 get the GUIWidget object of which it is the root node.
+	
+	
+</div>
+	<dl class="detailList">
+		<dt class="heading">See:</dt>
+		
+			<dd><a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">bbq.gui.GUIWidget#setRootNode</a></dd>
+		
+	</dl>
 
-See setRootNode() for more information
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-						
-						
 
-					<hr />
-				
-					<a name="removeChild"> </a>
-					<div class="fixedFont">
+						<hr />
 					
-					
-					<b>removeChild</b>(A)
-					
-					</div>
-					<div class="description">
-						Attempts to remove the passed node if it is a child of this._rootNode
+						<a name="removeChild"> </a>
+						<h3>
+
+							
+							<b>removeChild</b>(A)
+						</h3>
+
+						<div class="description">
+	Attempts to remove the passed node if it is a child of this._rootNode
 
 The passed argument can be either a DOM Node object, or a GUIWidget object.
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>A </td>
-									<td><span class="light fixedFont">{Mixed}</span> </td>
-									<td>child node</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>A </td>
+					<td><span class="light fixedFont">{Mixed}</span> </td>
+					<td>child node</td>
+				</tr>
+			
+		</tbody>
+	</table>
 
-					<hr />
-				
-					<a name="removeClass"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>removeClass</b>(className, recursively)
-					
-					</div>
-					<div class="description">
-						Removes a class from the root node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>className </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>The name of the class to remove</td>
-								</tr>
-							
-								<tr>
-									<td>recursively </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
 
-					<hr />
-				
-					<a name="render"> </a>
-					<div class="fixedFont">
+						<hr />
 					
+						<a name="removeClass"> </a>
+						<h3>
+
+							
+							<b>removeClass</b>(className, recursively)
+						</h3>
+
+						<div class="description">
+	Removes a class from the root node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>className </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>The name of the class to remove</td>
+				</tr>
+			
+				<tr>
+					<td>recursively </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
 					
-					<b>render</b>()
-					
-					</div>
-					<div class="description">
-						This method should be overridden by child classes and called explicitly by the overriding method if they make use of the 
+						<a name="render"> </a>
+						<h3>
+
+							
+							<b>render</b>()
+						</h3>
+
+						<div class="description">
+	This method should be overridden by child classes and called explicitly by the overriding method if they make use of the 
 childWidgets array, which they should, haha.
 
 The idea of the method is to create a DOM node tree representation of the widget.  The root node of the tree should be 
@@ -1334,386 +1118,269 @@ This method will be called before the node tree is added to the main document tr
 in graphics programming) and may be called at seeming arbitrary times.  Consequently it should always create a 
 representation of the widget/object in it's current state but at the same time, not rely on any other portion of the DOM tree 
 existing.
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-						
-						
+	
+	
+</div>
 
-					<hr />
-				
-					<a name="replaceChild"> </a>
-					<div class="fixedFont">
+						<hr />
 					
-					<span class="light">{Node || GUIWidget}</span>
-					<b>replaceChild</b>(oldNode, newNode)
-					
-					</div>
-					<div class="description">
-						Replaces a DOM node or GUIWidget that is a child of the root node of this object
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>oldNode </td>
-									<td><span class="light fixedFont">{Node || GUIWidget}</span> </td>
-									<td>The outgoing child</td>
-								</tr>
-							
-								<tr>
-									<td>newNode </td>
-									<td><span class="light fixedFont">{Node || GUIWidget}</span> </td>
-									<td>The incoming child</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node || GUIWidget}</span> The incoming child</dd>
-							
-							</dl>
-						
-						
-						
+						<a name="replaceChild"> </a>
+						<h3>
 
-					<hr />
-				
-					<a name="resize"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>resize</b>()
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd>void</dd>
-							
-							</dl>
-						
-						
-						
+							<span class="light">{Node || GUIWidget}</span>
+							<b>replaceChild</b>(oldNode, newNode)
+						</h3>
 
-					<hr />
-				
-					<a name="setAttribute"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>setAttribute</b>(attributeName, attributeValue)
-					
-					</div>
-					<div class="description">
-						Sets an attribute on the root node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>attributeName </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>e.g. "id"</td>
-								</tr>
-							
-								<tr>
-									<td>attributeValue </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>e.g. "anElement"</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+						<div class="description">
+	Replaces a DOM node or GUIWidget that is a child of the root node of this object
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>oldNode </td>
+					<td><span class="light fixedFont">{Node || GUIWidget}</span> </td>
+					<td>The outgoing child</td>
+				</tr>
+			
+				<tr>
+					<td>newNode </td>
+					<td><span class="light fixedFont">{Node || GUIWidget}</span> </td>
+					<td>The incoming child</td>
+				</tr>
+			
+		</tbody>
+	</table>
 
-					<hr />
-				
-					<a name="setID"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>setID</b>(id)
-					
-					</div>
-					<div class="description">
-						Sets the id attribute on the root node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>id </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node || GUIWidget}</span> The incoming child</dd>
+		
+	</dl>
 
-					<hr />
-				
-					<a name="setRootNode"> </a>
-					<div class="fixedFont">
+
+						<hr />
 					
+						<a name="resize"> </a>
+						<h3>
+
+							
+							<b>resize</b>()
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd>void</dd>
+		
+	</dl>
+
+
+						<hr />
 					
-					<b>setRootNode</b>(rootNode)
+						<a name="setAttribute"> </a>
+						<h3>
+
+							
+							<b>setAttribute</b>(attributeName, attributeValue)
+						</h3>
+
+						<div class="description">
+	Sets an attribute on the root node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>attributeName </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>e.g. "id"</td>
+				</tr>
+			
+				<tr>
+					<td>attributeValue </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>e.g. "anElement"</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
 					
-					</div>
-					<div class="description">
-						Sets the root node and registers this object for retrieval from the root node.
+						<a name="setID"> </a>
+						<h3>
+
+							
+							<b>setID</b>(id)
+						</h3>
+
+						<div class="description">
+	Sets the id attribute on the root node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>id </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="setRootNode"> </a>
+						<h3>
+
+							
+							<b>setRootNode</b>(rootNode)
+						</h3>
+
+						<div class="description">
+	Sets the root node and registers this object for retrieval from the root node.
 
 This object can then be retrieved by calling owner() on the dom node passed as the argument to this method.
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					<pre class="code">So, for example:
+	
+	
+</div>
+	
+		<pre><code class="language-javascript">
+bbq.gui.form.TextField = new Class.create(bbq.gui.GUIWidget, {
+    initialize: function($super, options) {
+      $super(options);
 
-<code>
-proxim.gui.TextField = new Class.create();
-
-Object.extend(proxim.gui.TextField.prototype, bbq.gui.GUIWidget.prototype);
-
-proxim.gui.TextField.prototype.initialize: function(controller, htmlID)
-  {
-  var parentMethod = initialize;
-  parentMethod.apply(this, arguments);
-  this.setRootNode(document.createElement("input"));
-  this.setID(htmlID);
+      this.setRootNode(document.createElement("input"));
+      this.addClass("TextField");
+      this.setAttribute("value", this.options.value);
   }
+});
 
 ...
 
-var foo = proxim.gui.TextField(this.controller, "exampleObject");
-foo.appendTo(document.getElementsByTagName("body")[0]);
+var foo = new bbq.gui.form.TextField({value: "a value"});
+foo.appendTo(document.body);
 
 ...
 
 var bar = document.getElementById("exampleObject");
 var foo = bar.owner();
 </code></pre>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>rootNode </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+	
 
-					<hr />
-				
-					<a name="setStyle"> </a>
-					<div class="fixedFont">
-					
-					
-					<b>setStyle</b>(styleName, styleValue)
-					
-					</div>
-					<div class="description">
-						Sets a CSS style property to the passed value on the root node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_gui_GUIWidget.js.html">GUIWidget.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>styleName </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td>e.g. "border"</td>
-								</tr>
-							
-								<tr>
-									<td>styleValue </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td>e.g. "1px solid #CCC"</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>rootNode </td>
+					<td><span class="light fixedFont">{Node or String}</span> </td>
+					<td>Either a DOM Node (from document.createElement) or the String name of a node - e.g. "div"</td>
+				</tr>
+			
+		</tbody>
+	</table>
 
+
+						<hr />
 					
-				
+						<a name="setStyle"> </a>
+						<h3>
+
+							
+							<b>setStyle</b>(styleName, styleValue)
+						</h3>
+
+						<div class="description">
+	Sets a CSS style property to the passed value on the root node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
 			
+				<tr>
+					<td>styleName </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td>e.g. "border"</td>
+				</tr>
 			
+				<tr>
+					<td>styleValue </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td>e.g. "1px solid #CCC"</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						
+					
+				</article>
+			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:08 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:57 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -278,122 +284,14 @@ ul.inheritsList
 			<p class="description">
 				
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_date_DateFormatter.js.html">DateFormatter.js</a>.<br />
+				
+				
 				DateFormatter
 				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_date_DateFormatter.js.html">DateFormatter.js</a>.
-				
-			</p>
-
-<!-- ============================== constructor summary ==================== -->			
-			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class DateFormatter.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/DateFormatter.html#constructor">DateFormatter</a></b>()
-							</div>
-							<div class="description">DateFormatter represents the date format
-
-Cribbed from http://blog.stevenlevithan.com/archives/date-time-format
-
-(c) 2007-2009 Steven Levithan <stevenlevithan.com>
-MIT license
-
-Includes enhancements by Scott Trenda <scott.trenda.net>
-and Kris Kowal <cixar.com/~kris.kowal/>
-
-Accepts a date, a mask, or a date and a mask.</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			
-
-<!-- ============================== properties summary ===================== -->
-			
-				
-				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the fields documented in the class DateFormatter.">
-					<caption>Field Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Field Attributes</th>
-							<th scope="col">Field Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">
-								DateFormatter.<b><a href="../symbols/DateFormatter.html#.masks">masks</a></b>
-								</div>
-								<div class="description">Various built in date format masks.</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
-				
-				
-				
-			
-
-<!-- ============================== methods summary ======================== -->
-			
-				
-				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class DateFormatter.">
-					<caption>Method Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Method Attributes</th>
-							<th scope="col">Method Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DateFormatter.<b><a href="../symbols/DateFormatter.html#.format">format</a></b>(date, mask, formatter)
-								</div>
-								<div class="description">Formats a given date using the passed mask and formatter.</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
-				
-				
-				
-			
-<!-- ============================== events summary ======================== -->
-			
-
-<!-- ============================== constructor details ==================== -->		
-			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>DateFormatter</em>()
-				</h3>
-				
 				<div class="description">
-					DateFormatter represents the date format
+	DateFormatter represents the date format
 
 Cribbed from http://blog.stevenlevithan.com/archives/date-time-format
 
@@ -423,70 +321,158 @@ DateFormatter.format(date, "yyyy");
 // 2012-01-09
 DateFormatter.format(date, DateFormatter.masks.isoDate);
 </code></pre>
-					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+	
+	
+</div>
+			</p>
 
-			</div>
-		
+<!-- ============================== constructor summary ==================== -->			
+			
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class DateFormatter.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/DateFormatter.html#constructor">DateFormatter</a></b>()
+								</div>
+								<div class="description">DateFormatter represents the date format
+
+Cribbed from http://blog.stevenlevithan.com/archives/date-time-format
+
+(c) 2007-2009 Steven Levithan <stevenlevithan.com>
+MIT license
+
+Includes enhancements by Scott Trenda <scott.trenda.net>
+and Kris Kowal <cixar.com/~kris.kowal/>
+
+Accepts a date, a mask, or a date and a mask.</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+				
+				
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the fields documented in the class DateFormatter.">
+						<caption>Field Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Field Attributes</th>
+								<th scope="col">Field Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">
+									DateFormatter.<b><a href="../symbols/DateFormatter.html#.masks">masks</a></b>
+									</div>
+									<div class="description">Various built in date format masks.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				
+				
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class DateFormatter.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DateFormatter.<b><a href="../symbols/DateFormatter.html#.format">format</a></b>(date, mask, formatter)
+									</div>
+									<div class="description">Formats a given date using the passed mask and formatter.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							DateFormatter()
+					</h3>
+					
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
-			<div class="sectionTitle">Field Detail</div>
 			
-				<a name=".masks"> </a>
-				<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Field Detail</h2>
 					
-					
-					<span class="light">DateFormatter.</span><b>masks</b>
-				</div>
-				<div class="description">
-					Various built in date format masks.  Pass one of these as the
+						<a name=".masks"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">DateFormatter.</span><b>masks</b>
+						</h3>
+
+						<div class="description">
+	Various built in date format masks.  Pass one of these as the
 second argument to DateFormatter#format
-					
-					
-						<br />
-						<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_date_DateFormatter.js.html">DateFormatter.js</a>.
-					
-					
-				</div>
-					
-				
+	
+	
+</div>
 
 						
-						
-						
-						
-
 					
-				
+				</article>
 			
 
 <!-- ============================== method details ========================= -->		
 			
-				<div class="sectionTitle">
-					Method Detail
-				</div>
-				
-					<a name=".format"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Method Detail</h2>
 					
-					
-					<span class="light">DateFormatter.</span><b>format</b>(date, mask, formatter)
-					
-					</div>
-					<div class="description">
-						Formats a given date using the passed mask and formatter.
+						<a name=".format"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">DateFormatter.</span><b>format</b>(date, mask, formatter)
+						</h3>
+
+						<div class="description">
+	Formats a given date using the passed mask and formatter.
 
 If you do not specify a formatter, this function will return the date formatted
 as a string using the passed mask.
@@ -494,76 +480,59 @@ as a string using the passed mask.
 If you do not pass a mask it uses DateFormatter.masks.default.
 
 If you do not pass a date it uses the current date.
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_date_DateFormatter.js.html">DateFormatter.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>date </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>mask </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>formatter </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>formatter.format(date, </td>
-									<td></td>
-									<td>mask, utc, regex)</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>date </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>mask </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>formatter </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>formatter.format(date, </td>
+					<td></td>
+					<td>mask, utc, regex)</td>
+				</tr>
+			
+		</tbody>
+	</table>
 
+
+						
 					
-				
+				</article>
 			
-			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:10 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:58 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

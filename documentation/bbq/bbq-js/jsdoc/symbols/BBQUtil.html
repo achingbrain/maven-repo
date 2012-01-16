@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -278,36 +284,41 @@ ul.inheritsList
 			<p class="description">
 				
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_util_BBQUtil.js.html">BBQUtil.js</a>.<br />
+				
+				
 				BBQUtil
 				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-				
+				<div class="description">
+	Provides some utility methods for JavaScript vagaries
+	
+	
+</div>
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class BBQUtil.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/BBQUtil.html#constructor">BBQUtil</a></b>()
-							</div>
-							<div class="description">Provides some utility methods for JavaScript vagaries</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class BBQUtil.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/BBQUtil.html#constructor">BBQUtil</a></b>()
+								</div>
+								<div class="description">Provides some utility methods for JavaScript vagaries</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			
 
 <!-- ============================== properties summary ===================== -->
@@ -317,144 +328,144 @@ ul.inheritsList
 			
 				
 				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class BBQUtil.">
-					<caption>Method Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Method Attributes</th>
-							<th scope="col">Method Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.clearFocus">clearFocus</a></b>(event, element)
-								</div>
-								<div class="description">Tries to remove focus from the element that triggered the passed event and then return that element.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.cloneObject">cloneObject</a></b>(object)
-								</div>
-								<div class="description">Returns a discrete copy of the passed object</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.count">count</a></b>(object)
-								</div>
-								<div class="description">Counts the number of properties an object has</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.dumpObject">dumpObject</a></b>(object, spaces)
-								</div>
-								<div class="description">Recursively dumps the name and value of each property contained within the passed object</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.formatFileSize">formatFileSize</a></b>(The)
-								</div>
-								<div class="description">Will format 1024B into 1KB, 1024KB into 1MB, etc</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.formatText">formatText</a></b>(text, attributes)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.generateGUID">generateGUID</a></b>()
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.getViewportSize">getViewportSize</a></b>()
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.getWindowSize">getWindowSize</a></b>()
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.isGUID">isGUID</a></b>(guid)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.objectToArray">objectToArray</a></b>(object)
-								</div>
-								<div class="description">Turns an object into an array - eg.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.readCookie">readCookie</a></b>(cookieName)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.serializeForPHP">serializeForPHP</a></b>(passedArray)
-								</div>
-								<div class="description">Serializes an array in a fashion suitable for unserialization within a PHP script</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.trim">trim</a></b>(string)
-								</div>
-								<div class="description">Removes leading and trailing spaces from the passed string</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class BBQUtil.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.clearFocus">clearFocus</a></b>(event, element)
+									</div>
+									<div class="description">Tries to remove focus from the element that triggered the passed event and then return that element.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.cloneObject">cloneObject</a></b>(object)
+									</div>
+									<div class="description">Returns a discrete copy of the passed object</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.count">count</a></b>(object)
+									</div>
+									<div class="description">Counts the number of properties an object has</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.dumpObject">dumpObject</a></b>(object, spaces)
+									</div>
+									<div class="description">Recursively dumps the name and value of each property contained within the passed object</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.formatFileSize">formatFileSize</a></b>(The)
+									</div>
+									<div class="description">Will format 1024B into 1KB, 1024KB into 1MB, etc</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.formatText">formatText</a></b>(text, attributes)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.generateGUID">generateGUID</a></b>()
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.getViewportSize">getViewportSize</a></b>()
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.getWindowSize">getWindowSize</a></b>()
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.isGUID">isGUID</a></b>(guid)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.objectToArray">objectToArray</a></b>(object)
+									</div>
+									<div class="description">Turns an object into an array - eg.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.readCookie">readCookie</a></b>(cookieName)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.serializeForPHP">serializeForPHP</a></b>(passedArray)
+									</div>
+									<div class="description">Serializes an array in a fashion suitable for unserialization within a PHP script</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQUtil.<b><a href="../symbols/BBQUtil.html#.trim">trim</a></b>(string)
+									</div>
+									<div class="description">Removes leading and trailing spaces from the passed string</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
 				
 				
 				
@@ -464,802 +475,560 @@ ul.inheritsList
 
 <!-- ============================== constructor details ==================== -->		
 			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>BBQUtil</em>()
-				</h3>
-				
-				<div class="description">
-					Provides some utility methods for JavaScript vagaries
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							BBQUtil()
+					</h3>
 					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-
-			</div>
-		
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
+			
 
 <!-- ============================== method details ========================= -->		
 			
-				<div class="sectionTitle">
-					Method Detail
-				</div>
-				
-					<a name=".clearFocus"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Method Detail</h2>
 					
-					
-					<span class="light">BBQUtil.</span><b>clearFocus</b>(event, element)
-					
-					</div>
-					<div class="description">
-						Tries to remove focus from the element that triggered the passed event and then return that element.
+						<a name=".clearFocus"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">BBQUtil.</span><b>clearFocus</b>(event, element)
+						</h3>
+
+						<div class="description">
+	Tries to remove focus from the element that triggered the passed event and then return that element.
 
 N.B.  This method occasionally makes FireFox throw an uncatchable exception
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>event </td>
-									<td><span class="light fixedFont">{Event}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>element </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					<hr />
-				
-					<a name=".cloneObject"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Object}</span>
-					<span class="light">BBQUtil.</span><b>cloneObject</b>(object)
-					
-					</div>
-					<div class="description">
-						Returns a discrete copy of the passed object
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>object </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Object}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".count"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{integer}</span>
-					<span class="light">BBQUtil.</span><b>count</b>(object)
-					
-					</div>
-					<div class="description">
-						Counts the number of properties an object has
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>object </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{integer}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".dumpObject"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">BBQUtil.</span><b>dumpObject</b>(object, spaces)
-					
-					</div>
-					<div class="description">
-						Recursively dumps the name and value of each property contained within the passed object
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>object </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>spaces </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					<hr />
-				
-					<a name=".formatFileSize"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{String}</span>
-					<span class="light">BBQUtil.</span><b>formatFileSize</b>(The)
-					
-					</div>
-					<div class="description">
-						Will format 1024B into 1KB, 1024KB into 1MB, etc
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>The </td>
-									<td><span class="light fixedFont">{Integer}</span> </td>
-									<td>number of bytes to format</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".formatText"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">BBQUtil.</span><b>formatText</b>(text, attributes)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>text </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>attributes </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".generateGUID"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{string}</span>
-					<span class="light">BBQUtil.</span><b>generateGUID</b>()
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{string}</span> Returns string representaton of a GUID</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getViewportSize"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Object}</span>
-					<span class="light">BBQUtil.</span><b>getViewportSize</b>()
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Object}</span> returns viewport size object</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getWindowSize"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Object}</span>
-					<span class="light">BBQUtil.</span><b>getWindowSize</b>()
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Object}</span> returns window size object</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".isGUID"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{boolean}</span>
-					<span class="light">BBQUtil.</span><b>isGUID</b>(guid)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>guid </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{boolean}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".objectToArray"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Array}</span>
-					<span class="light">BBQUtil.</span><b>objectToArray</b>(object)
-					
-					</div>
-					<div class="description">
-						Turns an object into an array - eg. an associative array into a numeric array
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>object </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Array}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".readCookie"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">BBQUtil.</span><b>readCookie</b>(cookieName)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>cookieName </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					<hr />
-				
-					<a name=".serializeForPHP"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{String}</span>
-					<span class="light">BBQUtil.</span><b>serializeForPHP</b>(passedArray)
-					
-					</div>
-					<div class="description">
-						Serializes an array in a fashion suitable for unserialization within a PHP script
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>passedArray </td>
-									<td><span class="light fixedFont">{Array}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".trim"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{String}</span>
-					<span class="light">BBQUtil.</span><b>trim</b>(string)
-					
-					</div>
-					<div class="description">
-						Removes leading and trailing spaces from the passed string
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_util_BBQUtil.js.html">BBQUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>string </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					
-				
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
 			
+				<tr>
+					<td>event </td>
+					<td><span class="light fixedFont">{Event}</span> </td>
+					<td></td>
+				</tr>
 			
+				<tr>
+					<td>element </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name=".cloneObject"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Object}</span>
+							<span class="light">BBQUtil.</span><b>cloneObject</b>(object)
+						</h3>
+
+						<div class="description">
+	Returns a discrete copy of the passed object
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>object </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Object}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".count"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{integer}</span>
+							<span class="light">BBQUtil.</span><b>count</b>(object)
+						</h3>
+
+						<div class="description">
+	Counts the number of properties an object has
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>object </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{integer}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".dumpObject"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">BBQUtil.</span><b>dumpObject</b>(object, spaces)
+						</h3>
+
+						<div class="description">
+	Recursively dumps the name and value of each property contained within the passed object
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>object </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>spaces </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name=".formatFileSize"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{String}</span>
+							<span class="light">BBQUtil.</span><b>formatFileSize</b>(The)
+						</h3>
+
+						<div class="description">
+	Will format 1024B into 1KB, 1024KB into 1MB, etc
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>The </td>
+					<td><span class="light fixedFont">{Integer}</span> </td>
+					<td>number of bytes to format</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{String}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".formatText"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">BBQUtil.</span><b>formatText</b>(text, attributes)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>text </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>attributes </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".generateGUID"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{string}</span>
+							<span class="light">BBQUtil.</span><b>generateGUID</b>()
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{string}</span> Returns string representaton of a GUID</dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".getViewportSize"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Object}</span>
+							<span class="light">BBQUtil.</span><b>getViewportSize</b>()
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Object}</span> returns viewport size object</dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".getWindowSize"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Object}</span>
+							<span class="light">BBQUtil.</span><b>getWindowSize</b>()
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Object}</span> returns window size object</dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".isGUID"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{boolean}</span>
+							<span class="light">BBQUtil.</span><b>isGUID</b>(guid)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>guid </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{boolean}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".objectToArray"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Array}</span>
+							<span class="light">BBQUtil.</span><b>objectToArray</b>(object)
+						</h3>
+
+						<div class="description">
+	Turns an object into an array - eg. an associative array into a numeric array
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>object </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Array}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".readCookie"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">BBQUtil.</span><b>readCookie</b>(cookieName)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>cookieName </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name=".serializeForPHP"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{String}</span>
+							<span class="light">BBQUtil.</span><b>serializeForPHP</b>(passedArray)
+						</h3>
+
+						<div class="description">
+	Serializes an array in a fashion suitable for unserialization within a PHP script
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>passedArray </td>
+					<td><span class="light fixedFont">{Array}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{String}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".trim"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{String}</span>
+							<span class="light">BBQUtil.</span><b>trim</b>(string)
+						</h3>
+
+						<div class="description">
+	Removes leading and trailing spaces from the passed string
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>string </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{String}</span> </dd>
+		
+	</dl>
+
+
+						
+					
+				</article>
+			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:10 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:58 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

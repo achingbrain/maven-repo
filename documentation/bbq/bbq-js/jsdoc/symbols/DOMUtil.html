@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -278,36 +284,41 @@ ul.inheritsList
 			<p class="description">
 				
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_web_DOMUtil.js.html">DOMUtil.js</a>.<br />
+				
+				
 				DOMUtil
 				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-				
+				<div class="description">
+	Utility class with static methods for manipulating the DOM
+	
+	
+</div>
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class DOMUtil.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/DOMUtil.html#constructor">DOMUtil</a></b>()
-							</div>
-							<div class="description">Utility class with static methods for manipulating the DOM</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class DOMUtil.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/DOMUtil.html#constructor">DOMUtil</a></b>()
+								</div>
+								<div class="description">Utility class with static methods for manipulating the DOM</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			
 
 <!-- ============================== properties summary ===================== -->
@@ -317,207 +328,207 @@ ul.inheritsList
 			
 				
 				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class DOMUtil.">
-					<caption>Method Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Method Attributes</th>
-							<th scope="col">Method Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.addClass">addClass</a></b>(node, newClass)
-								</div>
-								<div class="description">Adds a CSS class to the passed node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.addRowToTable">addRowToTable</a></b>(table, rowData)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.applyAttributesToElement">applyAttributesToElement</a></b>(element, attributes)
-								</div>
-								<div class="description">Creates a HTML password input</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.checkDOM">checkDOM</a></b>()
-								</div>
-								<div class="description">Boots old browsers to the upgrade page</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createDefinitionList">createDefinitionList</a></b>(values, attributes)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createElement">createElement</a></b>(tagName, attributes, arg3)
-								</div>
-								<div class="description">Shortcut for creating a DOM node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createPasswordInputNode">createPasswordInputNode</a></b>(nodeValue, options)
-								</div>
-								<div class="description">Creates a HTML password input</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createSubmitInputNode">createSubmitInputNode</a></b>(nodeValue, options)
-								</div>
-								<div class="description">Creates a HTML submit button</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTable">createTable</a></b>(headerArray, attributes)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTableHeaderRow">createTableHeaderRow</a></b>(numCells)
-								</div>
-								<div class="description">Creates a row of empty table header cells</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTableRow">createTableRow</a></b>(numCells, header)
-								</div>
-								<div class="description">Creates a table row</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTextElement">createTextElement</a></b>(tagName, text, attributes)
-								</div>
-								<div class="description">Creates a node with a textNode as a child</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTextInputNode">createTextInputNode</a></b>(nodeValue, options)
-								</div>
-								<div class="description">Creates a single line HTML text input</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.emptyNode">emptyNode</a></b>(node)
-								</div>
-								<div class="description">Removes all children of the passed node</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.emptyNodes">emptyNodes</a></b>()
-								</div>
-								<div class="description">Removes all children of the passed nodes</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.getIFrameDocument">getIFrameDocument</a></b>(iframe)
-								</div>
-								<div class="description">Returns the iFrameDocument object from the passed iFrame in a browser neutral way</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.getStyle">getStyle</a></b>(element, styleToGet)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.hasClass">hasClass</a></b>(, className)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.isInDOM">isInDOM</a></b>(node)
-								</div>
-								<div class="description">Returns true if the passed node is in the DOM</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.removeClass">removeClass</a></b>(node, oldClass, recursive)
-								</div>
-								<div class="description">Removes a CSS class to the passed node, optionally recursing through it's child nodes</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.setStyle">setStyle</a></b>(element, styleToSet, value)
-								</div>
-								<div class="description">Sets a CSS style on the passed node to the passed value</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class DOMUtil.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.addClass">addClass</a></b>(node, newClass)
+									</div>
+									<div class="description">Adds a CSS class to the passed node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.addRowToTable">addRowToTable</a></b>(table, rowData)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.applyAttributesToElement">applyAttributesToElement</a></b>(element, attributes)
+									</div>
+									<div class="description">Creates a HTML password input</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.checkDOM">checkDOM</a></b>()
+									</div>
+									<div class="description">Boots old browsers to the upgrade page</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createDefinitionList">createDefinitionList</a></b>(values, attributes)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createElement">createElement</a></b>(tagName, attributes, arg3)
+									</div>
+									<div class="description">Shortcut for creating a DOM node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createPasswordInputNode">createPasswordInputNode</a></b>(nodeValue, options)
+									</div>
+									<div class="description">Creates a HTML password input</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createSubmitInputNode">createSubmitInputNode</a></b>(nodeValue, options)
+									</div>
+									<div class="description">Creates a HTML submit button</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTable">createTable</a></b>(headerArray, attributes)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTableHeaderRow">createTableHeaderRow</a></b>(numCells)
+									</div>
+									<div class="description">Creates a row of empty table header cells</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTableRow">createTableRow</a></b>(numCells, header)
+									</div>
+									<div class="description">Creates a table row</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTextElement">createTextElement</a></b>(tagName, text, attributes)
+									</div>
+									<div class="description">Creates a node with a textNode as a child</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createTextInputNode">createTextInputNode</a></b>(nodeValue, options)
+									</div>
+									<div class="description">Creates a single line HTML text input</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.emptyNode">emptyNode</a></b>(node)
+									</div>
+									<div class="description">Removes all children of the passed node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.emptyNodes">emptyNodes</a></b>()
+									</div>
+									<div class="description">Removes all children of the passed nodes</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.getIFrameDocument">getIFrameDocument</a></b>(iframe)
+									</div>
+									<div class="description">Returns the iFrameDocument object from the passed iFrame in a browser neutral way</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.getStyle">getStyle</a></b>(element, styleToGet)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.hasClass">hasClass</a></b>(, className)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.isInDOM">isInDOM</a></b>(node)
+									</div>
+									<div class="description">Returns true if the passed node is in the DOM</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.removeClass">removeClass</a></b>(node, oldClass, recursive)
+									</div>
+									<div class="description">Removes a CSS class to the passed node, optionally recursing through it's child nodes</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.setStyle">setStyle</a></b>(element, styleToSet, value)
+									</div>
+									<div class="description">Sets a CSS style on the passed node to the passed value</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
 				
 				
 				
@@ -527,1301 +538,947 @@ ul.inheritsList
 
 <!-- ============================== constructor details ==================== -->		
 			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>DOMUtil</em>()
-				</h3>
-				
-				<div class="description">
-					Utility class with static methods for manipulating the DOM
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							DOMUtil()
+					</h3>
 					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-
-			</div>
-		
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
+			
 
 <!-- ============================== method details ========================= -->		
 			
-				<div class="sectionTitle">
-					Method Detail
-				</div>
-				
-					<a name=".addClass"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Method Detail</h2>
 					
-					<span class="light">{void}</span>
-					<span class="light">DOMUtil.</span><b>addClass</b>(node, newClass)
-					
-					</div>
-					<div class="description">
-						Adds a CSS class to the passed node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>node </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>newClass </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{void}</span> </dd>
-							
-							</dl>
-						
-						
-						
+						<a name=".addClass"> </a>
+						<h3>&lt;static&gt; 
 
-					<hr />
-				
-					<a name=".addRowToTable"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">DOMUtil.</span><b>addRowToTable</b>(table, rowData)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>table </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>rowData </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+							<span class="light">{void}</span>
+							<span class="light">DOMUtil.</span><b>addClass</b>(node, newClass)
+						</h3>
 
-					<hr />
-				
-					<a name=".applyAttributesToElement"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{void}</span>
-					<span class="light">DOMUtil.</span><b>applyAttributesToElement</b>(element, attributes)
-					
-					</div>
-					<div class="description">
-						Creates a HTML password input
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>element </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td>Node to apply attributes to</td>
-								</tr>
-							
-								<tr>
-									<td>attributes </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td>Associative array of attributes to apply to the passed node</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{void}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".checkDOM"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">DOMUtil.</span><b>checkDOM</b>()
-					
-					</div>
-					<div class="description">
-						Boots old browsers to the upgrade page
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createDefinitionList"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">DOMUtil.</span><b>createDefinitionList</b>(values, attributes)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>values </td>
-									<td><span class="light fixedFont">{Array}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>attributes </td>
-									<td><span class="light fixedFont">{Array}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createElement"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">DOMUtil.</span><b>createElement</b>(tagName, attributes, arg3)
-					
-					</div>
-					<div class="description">
-						Shortcut for creating a DOM node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>tagName </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>attributes </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>arg3 </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createPasswordInputNode"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">DOMUtil.</span><b>createPasswordInputNode</b>(nodeValue, options)
-					
-					</div>
-					<div class="description">
-						Creates a HTML password input
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>nodeValue </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>options </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createSubmitInputNode"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">DOMUtil.</span><b>createSubmitInputNode</b>(nodeValue, options)
-					
-					</div>
-					<div class="description">
-						Creates a HTML submit button
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>nodeValue </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>options </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createTable"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">DOMUtil.</span><b>createTable</b>(headerArray, attributes)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>headerArray </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>attributes </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createTableHeaderRow"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">DOMUtil.</span><b>createTableHeaderRow</b>(numCells)
-					
-					</div>
-					<div class="description">
-						Creates a row of empty table header cells
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>numCells </td>
-									<td><span class="light fixedFont">{integer}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createTableRow"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{void}</span>
-					<span class="light">DOMUtil.</span><b>createTableRow</b>(numCells, header)
-					
-					</div>
-					<div class="description">
-						Creates a table row
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>numCells </td>
-									<td><span class="light fixedFont">{integer}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>header </td>
-									<td><span class="light fixedFont">{boolean}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{void}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createTextElement"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">DOMUtil.</span><b>createTextElement</b>(tagName, text, attributes)
-					
-					</div>
-					<div class="description">
-						Creates a node with a textNode as a child
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>tagName </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>text </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>attributes </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".createTextInputNode"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">DOMUtil.</span><b>createTextInputNode</b>(nodeValue, options)
-					
-					</div>
-					<div class="description">
-						Creates a single line HTML text input
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>nodeValue </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>options </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".emptyNode"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">DOMUtil.</span><b>emptyNode</b>(node)
-					
-					</div>
-					<div class="description">
-						Removes all children of the passed node
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>node </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd>void</dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".emptyNodes"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">DOMUtil.</span><b>emptyNodes</b>()
-					
-					</div>
-					<div class="description">
-						Removes all children of the passed nodes
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getIFrameDocument"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Node}</span>
-					<span class="light">DOMUtil.</span><b>getIFrameDocument</b>(iframe)
-					
-					</div>
-					<div class="description">
-						Returns the iFrameDocument object from the passed iFrame in a browser neutral way
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>iframe </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Node}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".getStyle"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">DOMUtil.</span><b>getStyle</b>(element, styleToGet)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>element </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>styleToGet </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					<hr />
-				
-					<a name=".hasClass"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{boolean}</span>
-					<span class="light">DOMUtil.</span><b>hasClass</b>(, className)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td> </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>className </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{boolean}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".isInDOM"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">DOMUtil.</span><b>isInDOM</b>(node)
-					
-					</div>
-					<div class="description">
-						Returns true if the passed node is in the DOM
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>node </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					<hr />
-				
-					<a name=".removeClass"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{void}</span>
-					<span class="light">DOMUtil.</span><b>removeClass</b>(node, oldClass, recursive)
-					
-					</div>
-					<div class="description">
-						Removes a CSS class to the passed node, optionally recursing through it's child nodes
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>node </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>oldClass </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>recursive </td>
-									<td><span class="light fixedFont">{boolean}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{void}</span> </dd>
-							
-							</dl>
-						
-						
-						
-
-					<hr />
-				
-					<a name=".setStyle"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">DOMUtil.</span><b>setStyle</b>(element, styleToSet, value)
-					
-					</div>
-					<div class="description">
-						Sets a CSS style on the passed node to the passed value
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_DOMUtil.js.html">DOMUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>element </td>
-									<td><span class="light fixedFont">{Node}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>styleToSet </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>value </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					
-				
+						<div class="description">
+	Adds a CSS class to the passed node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
 			
+				<tr>
+					<td>node </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td></td>
+				</tr>
 			
+				<tr>
+					<td>newClass </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{void}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".addRowToTable"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">DOMUtil.</span><b>addRowToTable</b>(table, rowData)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>table </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>rowData </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name=".applyAttributesToElement"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{void}</span>
+							<span class="light">DOMUtil.</span><b>applyAttributesToElement</b>(element, attributes)
+						</h3>
+
+						<div class="description">
+	Creates a HTML password input
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>element </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td>Node to apply attributes to</td>
+				</tr>
+			
+				<tr>
+					<td>attributes </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>Associative array of attributes to apply to the passed node</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{void}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".checkDOM"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">DOMUtil.</span><b>checkDOM</b>()
+						</h3>
+
+						<div class="description">
+	Boots old browsers to the upgrade page
+	
+	
+</div>
+
+						<hr />
+					
+						<a name=".createDefinitionList"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>createDefinitionList</b>(values, attributes)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>values </td>
+					<td><span class="light fixedFont">{Array}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>attributes </td>
+					<td><span class="light fixedFont">{Array}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".createElement"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>createElement</b>(tagName, attributes, arg3)
+						</h3>
+
+						<div class="description">
+	Shortcut for creating a DOM node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>tagName </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>attributes </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>arg3 </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".createPasswordInputNode"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>createPasswordInputNode</b>(nodeValue, options)
+						</h3>
+
+						<div class="description">
+	Creates a HTML password input
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>nodeValue </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".createSubmitInputNode"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>createSubmitInputNode</b>(nodeValue, options)
+						</h3>
+
+						<div class="description">
+	Creates a HTML submit button
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>nodeValue </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".createTable"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>createTable</b>(headerArray, attributes)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>headerArray </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>attributes </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".createTableHeaderRow"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>createTableHeaderRow</b>(numCells)
+						</h3>
+
+						<div class="description">
+	Creates a row of empty table header cells
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>numCells </td>
+					<td><span class="light fixedFont">{integer}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".createTableRow"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{void}</span>
+							<span class="light">DOMUtil.</span><b>createTableRow</b>(numCells, header)
+						</h3>
+
+						<div class="description">
+	Creates a table row
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>numCells </td>
+					<td><span class="light fixedFont">{integer}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>header </td>
+					<td><span class="light fixedFont">{boolean}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{void}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".createTextElement"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>createTextElement</b>(tagName, text, attributes)
+						</h3>
+
+						<div class="description">
+	Creates a node with a textNode as a child
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>tagName </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>text </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>attributes </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".createTextInputNode"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>createTextInputNode</b>(nodeValue, options)
+						</h3>
+
+						<div class="description">
+	Creates a single line HTML text input
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>nodeValue </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".emptyNode"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">DOMUtil.</span><b>emptyNode</b>(node)
+						</h3>
+
+						<div class="description">
+	Removes all children of the passed node
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>node </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd>void</dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".emptyNodes"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">DOMUtil.</span><b>emptyNodes</b>()
+						</h3>
+
+						<div class="description">
+	Removes all children of the passed nodes
+	
+	
+</div>
+
+						<hr />
+					
+						<a name=".getIFrameDocument"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>getIFrameDocument</b>(iframe)
+						</h3>
+
+						<div class="description">
+	Returns the iFrameDocument object from the passed iFrame in a browser neutral way
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>iframe </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Node}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".getStyle"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">DOMUtil.</span><b>getStyle</b>(element, styleToGet)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>element </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>styleToGet </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name=".hasClass"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{boolean}</span>
+							<span class="light">DOMUtil.</span><b>hasClass</b>(, className)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td> </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>className </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{boolean}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".isInDOM"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">DOMUtil.</span><b>isInDOM</b>(node)
+						</h3>
+
+						<div class="description">
+	Returns true if the passed node is in the DOM
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>node </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name=".removeClass"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{void}</span>
+							<span class="light">DOMUtil.</span><b>removeClass</b>(node, oldClass, recursive)
+						</h3>
+
+						<div class="description">
+	Removes a CSS class to the passed node, optionally recursing through it's child nodes
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>node </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>oldClass </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>recursive </td>
+					<td><span class="light fixedFont">{boolean}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{void}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".setStyle"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">DOMUtil.</span><b>setStyle</b>(element, styleToSet, value)
+						</h3>
+
+						<div class="description">
+	Sets a CSS style on the passed node to the passed value
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>element </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>styleToSet </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>value </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						
+					
+				</article>
+			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:10 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:58 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

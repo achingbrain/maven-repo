@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -278,36 +284,41 @@ ul.inheritsList
 			<p class="description">
 				
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_util_BBQTestUtil.js.html">BBQTestUtil.js</a>.<br />
+				
+				
 				BBQTestUtil
 				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_util_BBQTestUtil.js.html">BBQTestUtil.js</a>.
-				
+				<div class="description">
+	Contains helper methods for running tests
+	
+	
+</div>
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class BBQTestUtil.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/BBQTestUtil.html#constructor">BBQTestUtil</a></b>()
-							</div>
-							<div class="description">Contains helper methods for running tests</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class BBQTestUtil.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/BBQTestUtil.html#constructor">BBQTestUtil</a></b>()
+								</div>
+								<div class="description">Contains helper methods for running tests</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			
 
 <!-- ============================== properties summary ===================== -->
@@ -317,46 +328,46 @@ ul.inheritsList
 			
 				
 				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class BBQTestUtil.">
-					<caption>Method Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Method Attributes</th>
-							<th scope="col">Method Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQTestUtil.<b><a href="../symbols/BBQTestUtil.html#.mockLanguage">mockLanguage</a></b>()
-								</div>
-								<div class="description">The JSON request for language files does not work while testing (language server not running), therefore requests
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class BBQTestUtil.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQTestUtil.<b><a href="../symbols/BBQTestUtil.html#.mockLanguage">mockLanguage</a></b>()
+									</div>
+									<div class="description">The JSON request for language files does not work while testing (language server not running), therefore requests
 for language will fail with an error.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQTestUtil.<b><a href="../symbols/BBQTestUtil.html#.redirectLog">redirectLog</a></b>(runner)
-								</div>
-								<div class="description">I redirect Log messages to the runner's console output</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">BBQTestUtil.<b><a href="../symbols/BBQTestUtil.html#.restoreLanguage">restoreLanguage</a></b>()
-								</div>
-								<div class="description">Restores changes made by BBQTestUtil#mockLanguage.</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQTestUtil.<b><a href="../symbols/BBQTestUtil.html#.redirectLog">redirectLog</a></b>(runner)
+									</div>
+									<div class="description">I redirect Log messages to the runner's console output</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">BBQTestUtil.<b><a href="../symbols/BBQTestUtil.html#.restoreLanguage">restoreLanguage</a></b>()
+									</div>
+									<div class="description">Restores changes made by BBQTestUtil#mockLanguage.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
 				
 				
 				
@@ -366,166 +377,100 @@ for language will fail with an error.</div>
 
 <!-- ============================== constructor details ==================== -->		
 			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>BBQTestUtil</em>()
-				</h3>
-				
-				<div class="description">
-					Contains helper methods for running tests
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							BBQTestUtil()
+					</h3>
 					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-
-			</div>
-		
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
+			
 
 <!-- ============================== method details ========================= -->		
 			
-				<div class="sectionTitle">
-					Method Detail
-				</div>
-				
-					<a name=".mockLanguage"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Method Detail</h2>
 					
-					
-					<span class="light">BBQTestUtil.</span><b>mockLanguage</b>()
-					
-					</div>
-					<div class="description">
-						The JSON request for language files does not work while testing (language server not running), therefore requests
+						<a name=".mockLanguage"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">BBQTestUtil.</span><b>mockLanguage</b>()
+						</h3>
+
+						<div class="description">
+	The JSON request for language files does not work while testing (language server not running), therefore requests
 for language will fail with an error. This function mocks requests for localization with functions that simply
 echo the arguments given to them.
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js-test_src_main_javascript_bbq_util_BBQTestUtil.js.html">BBQTestUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-						
-						
+	
+	
+</div>
 
-					<hr />
-				
-					<a name=".redirectLog"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+						<hr />
 					
-					
-					<span class="light">BBQTestUtil.</span><b>redirectLog</b>(runner)
-					
-					</div>
-					<div class="description">
-						I redirect Log messages to the runner's console output
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js-test_src_main_javascript_bbq_util_BBQTestUtil.js.html">BBQTestUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
+						<a name=".redirectLog"> </a>
+						<h3>&lt;static&gt; 
+
 							
-								<tr>
-									<td>runner </td>
-									<td></td>
-									<td></td>
-								</tr>
+							<span class="light">BBQTestUtil.</span><b>redirectLog</b>(runner)
+						</h3>
+
+						<div class="description">
+	I redirect Log messages to the runner's console output
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>runner </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name=".restoreLanguage"> </a>
+						<h3>&lt;static&gt; 
+
 							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+							<span class="light">BBQTestUtil.</span><b>restoreLanguage</b>()
+						</h3>
 
-					<hr />
-				
-					<a name=".restoreLanguage"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">BBQTestUtil.</span><b>restoreLanguage</b>()
-					
-					</div>
-					<div class="description">
-						Restores changes made by BBQTestUtil#mockLanguage.
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js-test_src_main_javascript_bbq_util_BBQTestUtil.js.html">BBQTestUtil.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-					
-				
-				
-				
-				
-				
-						
-						
-						
+						<div class="description">
+	Restores changes made by BBQTestUtil#mockLanguage.
+	
+	
+</div>
 
+						
 					
-				
+				</article>
 			
-			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:43:43 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:57:40 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

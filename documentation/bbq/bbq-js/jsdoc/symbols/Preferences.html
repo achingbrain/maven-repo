@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -278,136 +284,19 @@ ul.inheritsList
 			<p class="description">
 				
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_web_Preferences.js.html">Preferences.js</a>.<br />
+				
+				
 				Preferences
 				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_web_Preferences.js.html">Preferences.js</a>.
-				
-			</p>
-
-<!-- ============================== constructor summary ==================== -->			
-			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class Preferences.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/Preferences.html#constructor">Preferences</a></b>()
-							</div>
-							<div class="description">User preferences mechanism.</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			
-
-<!-- ============================== properties summary ===================== -->
-			
-				
-				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the fields documented in the class Preferences.">
-					<caption>Field Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Field Attributes</th>
-							<th scope="col">Field Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">
-								Preferences.<b><a href="../symbols/Preferences.html#.implementation">implementation</a></b>
-								</div>
-								<div class="description">Holds a Preferences implementation.</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
-				
-				
-				
-			
-
-<!-- ============================== methods summary ======================== -->
-			
-				
-				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class Preferences.">
-					<caption>Method Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Method Attributes</th>
-							<th scope="col">Method Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">Preferences.<b><a href="../symbols/Preferences.html#.del">del</a></b>(key)
-								</div>
-								<div class="description">Deletes the value stored under the passed key</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">Preferences.<b><a href="../symbols/Preferences.html#.get">get</a></b>(key, defaultValue)
-								</div>
-								<div class="description">Pass in a key to retrieve the stored value with an option value to set as the default
-in case the value stored is undefined.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">Preferences.<b><a href="../symbols/Preferences.html#.set">set</a></b>(key, value)
-								</div>
-								<div class="description">Pass in a value to persist under the passed key</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
-				
-				
-				
-			
-<!-- ============================== events summary ======================== -->
-			
-
-<!-- ============================== constructor details ==================== -->		
-			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>Preferences</em>()
-				</h3>
-				
 				<div class="description">
-					User preferences mechanism.
+	User preferences mechanism.
 
 Uses HTML5 localStorage where available otherwise
 falls back to cookies.
 
-<code>
+<pre><code class="language-javascript">
 var foo = {bar: "baz"};
 
 Preferences.set("wibble", foo);
@@ -418,243 +307,300 @@ var foo = Preferences.get("wibble");
 
 alert(foo.bar);
 
-</code>
-					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+</code></pre>
+	
+	
+</div>
+			</p>
 
-			</div>
-		
+<!-- ============================== constructor summary ==================== -->			
+			
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class Preferences.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/Preferences.html#constructor">Preferences</a></b>()
+								</div>
+								<div class="description">User preferences mechanism.</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+				
+				
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the fields documented in the class Preferences.">
+						<caption>Field Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Field Attributes</th>
+								<th scope="col">Field Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">
+									Preferences.<b><a href="../symbols/Preferences.html#.implementation">implementation</a></b>
+									</div>
+									<div class="description">Holds a Preferences implementation.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				
+				
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class Preferences.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">Preferences.<b><a href="../symbols/Preferences.html#.del">del</a></b>(key)
+									</div>
+									<div class="description">Deletes the value stored under the passed key</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">Preferences.<b><a href="../symbols/Preferences.html#.get">get</a></b>(key, defaultValue)
+									</div>
+									<div class="description">Pass in a key to retrieve the stored value with an option value to set as the default
+in case the value stored is undefined.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">Preferences.<b><a href="../symbols/Preferences.html#.set">set</a></b>(key, value)
+									</div>
+									<div class="description">Pass in a value to persist under the passed key</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							Preferences()
+					</h3>
+					
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
-			<div class="sectionTitle">Field Detail</div>
 			
-				<a name=".implementation"> </a>
-				<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Field Detail</h2>
 					
-					
-					<span class="light">Preferences.</span><b>implementation</b>
-				</div>
-				<div class="description">
-					Holds a Preferences implementation.  Should support three methods:
+						<a name=".implementation"> </a>
+						<h3>&lt;static&gt; 
 
+							
+							<span class="light">Preferences.</span><b>implementation</b>
+						</h3>
+
+						<div class="description">
+	Holds a Preferences implementation.  Should support three methods:
+
+<pre><code class="language-javascript">
 set(key:String, value:String):Void
 get(key:String):String
 del(key:String)
+</code></pre>
 
 Value will be JSON encoded prior to being set and decocde after get.
-					
-					
-						<br />
-						<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_Preferences.js.html">Preferences.js</a>.
-					
-					
-				</div>
-					
-				
+	
+	
+</div>
 
 						
-						
-						
-						
-
 					
-				
+				</article>
 			
 
 <!-- ============================== method details ========================= -->		
 			
-				<div class="sectionTitle">
-					Method Detail
-				</div>
-				
-					<a name=".del"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Method Detail</h2>
 					
-					
-					<span class="light">Preferences.</span><b>del</b>(key)
-					
-					</div>
-					<div class="description">
-						Deletes the value stored under the passed key
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_Preferences.js.html">Preferences.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>key </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+						<a name=".del"> </a>
+						<h3>&lt;static&gt; 
 
-					<hr />
-				
-					<a name=".get"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+							
+							<span class="light">Preferences.</span><b>del</b>(key)
+						</h3>
+
+						<div class="description">
+	Deletes the value stored under the passed key
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>key </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
 					
-					
-					<span class="light">Preferences.</span><b>get</b>(key, defaultValue)
-					
-					</div>
-					<div class="description">
-						Pass in a key to retrieve the stored value with an option value to set as the default
+						<a name=".get"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Object}</span>
+							<span class="light">Preferences.</span><b>get</b>(key, defaultValue)
+						</h3>
+
+						<div class="description">
+	Pass in a key to retrieve the stored value with an option value to set as the default
 in case the value stored is undefined.
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_Preferences.js.html">Preferences.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>key </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>defaultValue </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					<hr />
-				
-					<a name=".set"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">Preferences.</span><b>set</b>(key, value)
-					
-					</div>
-					<div class="description">
-						Pass in a value to persist under the passed key
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_Preferences.js.html">Preferences.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>key </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>value </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					
-				
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
 			
+				<tr>
+					<td>key </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td></td>
+				</tr>
 			
+				<tr>
+					<td>defaultValue </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>Returned when no entry is present for key</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Object}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".set"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">Preferences.</span><b>set</b>(key, value)
+						</h3>
+
+						<div class="description">
+	Pass in a value to persist under the passed key
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>key </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>value </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						
+					
+				</article>
+			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:10 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:58 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

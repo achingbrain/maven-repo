@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -278,36 +284,41 @@ ul.inheritsList
 			<p class="description">
 				
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_language_Language.js.html">Language.js</a>.<br />
+				
+				
 				Language
 				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_language_Language.js.html">Language.js</a>.
-				
+				<div class="description">
+	
+	
+	
+</div>
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class Language.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/Language.html#constructor">Language</a></b>()
-							</div>
-							<div class="description"></div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class Language.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/Language.html#constructor">Language</a></b>()
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			
 
 <!-- ============================== properties summary ===================== -->
@@ -317,54 +328,63 @@ ul.inheritsList
 			
 				
 				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class Language.">
-					<caption>Method Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Method Attributes</th>
-							<th scope="col">Method Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">Language.<b><a href="../symbols/Language.html#.get">get</a></b>(key)
-								</div>
-								<div class="description">Get a translated language string for a key</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">Language.<b><a href="../symbols/Language.html#.getArray">getArray</a></b>(key)
-								</div>
-								<div class="description">Returns an array of language strings</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">Language.<b><a href="../symbols/Language.html#.getFormatted">getFormatted</a></b>(language, keys)
-								</div>
-								<div class="description">Allows for language formatting so that variable value placement in strings is not dependant on the flow of the English language.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">Language.<b><a href="../symbols/Language.html#.load">load</a></b>(options)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class Language.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">Language.<b><a href="../symbols/Language.html#.get">get</a></b>(key)
+									</div>
+									<div class="description">Get a translated language string for a key</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">Language.<b><a href="../symbols/Language.html#.getArray">getArray</a></b>(key)
+									</div>
+									<div class="description">Returns an array of language strings</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">Language.<b><a href="../symbols/Language.html#.getFormatted">getFormatted</a></b>(language, keys)
+									</div>
+									<div class="description">Allows for language formatting so that variable value placement in strings is not dependant on the flow of the English language.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">Language.<b><a href="../symbols/Language.html#.isLoaded">isLoaded</a></b>()
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">Language.<b><a href="../symbols/Language.html#.load">load</a></b>(options)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
 				
 				
 				
@@ -374,300 +394,255 @@ ul.inheritsList
 
 <!-- ============================== constructor details ==================== -->		
 			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>Language</em>()
-				</h3>
-				
-				<div class="description">
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							Language()
+					</h3>
 					
-					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-
-			</div>
-		
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
+			
 
 <!-- ============================== method details ========================= -->		
 			
-				<div class="sectionTitle">
-					Method Detail
-				</div>
-				
-					<a name=".get"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Method Detail</h2>
 					
-					<span class="light">{String}</span>
-					<span class="light">Language.</span><b>get</b>(key)
-					
-					</div>
-					<div class="description">
-						Get a translated language string for a key
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_language_Language.js.html">Language.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>key </td>
-									<td></td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{String}</span> </dd>
-							
-							</dl>
-						
-						
-						
+						<a name=".get"> </a>
+						<h3>&lt;static&gt; 
 
-					<hr />
-				
-					<a name=".getArray"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					<span class="light">{Array}</span>
-					<span class="light">Language.</span><b>getArray</b>(key)
-					
-					</div>
-					<div class="description">
-						Returns an array of language strings
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_language_Language.js.html">Language.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>key </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd><span class="light fixedFont">{Array}</span> </dd>
-							
-							</dl>
-						
-						
-						
+							<span class="light">{String}</span>
+							<span class="light">Language.</span><b>get</b>(key)
+						</h3>
 
-					<hr />
-				
-					<a name=".getFormatted"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+						<div class="description">
+	Get a translated language string for a key
+	
+	
+</div>
+	
+		<pre><code class="language-javascript">
+Language.get("foo.bar");
+</code></pre>
+	
+
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>key </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{String}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
 					
+						<a name=".getArray"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{Array}</span>
+							<span class="light">Language.</span><b>getArray</b>(key)
+						</h3>
+
+						<div class="description">
+	Returns an array of language strings
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>key </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{Array}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
 					
-					<span class="light">Language.</span><b>getFormatted</b>(language, keys)
-					
-					</div>
-					<div class="description">
-						Allows for language formatting so that variable value placement in strings is not dependant on the flow of the English language.
+						<a name=".getFormatted"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">Language.</span><b>getFormatted</b>(language, keys)
+						</h3>
+
+						<div class="description">
+	Allows for language formatting so that variable value placement in strings is not dependant on the flow of the English language.
 
 In the language file, declare this sort of thing:
 
-<code>
+<pre><code class="language-xml">
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
      <entry key="generic.mystring">This string has {marker} marker</entry>
 </properties>
-</code>
+</code></pre>
 
 Then in the javascript, call:
 
+<pre><code class="language-javascript">
 Language.getFormatted("generic.mystring", {marker: "a nice little"});
+</code></pre>
 
 And the following will be output:
 
+<pre><code>
 "This string has a nice little marker"
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_language_Language.js.html">Language.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>language </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>keys </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					<hr />
-				
-					<a name=".load"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">Language.</span><b>load</b>(options)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_language_Language.js.html">Language.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					<pre class="code">options {
-		section: string
-		postLoad: function
-}</pre>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>options </td>
-									<td><span class="light fixedFont">{mixed}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
-
-					
-				
+</code></pre>
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
 			
+				<tr>
+					<td>language </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td></td>
+				</tr>
 			
+				<tr>
+					<td>keys </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name=".isLoaded"> </a>
+						<h3>&lt;static&gt; 
+
+							<span class="light">{boolean}</span>
+							<span class="light">Language.</span><b>isLoaded</b>()
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{boolean}</span> True if the language file has been loaded</dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name=".load"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">Language.</span><b>load</b>(options)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options.section <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>This corresponds to the name of a language file defined in /WEB-INF/language</td>
+				</tr>
+			
+				<tr>
+					<td>options.postLoad <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>A callback function invoked once the language file has been loaded</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						
+					
+				</article>
+			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:10 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:58 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

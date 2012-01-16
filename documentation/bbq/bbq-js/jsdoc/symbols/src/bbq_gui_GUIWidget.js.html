@@ -72,403 +72,398 @@
 <span class='line'> 65</span> 	 * 
 <span class='line'> 66</span> 	 * This object can then be retrieved by calling owner() on the dom node passed as the argument to this method.
 <span class='line'> 67</span> 	 * 
-<span class='line'> 68</span> 	 * @param	{Node}	rootNode
+<span class='line'> 68</span> 	 * @param {Node or String} rootNode Either a DOM Node (from document.createElement) or the String name of a node - e.g. "div"
 <span class='line'> 69</span> 	 * @example
-<span class='line'> 70</span> 	 * So, for example:
-<span class='line'> 71</span> 	 * 
-<span class='line'> 72</span> 	 * &lt;code>
-<span class='line'> 73</span> 	 * proxim.gui.TextField = new Class.create();
-<span class='line'> 74</span> 	 * 
-<span class='line'> 75</span> 	 * Object.extend(proxim.gui.TextField.prototype, bbq.gui.GUIWidget.prototype);
-<span class='line'> 76</span> 	 * 
-<span class='line'> 77</span> 	 * proxim.gui.TextField.prototype.initialize: function(controller, htmlID)
-<span class='line'> 78</span> 	 *   {
-<span class='line'> 79</span> 	 *   var parentMethod = initialize;
-<span class='line'> 80</span> 	 *   parentMethod.apply(this, arguments);
-<span class='line'> 81</span> 	 *   this.setRootNode(document.createElement("input"));
-<span class='line'> 82</span> 	 *   this.setID(htmlID);
-<span class='line'> 83</span> 	 *   }
-<span class='line'> 84</span> 	 * 
-<span class='line'> 85</span> 	 * ...
-<span class='line'> 86</span> 	 * 
-<span class='line'> 87</span> 	 * var foo = proxim.gui.TextField(this.controller, "exampleObject");
-<span class='line'> 88</span> 	 * foo.appendTo(document.getElementsByTagName("body")[0]);
-<span class='line'> 89</span> 	 * 
-<span class='line'> 90</span> 	 * ...
-<span class='line'> 91</span> 	 * 
-<span class='line'> 92</span> 	 * var bar = document.getElementById("exampleObject");
-<span class='line'> 93</span> 	 * var foo = bar.owner();
-<span class='line'> 94</span> 	 * &lt;/code>
-<span class='line'> 95</span> 	 * 
-<span class='line'> 96</span> 	 */</span><span class="WHIT">
-<span class='line'> 97</span> </span><span class="WHIT">	</span><span class="NAME">setRootNode</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 98</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 99</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._rootNode</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>100</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>101</span> </span><span class="WHIT">		
-<span class='line'>102</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">Object.isString</span><span class="PUNC">(</span><span class="NAME">rootNode</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>103</span> </span><span class="WHIT">			</span><span class="NAME">this._rootNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">document.createElement</span><span class="PUNC">(</span><span class="NAME">rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>104</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>105</span> </span><span class="WHIT">			</span><span class="NAME">this._rootNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">rootNode</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>106</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>107</span> </span><span class="WHIT">		
-<span class='line'>108</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">oldNode.className</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>109</span> </span><span class="WHIT">			</span><span class="NAME">this.addClass</span><span class="PUNC">(</span><span class="NAME">oldNode.className.split</span><span class="PUNC">(</span><span class="STRN">" "</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>110</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>111</span> </span><span class="WHIT">		
-<span class='line'>112</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.options</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.options.attributes</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>113</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.options.attributes</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>114</span> </span><span class="WHIT">			</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">key</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>115</span> </span><span class="WHIT">				</span><span class="NAME">this.setAttribute</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>116</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>117</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>118</span> </span><span class="WHIT">		
-<span class='line'>119</span> 		</span><span class="NAME">this._rootNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">$</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>120</span> </span><span class="WHIT">		</span><span class="NAME">this.registerObject</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>121</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>122</span> </span><span class="WHIT">	
-<span class='line'>123</span> 	</span><span class="NAME">getRootNode</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>124</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this._rootNode</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>125</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>126</span> </span><span class="WHIT">	
-<span class='line'>127</span> 	</span><span class="COMM">/**
-<span class='line'>128</span> 	 * Sets a reference to this object on the rootNode DOM node.  This allows us to take a DOM node from the document tree and 
-<span class='line'>129</span> 	 * get the GUIWidget object of which it is the root node.
-<span class='line'>130</span> 	 * 
-<span class='line'>131</span> 	 * See setRootNode() for more information
-<span class='line'>132</span> 	 */</span><span class="WHIT">
-<span class='line'>133</span> </span><span class="WHIT">	</span><span class="NAME">registerObject</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>134</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>135</span> </span><span class="WHIT">			</span><span class="NAME">this._rootNode.owner</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>136</span> </span><span class="WHIT">				</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>137</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>138</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>139</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>140</span> </span><span class="WHIT">	
-<span class='line'>141</span> 	</span><span class="COMM">/**
-<span class='line'>142</span> 	 * Removes all nodes attached to this GUIWidgets rootNode
-<span class='line'>143</span> 	 */</span><span class="WHIT">
-<span class='line'>144</span> </span><span class="WHIT">	</span><span class="NAME">empty</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>145</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>146</span> </span><span class="WHIT">			</span><span class="NAME">DOMUtil.emptyNode</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>147</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>148</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>149</span> 
-<span class='line'>150</span> </span><span class="WHIT">	</span><span class="NAME">hasClass</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">className</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>151</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">DOMUtil.hasClass</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">className</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>152</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>153</span> </span><span class="WHIT">	
-<span class='line'>154</span> 	</span><span class="COMM">/**
-<span class='line'>155</span> 	 * Adds a class to the root node
-<span class='line'>156</span> 	 *
-<span class='line'>157</span> 	  * @param	{String}	className	The name of the class to add
-<span class='line'>158</span> 	 */</span><span class="WHIT">
-<span class='line'>159</span> </span><span class="WHIT">	</span><span class="NAME">addClass</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">className</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>160</span> </span><span class="WHIT">		</span><span class="NAME">DOMUtil.addClass</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">className</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>161</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>162</span> </span><span class="WHIT">	
-<span class='line'>163</span> 	</span><span class="COMM">/**
-<span class='line'>164</span> 	 * Removes a class from the root node
-<span class='line'>165</span> 	 * 
-<span class='line'>166</span> 	 * @param	{String}	className	The name of the class to remove
-<span class='line'>167</span> 	 */</span><span class="WHIT">
-<span class='line'>168</span> </span><span class="WHIT">	</span><span class="NAME">removeClass</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">className</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">recursively</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>169</span> </span><span class="WHIT">		</span><span class="NAME">DOMUtil.removeClass</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">className</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">recursively</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>170</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>171</span> </span><span class="WHIT">	
-<span class='line'>172</span> 	</span><span class="COMM">/**
-<span class='line'>173</span> 	 * Attaches the root node to the passed node
-<span class='line'>174</span> 	 * 
-<span class='line'>175</span> 	 * @param	{Node}	pageNode	The node to attach the root node to
-<span class='line'>176</span> 	 */</span><span class="WHIT">
-<span class='line'>177</span> </span><span class="WHIT">	</span><span class="NAME">appendTo</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">pageNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>178</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>179</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">pageNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>180</span> </span><span class="WHIT">				</span><span class="NAME">pageNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">pageNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>181</span> </span><span class="WHIT">				</span><span class="NAME">pageNode.appendChild</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>182</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>183</span> </span><span class="WHIT">			
-<span class='line'>184</span> 			</span><span class="NAME">this.render</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>185</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>186</span> </span><span class="WHIT">			</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error while appending to node "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">pageNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>187</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>188</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>189</span> 
-<span class='line'>190</span> </span><span class="WHIT">	</span><span class="COMM">/**
-<span class='line'>191</span> 	 * Adds this GUIWidget to the DOM in front of the passed node
-<span class='line'>192</span> 	 * @param Node node
-<span class='line'>193</span> 	 */</span><span class="WHIT">
-<span class='line'>194</span> </span><span class="WHIT">	</span><span class="NAME">appendBefore</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>195</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>196</span> </span><span class="WHIT">			</span><span class="NAME">node</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>197</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">parentNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">node.parentNode</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>198</span> </span><span class="WHIT">			</span><span class="NAME">parentNode.insertBefore</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>199</span> 
-<span class='line'>200</span> </span><span class="WHIT">			</span><span class="NAME">this.render</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>201</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>202</span> </span><span class="WHIT">			</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error while appending before "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">node</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>203</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>204</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>205</span> 
-<span class='line'>206</span> </span><span class="WHIT">	</span><span class="NAME">appendAfter</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>207</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>208</span> </span><span class="WHIT">			</span><span class="NAME">node</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>209</span> 
-<span class='line'>210</span> </span><span class="WHIT">			</span><span class="COMM">// find the parent node</span><span class="WHIT">
-<span class='line'>211</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">parentNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">node.parentNode</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 70</span> 	 * &lt;pre>&lt;code class="language-javascript">
+<span class='line'> 71</span> 	 * bbq.gui.form.TextField = new Class.create(bbq.gui.GUIWidget, {
+<span class='line'> 72</span> 	 *     initialize: function($super, options) {
+<span class='line'> 73</span> 	 *       $super(options);
+<span class='line'> 74</span> 	 *
+<span class='line'> 75</span> 	 *       this.setRootNode(document.createElement("input"));
+<span class='line'> 76</span> 	 *       this.addClass("TextField");
+<span class='line'> 77</span> 	 *       this.setAttribute("value", this.options.value);
+<span class='line'> 78</span> 	 *   }
+<span class='line'> 79</span> 	 * });
+<span class='line'> 80</span> 	 * 
+<span class='line'> 81</span> 	 * ...
+<span class='line'> 82</span> 	 * 
+<span class='line'> 83</span> 	 * var foo = new bbq.gui.form.TextField({value: "a value"});
+<span class='line'> 84</span> 	 * foo.appendTo(document.body);
+<span class='line'> 85</span> 	 * 
+<span class='line'> 86</span> 	 * ...
+<span class='line'> 87</span> 	 * 
+<span class='line'> 88</span> 	 * var bar = document.getElementById("exampleObject");
+<span class='line'> 89</span> 	 * var foo = bar.owner();
+<span class='line'> 90</span> 	 * &lt;/code>&lt;/pre>
+<span class='line'> 91</span> 	 */</span><span class="WHIT">
+<span class='line'> 92</span> </span><span class="WHIT">	</span><span class="NAME">setRootNode</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 93</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 94</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._rootNode</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 95</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 96</span> 
+<span class='line'> 97</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">Object.isString</span><span class="PUNC">(</span><span class="NAME">rootNode</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 98</span> </span><span class="WHIT">			</span><span class="NAME">this._rootNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">document.createElement</span><span class="PUNC">(</span><span class="NAME">rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 99</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>100</span> </span><span class="WHIT">			</span><span class="NAME">this._rootNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">rootNode</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>101</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>102</span> 
+<span class='line'>103</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">oldNode.className</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>104</span> </span><span class="WHIT">			</span><span class="NAME">this.addClass</span><span class="PUNC">(</span><span class="NAME">oldNode.className.split</span><span class="PUNC">(</span><span class="STRN">" "</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>105</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>106</span> 
+<span class='line'>107</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this.options</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.options.attributes</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>108</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this.options.attributes</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>109</span> </span><span class="WHIT">			</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">key</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>110</span> </span><span class="WHIT">				</span><span class="NAME">this.setAttribute</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">attr</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>111</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>112</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>113</span> 
+<span class='line'>114</span> </span><span class="WHIT">		</span><span class="NAME">this._rootNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">$</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>115</span> </span><span class="WHIT">		</span><span class="NAME">this.registerObject</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>116</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>117</span> </span><span class="WHIT">	
+<span class='line'>118</span> 	</span><span class="NAME">getRootNode</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>119</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this._rootNode</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>120</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>121</span> 
+<span class='line'>122</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'>123</span> 	 * Sets a reference to this object on the rootNode DOM node.  This allows us to take a DOM node from the document tree and 
+<span class='line'>124</span> 	 * get the GUIWidget object of which it is the root node.
+<span class='line'>125</span> 	 * 
+<span class='line'>126</span> 	 * @see bbq.gui.GUIWidget#setRootNode
+<span class='line'>127</span> 	 */</span><span class="WHIT">
+<span class='line'>128</span> </span><span class="WHIT">	</span><span class="NAME">registerObject</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>129</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>130</span> </span><span class="WHIT">			</span><span class="NAME">this._rootNode.owner</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>131</span> </span><span class="WHIT">				</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>132</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>133</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>134</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>135</span> </span><span class="WHIT">	
+<span class='line'>136</span> 	</span><span class="COMM">/**
+<span class='line'>137</span> 	 * Removes all nodes attached to this GUIWidgets rootNode
+<span class='line'>138</span> 	 */</span><span class="WHIT">
+<span class='line'>139</span> </span><span class="WHIT">	</span><span class="NAME">empty</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>140</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>141</span> </span><span class="WHIT">			</span><span class="NAME">DOMUtil.emptyNode</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>142</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>143</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>144</span> 
+<span class='line'>145</span> </span><span class="WHIT">	</span><span class="NAME">hasClass</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">className</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>146</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">DOMUtil.hasClass</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">className</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>147</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>148</span> </span><span class="WHIT">	
+<span class='line'>149</span> 	</span><span class="COMM">/**
+<span class='line'>150</span> 	 * Adds a class to the root node
+<span class='line'>151</span> 	 *
+<span class='line'>152</span> 	  * @param	{String}	className	The name of the class to add
+<span class='line'>153</span> 	 */</span><span class="WHIT">
+<span class='line'>154</span> </span><span class="WHIT">	</span><span class="NAME">addClass</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">className</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>155</span> </span><span class="WHIT">		</span><span class="NAME">DOMUtil.addClass</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">className</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>156</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>157</span> </span><span class="WHIT">	
+<span class='line'>158</span> 	</span><span class="COMM">/**
+<span class='line'>159</span> 	 * Removes a class from the root node
+<span class='line'>160</span> 	 * 
+<span class='line'>161</span> 	 * @param	{String}	className	The name of the class to remove
+<span class='line'>162</span> 	 */</span><span class="WHIT">
+<span class='line'>163</span> </span><span class="WHIT">	</span><span class="NAME">removeClass</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">className</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">recursively</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>164</span> </span><span class="WHIT">		</span><span class="NAME">DOMUtil.removeClass</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">className</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">recursively</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>165</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>166</span> </span><span class="WHIT">	
+<span class='line'>167</span> 	</span><span class="COMM">/**
+<span class='line'>168</span> 	 * Attaches the root node to the passed node
+<span class='line'>169</span> 	 * 
+<span class='line'>170</span> 	 * @param	{Node}	pageNode	The node to attach the root node to
+<span class='line'>171</span> 	 */</span><span class="WHIT">
+<span class='line'>172</span> </span><span class="WHIT">	</span><span class="NAME">appendTo</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">pageNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>173</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>174</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">pageNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>175</span> </span><span class="WHIT">				</span><span class="NAME">pageNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">pageNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>176</span> </span><span class="WHIT">				</span><span class="NAME">pageNode.appendChild</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>177</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>178</span> </span><span class="WHIT">			
+<span class='line'>179</span> 			</span><span class="NAME">this.render</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>180</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>181</span> </span><span class="WHIT">			</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error while appending to node "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">pageNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>182</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>183</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>184</span> 
+<span class='line'>185</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'>186</span> 	 * Adds this GUIWidget to the DOM in front of the passed node
+<span class='line'>187</span> 	 * @param Node node
+<span class='line'>188</span> 	 */</span><span class="WHIT">
+<span class='line'>189</span> </span><span class="WHIT">	</span><span class="NAME">appendBefore</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>190</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>191</span> </span><span class="WHIT">			</span><span class="NAME">node</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>192</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">parentNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">node.parentNode</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>193</span> </span><span class="WHIT">			</span><span class="NAME">parentNode.insertBefore</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>194</span> 
+<span class='line'>195</span> </span><span class="WHIT">			</span><span class="NAME">this.render</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>196</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>197</span> </span><span class="WHIT">			</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error while appending before "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">node</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>198</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>199</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>200</span> 
+<span class='line'>201</span> </span><span class="WHIT">	</span><span class="NAME">appendAfter</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>202</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>203</span> </span><span class="WHIT">			</span><span class="NAME">node</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>204</span> 
+<span class='line'>205</span> </span><span class="WHIT">			</span><span class="COMM">// find the parent node</span><span class="WHIT">
+<span class='line'>206</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">parentNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">node.parentNode</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>207</span> 
+<span class='line'>208</span> </span><span class="WHIT">			</span><span class="COMM">// find the index of the node</span><span class="WHIT">
+<span class='line'>209</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">nodeArray</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">$A</span><span class="PUNC">(</span><span class="NAME">parentNode.childNodes</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>210</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">index</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">nodeArray.indexOf</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>211</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">nextNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">nodeArray</span><span class="PUNC">[</span><span class="NAME">index</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>212</span> 
-<span class='line'>213</span> </span><span class="WHIT">			</span><span class="COMM">// find the index of the node</span><span class="WHIT">
-<span class='line'>214</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">nodeArray</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">$A</span><span class="PUNC">(</span><span class="NAME">parentNode.childNodes</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>215</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">index</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">nodeArray.indexOf</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>216</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">nextNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">nodeArray</span><span class="PUNC">[</span><span class="NAME">index</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>217</span> 
-<span class='line'>218</span> </span><span class="WHIT">			</span><span class="NAME">parentNode.insertBefore</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">nextNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>219</span> 
-<span class='line'>220</span> </span><span class="WHIT">			</span><span class="NAME">this.render</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>221</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>222</span> </span><span class="WHIT">			</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error while appending after "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">node</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>223</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>224</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>225</span> </span><span class="WHIT">	
-<span class='line'>226</span> 	</span><span class="COMM">/**
-<span class='line'>227</span> 	 * Adds a node or GUIWidget to the root node of this element
-<span class='line'>228</span> 	 * 
-<span class='line'>229</span> 	 * @param	{Mixed}	childNode	A Node, GUIWidget or array of Node and/or GUIWidget objects
-<span class='line'>230</span> 	 */</span><span class="WHIT">
-<span class='line'>231</span> </span><span class="WHIT">	</span><span class="NAME">appendChild</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>232</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>233</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>234</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>235</span> </span><span class="WHIT">		
-<span class='line'>236</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Array</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>237</span> </span><span class="WHIT">			</span><span class="NAME">childNode.each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>238</span> </span><span class="WHIT">				</span><span class="NAME">this.appendChild</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>239</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>240</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>241</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>242</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode.appendTo</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>243</span> </span><span class="WHIT">					</span><span class="NAME">childNode.appendTo</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>244</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode.toUpperCase</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>245</span> </span><span class="WHIT">					</span><span class="NAME">this._rootNode.appendChild</span><span class="PUNC">(</span><span class="NAME">document.createTextNode</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>246</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>247</span> </span><span class="WHIT">					</span><span class="NAME">this._rootNode.appendChild</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>248</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>249</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>250</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>251</span> </span><span class="WHIT">		
-<span class='line'>252</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">childNode</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>253</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>254</span> </span><span class="WHIT">	
-<span class='line'>255</span> 	</span><span class="COMM">/**
-<span class='line'>256</span> 	 * Attempts to remove the passed node if it is a child of this._rootNode
-<span class='line'>257</span> 	 * 
-<span class='line'>258</span> 	 * The passed argument can be either a DOM Node object, or a GUIWidget object.
-<span class='line'>259</span> 	 * 
-<span class='line'>260</span> 	 * @param	{Mixed}	A child node
-<span class='line'>261</span> 	 */</span><span class="WHIT">
-<span class='line'>262</span> </span><span class="WHIT">	</span><span class="NAME">removeChild</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>263</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>264</span> </span><span class="WHIT">			</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>265</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode.getRootNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>266</span> </span><span class="WHIT">					</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">removeChild</span><span class="PUNC">(</span><span class="NAME">childNode.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>267</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>268</span> </span><span class="WHIT">					</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">removeChild</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>269</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>270</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>271</span> </span><span class="WHIT">				</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error removing child "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">childNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>272</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>273</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>274</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>275</span> </span><span class="WHIT">	
-<span class='line'>276</span> 	</span><span class="COMM">/**
-<span class='line'>277</span> 	 * Replaces a DOM node or GUIWidget that is a child of the root node of this object
-<span class='line'>278</span> 	 * 
-<span class='line'>279</span> 	 * @param	{Node || GUIWidget}		oldNode		The outgoing child
-<span class='line'>280</span> 	 * @param	{Node || GUIWidget}		newNode		The incoming child
-<span class='line'>281</span> 	 * @return {Node || GUIWidget}		The incoming child
-<span class='line'>282</span> 	 */</span><span class="WHIT">
-<span class='line'>283</span> </span><span class="WHIT">	</span><span class="NAME">replaceChild</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">oldNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">newNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>284</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">output</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">newNode</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>285</span> 
-<span class='line'>286</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">newNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>287</span> </span><span class="WHIT">			</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>288</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">oldNode.getRootNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>289</span> </span><span class="WHIT">					</span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">oldNode.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>213</span> </span><span class="WHIT">			</span><span class="NAME">parentNode.insertBefore</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">nextNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>214</span> 
+<span class='line'>215</span> </span><span class="WHIT">			</span><span class="NAME">this.render</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>216</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>217</span> </span><span class="WHIT">			</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error while appending after "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">node</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>218</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>219</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>220</span> </span><span class="WHIT">	
+<span class='line'>221</span> 	</span><span class="COMM">/**
+<span class='line'>222</span> 	 * Adds a node or GUIWidget to the root node of this element
+<span class='line'>223</span> 	 * 
+<span class='line'>224</span> 	 * @param	{Mixed}	childNode	A Node, GUIWidget or array of Node and/or GUIWidget objects
+<span class='line'>225</span> 	 */</span><span class="WHIT">
+<span class='line'>226</span> </span><span class="WHIT">	</span><span class="NAME">appendChild</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>227</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>228</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>229</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>230</span> </span><span class="WHIT">		
+<span class='line'>231</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Array</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>232</span> </span><span class="WHIT">			</span><span class="NAME">childNode.each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>233</span> </span><span class="WHIT">				</span><span class="NAME">this.appendChild</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>234</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">.</span><span class="NAME">bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>235</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>236</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>237</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode.appendTo</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>238</span> </span><span class="WHIT">					</span><span class="NAME">childNode.appendTo</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>239</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode.toUpperCase</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>240</span> </span><span class="WHIT">					</span><span class="NAME">this._rootNode.appendChild</span><span class="PUNC">(</span><span class="NAME">document.createTextNode</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>241</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>242</span> </span><span class="WHIT">					</span><span class="NAME">this._rootNode.appendChild</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>243</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>244</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>245</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>246</span> </span><span class="WHIT">		
+<span class='line'>247</span> 		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">childNode</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>248</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>249</span> </span><span class="WHIT">	
+<span class='line'>250</span> 	</span><span class="COMM">/**
+<span class='line'>251</span> 	 * Attempts to remove the passed node if it is a child of this._rootNode
+<span class='line'>252</span> 	 * 
+<span class='line'>253</span> 	 * The passed argument can be either a DOM Node object, or a GUIWidget object.
+<span class='line'>254</span> 	 * 
+<span class='line'>255</span> 	 * @param	{Mixed}	A child node
+<span class='line'>256</span> 	 */</span><span class="WHIT">
+<span class='line'>257</span> </span><span class="WHIT">	</span><span class="NAME">removeChild</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>258</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>259</span> </span><span class="WHIT">			</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>260</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">childNode.getRootNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>261</span> </span><span class="WHIT">					</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">removeChild</span><span class="PUNC">(</span><span class="NAME">childNode.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>262</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>263</span> </span><span class="WHIT">					</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">removeChild</span><span class="PUNC">(</span><span class="NAME">childNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>264</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>265</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>266</span> </span><span class="WHIT">				</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error removing child "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">childNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>267</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>268</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>269</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>270</span> </span><span class="WHIT">	
+<span class='line'>271</span> 	</span><span class="COMM">/**
+<span class='line'>272</span> 	 * Replaces a DOM node or GUIWidget that is a child of the root node of this object
+<span class='line'>273</span> 	 * 
+<span class='line'>274</span> 	 * @param	{Node || GUIWidget}		oldNode		The outgoing child
+<span class='line'>275</span> 	 * @param	{Node || GUIWidget}		newNode		The incoming child
+<span class='line'>276</span> 	 * @return {Node || GUIWidget}		The incoming child
+<span class='line'>277</span> 	 */</span><span class="WHIT">
+<span class='line'>278</span> </span><span class="WHIT">	</span><span class="NAME">replaceChild</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">oldNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">newNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>279</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">output</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">newNode</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>280</span> 
+<span class='line'>281</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">newNode</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>282</span> </span><span class="WHIT">			</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>283</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">oldNode.getRootNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>284</span> </span><span class="WHIT">					</span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">oldNode.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>285</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>286</span> 
+<span class='line'>287</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">newNode.getRootNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>288</span> </span><span class="WHIT">					</span><span class="NAME">newNode.render</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>289</span> </span><span class="WHIT">					</span><span class="NAME">newNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">newNode.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>290</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
 <span class='line'>291</span> 
-<span class='line'>292</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">newNode.getRootNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>293</span> </span><span class="WHIT">					</span><span class="NAME">newNode.render</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>294</span> </span><span class="WHIT">					</span><span class="NAME">newNode</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">newNode.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>292</span> </span><span class="WHIT">				</span><span class="COMM">// check that we actually contain the old node before attempting to replace it</span><span class="WHIT">
+<span class='line'>293</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">Element.descendantOf</span><span class="PUNC">(</span><span class="NAME">oldNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>294</span> </span><span class="WHIT">					</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">replaceChild</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">oldNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>295</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>296</span> 
-<span class='line'>297</span> </span><span class="WHIT">				</span><span class="COMM">// check that we actually contain the old node before attempting to replace it</span><span class="WHIT">
-<span class='line'>298</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">Element.descendantOf</span><span class="PUNC">(</span><span class="NAME">oldNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>299</span> </span><span class="WHIT">					</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">replaceChild</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">oldNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>300</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>301</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>302</span> </span><span class="WHIT">				</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error replacing child "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">" for "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">newNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>303</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>304</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>305</span> 
-<span class='line'>306</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">output</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>307</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>308</span> </span><span class="WHIT">	
-<span class='line'>309</span> 	</span><span class="COMM">/**
-<span class='line'>310</span> 	 * Sets the id attribute on the root node
-<span class='line'>311</span> 	 * 
-<span class='line'>312</span> 	 * @param	{string}	id
-<span class='line'>313</span> 	 */</span><span class="WHIT">
-<span class='line'>314</span> </span><span class="WHIT">	</span><span class="NAME">setID</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">id</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>315</span> </span><span class="WHIT">		</span><span class="NAME">this.setAttribute</span><span class="PUNC">(</span><span class="STRN">"id"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">id</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>316</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>317</span> </span><span class="WHIT">	
-<span class='line'>318</span> 	</span><span class="COMM">/**
-<span class='line'>319</span> 	 * Returns the id of the root node
-<span class='line'>320</span> 	 * 
-<span class='line'>321</span> 	 * @return	{string}
-<span class='line'>322</span> 	 */</span><span class="WHIT">
-<span class='line'>323</span> </span><span class="WHIT">	</span><span class="NAME">getID</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>324</span> </span><span class="WHIT">		</span><span class="NAME">this.getAttribute</span><span class="PUNC">(</span><span class="STRN">"id"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>325</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>326</span> </span><span class="WHIT">	
-<span class='line'>327</span> 	</span><span class="COMM">/**
-<span class='line'>328</span> 	 * Sets a CSS style property to the passed value on the root node
-<span class='line'>329</span> 	 * 
-<span class='line'>330</span> 	 * @param	{string}	styleName	e.g. "border"
-<span class='line'>331</span> 	 * @param	{string}	styleValue	e.g. "1px solid #CCC"
-<span class='line'>332</span> 	 */</span><span class="WHIT">
-<span class='line'>333</span> </span><span class="WHIT">	</span><span class="NAME">setStyle</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">styleName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">styleValue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>334</span> </span><span class="WHIT">		</span><span class="NAME">DOMUtil.setStyle</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">styleName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">styleValue</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>335</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>336</span> </span><span class="WHIT">	
-<span class='line'>337</span> 	</span><span class="COMM">/**
-<span class='line'>338</span> 	 * Returns the requested CSS style property
-<span class='line'>339</span> 	 * 
-<span class='line'>340</span> 	 * @param	{string}	styleName	e.g. "font"
-<span class='line'>341</span> 	 * @return	{string}
-<span class='line'>342</span> 	 */</span><span class="WHIT">
-<span class='line'>343</span> </span><span class="WHIT">	</span><span class="NAME">getStyle</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">styleName</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>344</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">DOMUtil.getStyle</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">styleName</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>345</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>346</span> </span><span class="WHIT">	
-<span class='line'>347</span> 	</span><span class="COMM">/**
-<span class='line'>348</span> 	 * Sets an attribute on the root node
-<span class='line'>349</span> 	 * 
-<span class='line'>350</span> 	 * @param	{String}	attributeName	e.g. "id"
-<span class='line'>351</span> 	 * @param	{String}	attributeValue	e.g. "anElement"
-<span class='line'>352</span> 	 */</span><span class="WHIT">
-<span class='line'>353</span> </span><span class="WHIT">	</span><span class="NAME">setAttribute</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">attributeName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>354</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>355</span> </span><span class="WHIT">			</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>356</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">attributeName</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="STRN">"style"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Object</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>357</span> </span><span class="WHIT">					</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">key</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>358</span> </span><span class="WHIT">						</span><span class="NAME">this.setStyle</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>359</span> </span><span class="WHIT">					</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>360</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">[</span><span class="NAME">attributeName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>361</span> </span><span class="WHIT">					</span><span class="NAME">this._rootNode</span><span class="PUNC">[</span><span class="NAME">attributeName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>362</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>363</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>364</span> </span><span class="WHIT">				</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"exeption thrown setting "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">attributeName</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">" to "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>365</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>366</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>367</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>368</span> </span><span class="WHIT">	
-<span class='line'>369</span> 	</span><span class="COMM">/**
-<span class='line'>370</span> 	 * Returns the requested attribute from the root node
-<span class='line'>371</span> 	 * 
-<span class='line'>372</span> 	 * @param	{String}	attributeName	e.g. "id"
-<span class='line'>373</span> 	 * @return	{String}
-<span class='line'>374</span> 	 */</span><span class="WHIT">
-<span class='line'>375</span> </span><span class="WHIT">	</span><span class="NAME">getAttribute</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">attributeName</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>376</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>377</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this._rootNode</span><span class="PUNC">[</span><span class="NAME">attributeName</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>378</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>379</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>380</span> </span><span class="WHIT">	
-<span class='line'>381</span> 	</span><span class="COMM">/**
-<span class='line'>382</span> 	 * Returns whether or not the root node of this object is of the passed CSS class
-<span class='line'>383</span> 	 * 
-<span class='line'>384</span> 	 * @return boolean
-<span class='line'>385</span> 	 */</span><span class="WHIT">
-<span class='line'>386</span> </span><span class="WHIT">	</span><span class="NAME">isClass</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">className</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>387</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">DOMUtil.hasClass</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">className</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>388</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>389</span> </span><span class="WHIT">	
-<span class='line'>390</span> 	</span><span class="COMM">/**
-<span class='line'>391</span> 	 * @return void
-<span class='line'>392</span> 	 */</span><span class="WHIT">
-<span class='line'>393</span> </span><span class="WHIT">	</span><span class="NAME">resize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>394</span> </span><span class="WHIT">		</span><span class="NAME">this.notifyListeners</span><span class="PUNC">(</span><span class="STRN">"onResize"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>395</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>396</span> </span><span class="WHIT">	
-<span class='line'>397</span> 	</span><span class="NAME">_sizeScrollable</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">scrollable</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">dim</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">maxSize</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>398</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">scrollable</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">scrollable.parentNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>399</span> </span><span class="WHIT">			</span><span class="NAME">scrollable.owner</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">triggerEvent</span><span class="PUNC">(</span><span class="STRN">"onWillResize"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>400</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">nodeList</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">$A</span><span class="PUNC">(</span><span class="NAME">scrollable.parentNode.childNodes</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>401</span> </span><span class="WHIT">			
-<span class='line'>402</span> 			</span><span class="NAME">nodeList.each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>403</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">node</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">node</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">scrollable</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>404</span> </span><span class="WHIT">						</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">dims</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Element.getDimensions</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>405</span> </span><span class="WHIT">						</span><span class="NAME">maxSize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">maxSize</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="WHIT"> </span><span class="NAME">dims</span><span class="PUNC">[</span><span class="NAME">dim</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>406</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>407</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>408</span> </span><span class="WHIT">			
-<span class='line'>409</span> 			</span><span class="NAME">scrollable.style</span><span class="PUNC">[</span><span class="NAME">dim</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">maxSize</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">"px"</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>410</span> </span><span class="WHIT">			</span><span class="NAME">scrollable.owner</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">triggerEvent</span><span class="PUNC">(</span><span class="STRN">"onResize"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>411</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>412</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>413</span> </span><span class="WHIT">	
-<span class='line'>414</span> 	</span><span class="COMM">/**
-<span class='line'>415</span> 	 * Makes the passed node the first child of this object.
-<span class='line'>416</span> 	 * 
-<span class='line'>417</span> 	 * @param {Object} A GUIWidget or DOM Node
-<span class='line'>418</span> 	 */</span><span class="WHIT">
-<span class='line'>419</span> </span><span class="WHIT">	</span><span class="NAME">insertAtTop</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>420</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">insertBefore</span><span class="PUNC">(</span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">firstChild</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>421</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>422</span> </span><span class="WHIT">	
-<span class='line'>423</span> 	</span><span class="COMM">/**
-<span class='line'>424</span> 	 * Inserts the first passed node before the second.
-<span class='line'>425</span> 	 * 
-<span class='line'>426</span> 	 * @param {Object} A GUIWidget or DOM Node
-<span class='line'>427</span> 	 * @param {Object} A GUIWidget or DOM Node - should be a child of this element
-<span class='line'>428</span> 	 */</span><span class="WHIT">
-<span class='line'>429</span> </span><span class="WHIT">	</span><span class="NAME">insertBefore</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">referenceNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>430</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">insertBefore</span><span class="PUNC">(</span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">referenceNode</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>431</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>432</span> </span><span class="WHIT">	
-<span class='line'>433</span> 	</span><span class="COMM">/**
-<span class='line'>434</span> 	 * Gets the DOM node from a GUIWidget
-<span class='line'>435</span> 	 * 
-<span class='line'>436</span> 	 * @param {Object} A GUIWidget or DOM Node
-<span class='line'>437</span> 	 * @return {Node}
-<span class='line'>438</span> 	 */</span><span class="WHIT">
-<span class='line'>439</span> </span><span class="WHIT">	</span><span class="NAME">_getNode</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">fromNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>440</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">fromNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>441</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">fromNode.getRootNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>442</span> </span><span class="WHIT">				</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">fromNode.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>443</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">fromNode.appendChild</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>444</span> </span><span class="WHIT">				</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">fromNode</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>445</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>446</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>447</span> </span><span class="WHIT">		
-<span class='line'>448</span> 		</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Invalid node!"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>449</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>450</span> </span><span class="WHIT">	
-<span class='line'>451</span> 	</span><span class="NAME">focus</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>452</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">focus</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>453</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>454</span> </span><span class="WHIT">	
-<span class='line'>455</span> 	</span><span class="NAME">blur</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>456</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">blur</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>457</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>458</span> 
-<span class='line'>459</span> </span><span class="WHIT">	</span><span class="NAME">show</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>460</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">show</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>461</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>462</span> 
-<span class='line'>463</span> </span><span class="WHIT">	</span><span class="NAME">hide</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>464</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">hide</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>465</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>466</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>467</span> </span></pre></body></html>
+<span class='line'>296</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>297</span> </span><span class="WHIT">				</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error replacing child "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">oldNode</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">" for "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">newNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>298</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>299</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>300</span> 
+<span class='line'>301</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">output</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>302</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>303</span> </span><span class="WHIT">	
+<span class='line'>304</span> 	</span><span class="COMM">/**
+<span class='line'>305</span> 	 * Sets the id attribute on the root node
+<span class='line'>306</span> 	 * 
+<span class='line'>307</span> 	 * @param	{string}	id
+<span class='line'>308</span> 	 */</span><span class="WHIT">
+<span class='line'>309</span> </span><span class="WHIT">	</span><span class="NAME">setID</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">id</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>310</span> </span><span class="WHIT">		</span><span class="NAME">this.setAttribute</span><span class="PUNC">(</span><span class="STRN">"id"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">id</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>311</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>312</span> </span><span class="WHIT">	
+<span class='line'>313</span> 	</span><span class="COMM">/**
+<span class='line'>314</span> 	 * Returns the id of the root node
+<span class='line'>315</span> 	 * 
+<span class='line'>316</span> 	 * @return	{string}
+<span class='line'>317</span> 	 */</span><span class="WHIT">
+<span class='line'>318</span> </span><span class="WHIT">	</span><span class="NAME">getID</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>319</span> </span><span class="WHIT">		</span><span class="NAME">this.getAttribute</span><span class="PUNC">(</span><span class="STRN">"id"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>320</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>321</span> </span><span class="WHIT">	
+<span class='line'>322</span> 	</span><span class="COMM">/**
+<span class='line'>323</span> 	 * Sets a CSS style property to the passed value on the root node
+<span class='line'>324</span> 	 * 
+<span class='line'>325</span> 	 * @param	{string}	styleName	e.g. "border"
+<span class='line'>326</span> 	 * @param	{string}	styleValue	e.g. "1px solid #CCC"
+<span class='line'>327</span> 	 */</span><span class="WHIT">
+<span class='line'>328</span> </span><span class="WHIT">	</span><span class="NAME">setStyle</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">styleName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">styleValue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>329</span> </span><span class="WHIT">		</span><span class="NAME">DOMUtil.setStyle</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">styleName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">styleValue</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>330</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>331</span> </span><span class="WHIT">	
+<span class='line'>332</span> 	</span><span class="COMM">/**
+<span class='line'>333</span> 	 * Returns the requested CSS style property
+<span class='line'>334</span> 	 * 
+<span class='line'>335</span> 	 * @param	{string}	styleName	e.g. "font"
+<span class='line'>336</span> 	 * @return	{string}
+<span class='line'>337</span> 	 */</span><span class="WHIT">
+<span class='line'>338</span> </span><span class="WHIT">	</span><span class="NAME">getStyle</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">styleName</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>339</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">DOMUtil.getStyle</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">styleName</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>340</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>341</span> </span><span class="WHIT">	
+<span class='line'>342</span> 	</span><span class="COMM">/**
+<span class='line'>343</span> 	 * Sets an attribute on the root node
+<span class='line'>344</span> 	 * 
+<span class='line'>345</span> 	 * @param	{String}	attributeName	e.g. "id"
+<span class='line'>346</span> 	 * @param	{String}	attributeValue	e.g. "anElement"
+<span class='line'>347</span> 	 */</span><span class="WHIT">
+<span class='line'>348</span> </span><span class="WHIT">	</span><span class="NAME">setAttribute</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">attributeName</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>349</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>350</span> </span><span class="WHIT">			</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>351</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">attributeName</span><span class="WHIT"> </span><span class="PUNC">==</span><span class="WHIT"> </span><span class="STRN">"style"</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Object</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>352</span> </span><span class="WHIT">					</span><span class="KEYW">for</span><span class="PUNC">(</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">key</span><span class="WHIT"> </span><span class="KEYW">in</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>353</span> </span><span class="WHIT">						</span><span class="NAME">this.setStyle</span><span class="PUNC">(</span><span class="NAME">key</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">[</span><span class="NAME">key</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>354</span> </span><span class="WHIT">					</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>355</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">[</span><span class="NAME">attributeName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>356</span> </span><span class="WHIT">					</span><span class="NAME">this._rootNode</span><span class="PUNC">[</span><span class="NAME">attributeName</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>357</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>358</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>359</span> </span><span class="WHIT">				</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"exeption thrown setting "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">attributeName</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">" to "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">attributeValue</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>360</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>361</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>362</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>363</span> </span><span class="WHIT">	
+<span class='line'>364</span> 	</span><span class="COMM">/**
+<span class='line'>365</span> 	 * Returns the requested attribute from the root node
+<span class='line'>366</span> 	 * 
+<span class='line'>367</span> 	 * @param	{String}	attributeName	e.g. "id"
+<span class='line'>368</span> 	 * @return	{String}
+<span class='line'>369</span> 	 */</span><span class="WHIT">
+<span class='line'>370</span> </span><span class="WHIT">	</span><span class="NAME">getAttribute</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">attributeName</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>371</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._rootNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>372</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">this._rootNode</span><span class="PUNC">[</span><span class="NAME">attributeName</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>373</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>374</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>375</span> </span><span class="WHIT">	
+<span class='line'>376</span> 	</span><span class="COMM">/**
+<span class='line'>377</span> 	 * Returns whether or not the root node of this object is of the passed CSS class
+<span class='line'>378</span> 	 * 
+<span class='line'>379</span> 	 * @return boolean
+<span class='line'>380</span> 	 */</span><span class="WHIT">
+<span class='line'>381</span> </span><span class="WHIT">	</span><span class="NAME">isClass</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">className</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>382</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">DOMUtil.hasClass</span><span class="PUNC">(</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">className</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>383</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>384</span> </span><span class="WHIT">	
+<span class='line'>385</span> 	</span><span class="COMM">/**
+<span class='line'>386</span> 	 * @return void
+<span class='line'>387</span> 	 */</span><span class="WHIT">
+<span class='line'>388</span> </span><span class="WHIT">	</span><span class="NAME">resize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>389</span> </span><span class="WHIT">		</span><span class="NAME">this.notifyListeners</span><span class="PUNC">(</span><span class="STRN">"onResize"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>390</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>391</span> </span><span class="WHIT">	
+<span class='line'>392</span> 	</span><span class="NAME">_sizeScrollable</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">scrollable</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">dim</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">maxSize</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>393</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">scrollable</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">scrollable.parentNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>394</span> </span><span class="WHIT">			</span><span class="NAME">scrollable.owner</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">triggerEvent</span><span class="PUNC">(</span><span class="STRN">"onWillResize"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>395</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">nodeList</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">$A</span><span class="PUNC">(</span><span class="NAME">scrollable.parentNode.childNodes</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>396</span> </span><span class="WHIT">			
+<span class='line'>397</span> 			</span><span class="NAME">nodeList.each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>398</span> </span><span class="WHIT">				</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">node</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">node</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">scrollable</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>399</span> </span><span class="WHIT">						</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">dims</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">Element.getDimensions</span><span class="PUNC">(</span><span class="NAME">node</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>400</span> </span><span class="WHIT">						</span><span class="NAME">maxSize</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">maxSize</span><span class="WHIT"> </span><span class="PUNC">-</span><span class="WHIT"> </span><span class="NAME">dims</span><span class="PUNC">[</span><span class="NAME">dim</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>401</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>402</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>403</span> </span><span class="WHIT">			
+<span class='line'>404</span> 			</span><span class="NAME">scrollable.style</span><span class="PUNC">[</span><span class="NAME">dim</span><span class="PUNC">]</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">maxSize</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">"px"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>405</span> </span><span class="WHIT">			</span><span class="NAME">scrollable.owner</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">triggerEvent</span><span class="PUNC">(</span><span class="STRN">"onResize"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>406</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>407</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>408</span> </span><span class="WHIT">	
+<span class='line'>409</span> 	</span><span class="COMM">/**
+<span class='line'>410</span> 	 * Makes the passed node the first child of this object.
+<span class='line'>411</span> 	 * 
+<span class='line'>412</span> 	 * @param {Object} A GUIWidget or DOM Node
+<span class='line'>413</span> 	 */</span><span class="WHIT">
+<span class='line'>414</span> </span><span class="WHIT">	</span><span class="NAME">insertAtTop</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>415</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">insertBefore</span><span class="PUNC">(</span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">firstChild</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>416</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>417</span> </span><span class="WHIT">	
+<span class='line'>418</span> 	</span><span class="COMM">/**
+<span class='line'>419</span> 	 * Inserts the first passed node before the second.
+<span class='line'>420</span> 	 * 
+<span class='line'>421</span> 	 * @param {Object} A GUIWidget or DOM Node
+<span class='line'>422</span> 	 * @param {Object} A GUIWidget or DOM Node - should be a child of this element
+<span class='line'>423</span> 	 */</span><span class="WHIT">
+<span class='line'>424</span> </span><span class="WHIT">	</span><span class="NAME">insertBefore</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">referenceNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>425</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">insertBefore</span><span class="PUNC">(</span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">newNode</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this._getNode</span><span class="PUNC">(</span><span class="NAME">referenceNode</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>426</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>427</span> </span><span class="WHIT">	
+<span class='line'>428</span> 	</span><span class="COMM">/**
+<span class='line'>429</span> 	 * Gets the DOM node from a GUIWidget
+<span class='line'>430</span> 	 * 
+<span class='line'>431</span> 	 * @param {Object} A GUIWidget or DOM Node
+<span class='line'>432</span> 	 * @return {Node}
+<span class='line'>433</span> 	 */</span><span class="WHIT">
+<span class='line'>434</span> </span><span class="WHIT">	</span><span class="NAME">_getNode</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">fromNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>435</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">fromNode</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>436</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">fromNode.getRootNode</span><span class="WHIT"> </span><span class="KEYW">instanceof</span><span class="WHIT"> </span><span class="NAME">Function</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>437</span> </span><span class="WHIT">				</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">fromNode.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>438</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">else</span><span class="WHIT"> </span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">fromNode.appendChild</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>439</span> </span><span class="WHIT">				</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">fromNode</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>440</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>441</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>442</span> </span><span class="WHIT">		
+<span class='line'>443</span> 		</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Invalid node!"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>444</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>445</span> </span><span class="WHIT">	
+<span class='line'>446</span> 	</span><span class="NAME">focus</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>447</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">focus</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>448</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>449</span> </span><span class="WHIT">	
+<span class='line'>450</span> 	</span><span class="NAME">blur</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>451</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">blur</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>452</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>453</span> 
+<span class='line'>454</span> </span><span class="WHIT">	</span><span class="NAME">show</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>455</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">show</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>456</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>457</span> 
+<span class='line'>458</span> </span><span class="WHIT">	</span><span class="NAME">hide</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>459</span> </span><span class="WHIT">		</span><span class="NAME">this.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">hide</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>460</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>461</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>462</span> </span></pre></body></html>

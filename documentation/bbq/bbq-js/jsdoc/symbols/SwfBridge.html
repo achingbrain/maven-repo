@@ -75,13 +75,18 @@ code {
 	background-color: transparent;
 }
 
-caption, div.sectionTitle {
+caption, h2 {
 	background-color: #7F8FB1;
 	color: #fff;
 	font-size: 130%;
 	text-align: left;
 	padding: 5px 10px;
 	border: 1px #7F8FB1 solid;
+	font-weight: normal;
+	line-height: 1em;
+}
+h2 a {
+	color: #FFF;
 }
 pre {
 	margin: 10px 0;
@@ -252,6 +257,7 @@ ul.inheritsList
 	text-align: right;
 	font-size: 10px;
 }*/
+
 		</style>
 		
 		<style type="text/css">
@@ -278,36 +284,41 @@ ul.inheritsList
 			<p class="description">
 				
 				
-			
+				
+					<em>Defined in: </em> <a href="../symbols/src/bbq_web_SwfBridge.js.html">SwfBridge.js</a>.<br />
+				
+				
 				SwfBridge
 				
-				
-					<br /><i>Defined in: </i> <a href="../symbols/src/bbq_web_SwfBridge.js.html">SwfBridge.js</a>.
-				
+				<div class="description">
+	Provides a safe way to call Javascript functions that may not exist from within a Flash movie.
+	
+	
+</div>
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
 			
-			<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class SwfBridge.">
-				<caption>Class Summary</caption>
-				<thead>
-					<tr>
-						<th scope="col">Constructor Attributes</th>
-						<th scope="col">Constructor Name and Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="attributes">&nbsp;</td>
-						<td class="nameDescription" >
-							<div class="fixedFont">
-								<b><a href="../symbols/SwfBridge.html#constructor">SwfBridge</a></b>()
-							</div>
-							<div class="description">Provides a safe way to call Javascript functions that may not exist from within a Flash movie.</div>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the constructor documented in the class SwfBridge.">
+					<caption>Class Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/SwfBridge.html#constructor">SwfBridge</a></b>()
+								</div>
+								<div class="description">Provides a safe way to call Javascript functions that may not exist from within a Flash movie.</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			
 
 <!-- ============================== properties summary ===================== -->
@@ -317,54 +328,54 @@ ul.inheritsList
 			
 				
 				
-				<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class SwfBridge.">
-					<caption>Method Summary</caption>
-					<thead>
-						<tr>
-							<th scope="col">Method Attributes</th>
-							<th scope="col">Method Name and Description</th>
-						</tr>
-					</thead>
-					<tbody>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">SwfBridge.<b><a href="../symbols/SwfBridge.html#.callFunction">callFunction</a></b>(functionName, functionArgs)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">SwfBridge.<b><a href="../symbols/SwfBridge.html#.callRegisteredFunction">callRegisteredFunction</a></b>(key)
-								</div>
-								<div class="description">See SwfBridge#registerFunction</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">SwfBridge.<b><a href="../symbols/SwfBridge.html#.getFunction">getFunction</a></b>(functionName, searchObject)
-								</div>
-								<div class="description"></div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;static&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">SwfBridge.<b><a href="../symbols/SwfBridge.html#.registerFunction">registerFunction</a></b>(A)
-								</div>
-								<div class="description">Pass in a function and pass the returned key somewhere.</div>
-							</td>
-						</tr>
-					
-					</tbody>
-				</table>
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class SwfBridge.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">SwfBridge.<b><a href="../symbols/SwfBridge.html#.callFunction">callFunction</a></b>(functionName, functionArgs)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">SwfBridge.<b><a href="../symbols/SwfBridge.html#.callRegisteredFunction">callRegisteredFunction</a></b>(key)
+									</div>
+									<div class="description">See SwfBridge#registerFunction</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">SwfBridge.<b><a href="../symbols/SwfBridge.html#.getFunction">getFunction</a></b>(functionName, searchObject)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;static&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">SwfBridge.<b><a href="../symbols/SwfBridge.html#.registerFunction">registerFunction</a></b>(A)
+									</div>
+									<div class="description">Pass in a function and pass the returned key somewhere.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
 				
 				
 				
@@ -374,215 +385,150 @@ ul.inheritsList
 
 <!-- ============================== constructor details ==================== -->		
 			
-			<div class="details"><a name="constructor"></a>
-				<h2>Class Detail</h2>
-				
-				<h3>
-						<em>SwfBridge</em>()
-				</h3>
-				
-				<div class="description">
-					Provides a safe way to call Javascript functions that may not exist from within a Flash movie.
+				<article>
+					<a name="constructor"></a>
+					<h2>Constructor Detail</h2>
+					<h3>
+							SwfBridge()
+					</h3>
 					
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-
-			</div>
-		
+				</article>
+			
 
 <!-- ============================== field details ========================== -->		
-		
+			
 
 <!-- ============================== method details ========================= -->		
 			
-				<div class="sectionTitle">
-					Method Detail
-				</div>
-				
-					<a name=".callFunction"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+				<article>
+					<h2>Method Detail</h2>
 					
-					
-					<span class="light">SwfBridge.</span><b>callFunction</b>(functionName, functionArgs)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_SwfBridge.js.html">SwfBridge.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>functionName </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>functionArgs </td>
-									<td><span class="light fixedFont">{Arrays}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+						<a name=".callFunction"> </a>
+						<h3>&lt;static&gt; 
 
-					<hr />
-				
-					<a name=".callRegisteredFunction"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">SwfBridge.</span><b>callRegisteredFunction</b>(key)
-					
-					</div>
-					<div class="description">
-						See SwfBridge#registerFunction
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_SwfBridge.js.html">SwfBridge.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
 							
-								<tr>
-									<td>key </td>
-									<td><span class="light fixedFont">{String}</span> </td>
-									<td>The key</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+							<span class="light">SwfBridge.</span><b>callFunction</b>(functionName, functionArgs)
+						</h3>
 
-					<hr />
-				
-					<a name=".getFunction"> </a>
-					<div class="fixedFont">&lt;static&gt; 
-					
-					
-					<span class="light">SwfBridge.</span><b>getFunction</b>(functionName, searchObject)
-					
-					</div>
-					<div class="description">
-						
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_SwfBridge.js.html">SwfBridge.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>functionName </td>
-									<td><span class="light fixedFont">{string}</span> </td>
-									<td></td>
-								</tr>
-							
-								<tr>
-									<td>searchObject </td>
-									<td><span class="light fixedFont">{Object}</span> </td>
-									<td></td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-						
-						
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>functionName </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>functionArgs </td>
+					<td><span class="light fixedFont">{Arrays}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
 
-					<hr />
-				
-					<a name=".registerFunction"> </a>
-					<div class="fixedFont">&lt;static&gt; 
+
+						<hr />
 					
+						<a name=".callRegisteredFunction"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">SwfBridge.</span><b>callRegisteredFunction</b>(key)
+						</h3>
+
+						<div class="description">
+	See SwfBridge#registerFunction
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>key </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>The key</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
 					
-					<span class="light">SwfBridge.</span><b>registerFunction</b>(A)
+						<a name=".getFunction"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">SwfBridge.</span><b>getFunction</b>(functionName, searchObject)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>functionName </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>searchObject </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
 					
-					</div>
-					<div class="description">
-						Pass in a function and pass the returned key somewhere.
+						<a name=".registerFunction"> </a>
+						<h3>&lt;static&gt; 
+
+							
+							<span class="light">SwfBridge.</span><b>registerFunction</b>(A)
+						</h3>
+
+						<div class="description">
+	Pass in a function and pass the returned key somewhere.
 
 <code>
 
@@ -601,65 +547,48 @@ function callMe(String key):Void {
 // Alerts "Hello world"
 
 </code>
-						
-							<br />
-							<i>Defined in: </i> <a href="../symbols/src/_Users_alex_Sites_bbq_bbq-js_src_main_javascript_bbq_web_SwfBridge.js.html">SwfBridge.js</a>.
-						
-						
-					</div>
-					
-					
-					
-					
-						<table class="parameterlist zebra-striped">
-						<caption class="heading">Parameters:</caption>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Type</th>
-								<th>Comment</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-								<tr>
-									<td>A </td>
-									<td><span class="light fixedFont">{Function}</span> </td>
-									<td>bound function</td>
-								</tr>
-							
-						</tbody>
-					</table>
-				
-					
-				
-				
-				
-				
-				
-						
-							<dl class="detailList">
-							<dt class="heading">Returns:</dt>
-							
-								<dd>String</dd>
-							
-							</dl>
-						
-						
-						
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>A </td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>bound function</td>
+				</tr>
+			
+		</tbody>
+	</table>
 
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd>String</dd>
+		
+	</dl>
+
+
+						
 					
-				
+				</article>
 			
-			
+
 <!-- ============================== event details ========================= -->		
 			
-			
-			<hr />
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Thu Jan 12 2012 18:47:11 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:58 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 
