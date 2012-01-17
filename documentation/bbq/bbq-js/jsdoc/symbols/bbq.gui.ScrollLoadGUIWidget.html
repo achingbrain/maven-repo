@@ -290,13 +290,40 @@ ul.inheritsList
 					<em>Defined in: </em> <a href="../symbols/src/bbq_gui_ScrollLoadGUIWidget.js.html">ScrollLoadGUIWidget.js</a>.<br />
 				
 				
-				bbq.gui.ScrollLoadGUIWidget
+				
 				
 				<div class="description">
 	
 	
 	
 </div>
+	
+		The URL passed as part of the options object should return in the following format:
+
+ { numEntities: int, entities: {"en7": data, "en8": data, "en9": data,...}}     // <-  enN is zero indexed!
+
+Supports the following options:
+
+options: {
+		rowHeight: int								// roughly the expected height of one row.
+		createEntity: function(data)		// should return one new entity
+		url: String										// where to load from
+		args: Object									// arguments to pass
+		numToLoad: int							// how many entities to load initially and on every column sort
+		loadingText: String						// shown while doin the inital load
+		noEntitiesText:	String					// shown when there is nothing to show
+		entityKey: String							// the key field on each entity.  Pass this OR getEntityKey
+		getEntityKey: Function					// should take an entity and return it's id Pass this OR entityKey
+}
+
+Supports observers for the following events
+
+onEntitiesLoad
+onEmptyList
+onEntitiesLoaded
+onSelectedEntityChange
+	
+
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
@@ -314,7 +341,7 @@ ul.inheritsList
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription" >
 								<div class="fixedFont">
-									<b><a href="../symbols/bbq.gui.ScrollLoadGUIWidget.html#constructor">bbq.gui.ScrollLoadGUIWidget</a></b>()
+									<b><a href="../symbols/bbq.gui.ScrollLoadGUIWidget.html#constructor">bbq.gui.ScrollLoadGUIWidget</a></b>(options, options)
 								</div>
 								<div class="description"></div>
 							</td>
@@ -339,10 +366,68 @@ ul.inheritsList
 			
 				
 				
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class bbq.gui.ScrollLoadGUIWidget.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.ScrollLoadGUIWidget.html#getScrollableHolder">getScrollableHolder</a></b>()
+									</div>
+									<div class="description">Returns the scrollable holder that contains this widget</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.ScrollLoadGUIWidget.html#loadEntities">loadEntities</a></b>()
+									</div>
+									<div class="description">Loads the entities currently visible in the viewport if they have not been loaded already</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.ScrollLoadGUIWidget.html#reloadEntities">reloadEntities</a></b>()
+									</div>
+									<div class="description">Empties the list of currently loaded entities and reloads the entities currently visible in the viewport.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.ScrollLoadGUIWidget.html#setScrollableHolder">setScrollableHolder</a></b>(scrollableHolder)
+									</div>
+									<div class="description">Set the scrollable that holds this widget.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.ScrollLoadGUIWidget.html#sortByIndex">sortByIndex</a></b>(index, direction)
+									</div>
+									<div class="description">Sorts the entity set by the given index and direction.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				
 				
 				
 					<dl class="inheritsList">
-					<dt>Methods borrowed from class <a href="../symbols/bbq.gui.GUIWidget.html">bbq.gui.GUIWidget</a>: </dt><dd><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a>, <a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#render">render</a>, <a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>: </dt><dd><a href="../symbols/bbq.lang.Watchable.html#deRegisterListener">deRegisterListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListener">notifyListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListeners">notifyListeners</a>, <a href="../symbols/bbq.lang.Watchable.html#registerListener">registerListener</a>, <a href="../symbols/bbq.lang.Watchable.html#registerOneTimeListener">registerOneTimeListener</a></dd>
+					<dt>Methods borrowed from class <a href="../symbols/bbq.gui.GUIWidget.html">bbq.gui.GUIWidget</a>: </dt><dd><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a>, <a href="../symbols/bbq.gui.GUIWidget.html#blur">blur</a>, <a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a>, <a href="../symbols/bbq.gui.GUIWidget.html#focus">focus</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#hide">hide</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#render">render</a>, <a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#show">show</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>: </dt><dd><a href="../symbols/bbq.lang.Watchable.html#deRegisterListener">deRegisterListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListener">notifyListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListeners">notifyListeners</a>, <a href="../symbols/bbq.lang.Watchable.html#registerListener">registerListener</a>, <a href="../symbols/bbq.lang.Watchable.html#registerOneTimeListener">registerOneTimeListener</a></dd>
 					</dl>
 				
 			
@@ -355,9 +440,35 @@ ul.inheritsList
 					<a name="constructor"></a>
 					<h2>Constructor Detail</h2>
 					<h3>
-							bbq.gui.ScrollLoadGUIWidget()
+							bbq.gui.ScrollLoadGUIWidget(options, options)
 					</h3>
 					
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{mixed}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
 				</article>
 			
 
@@ -366,13 +477,142 @@ ul.inheritsList
 
 <!-- ============================== method details ========================= -->		
 			
+				<article>
+					<h2>Method Detail</h2>
+					
+						<a name="getScrollableHolder"> </a>
+						<h3>
+
+							
+							<b>getScrollableHolder</b>()
+						</h3>
+
+						<div class="description">
+	Returns the scrollable holder that contains this widget
+	
+	
+</div>
+
+						<hr />
+					
+						<a name="loadEntities"> </a>
+						<h3>
+
+							
+							<b>loadEntities</b>()
+						</h3>
+
+						<div class="description">
+	Loads the entities currently visible in the viewport if they have not been loaded already
+	
+	
+</div>
+
+						<hr />
+					
+						<a name="reloadEntities"> </a>
+						<h3>
+
+							
+							<b>reloadEntities</b>()
+						</h3>
+
+						<div class="description">
+	Empties the list of currently loaded entities and reloads the entities currently visible in the viewport.
+
+Use this method if the order of items has been changed.
+	
+	
+</div>
+
+						<hr />
+					
+						<a name="setScrollableHolder"> </a>
+						<h3>
+
+							
+							<b>setScrollableHolder</b>(scrollableHolder)
+						</h3>
+
+						<div class="description">
+	Set the scrollable that holds this widget.  This is necessary so we can watch it to find out when we should try to reload the 
+data contained within ourselves.
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>scrollableHolder </td>
+					<td></td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="sortByIndex"> </a>
+						<h3>
+
+							
+							<b>sortByIndex</b>(index, direction)
+						</h3>
+
+						<div class="description">
+	Sorts the entity set by the given index and direction.
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>index </td>
+					<td><span class="light fixedFont">{int}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>direction </td>
+					<td><span class="light fixedFont">{int}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						
+					
+				</article>
+			
 
 <!-- ============================== event details ========================= -->		
 			
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:57 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Tue Jan 17 2012 18:02:26 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

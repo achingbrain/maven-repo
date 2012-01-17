@@ -290,15 +290,24 @@ ul.inheritsList
 					<em>Defined in: </em> <a href="../symbols/src/bbq_gui_button_GUIButton.js.html">GUIButton.js</a>.<br />
 				
 				
-				bbq.gui.button.GUIButton
+				
 				
 				<div class="description">
-	GUIButton
-
-This class creates a link which can be used to receive on click events.
+	This class creates a link which can be used to receive onclick events.
 	
 	
 </div>
+	
+		<pre><code class="language-javascript">
+var button = new bbq.gui.button.GUIButton({
+    text: "Click me",
+    onClick: function() {
+        Log.info("The button was clicked!");
+    }
+});
+</code></pre>
+	
+
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
@@ -316,11 +325,9 @@ This class creates a link which can be used to receive on click events.
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription" >
 								<div class="fixedFont">
-									<b><a href="../symbols/bbq.gui.button.GUIButton.html#constructor">bbq.gui.button.GUIButton</a></b>()
+									<b><a href="../symbols/bbq.gui.button.GUIButton.html#constructor">bbq.gui.button.GUIButton</a></b>(options)
 								</div>
-								<div class="description">GUIButton
-
-This class creates a link which can be used to receive on click events.</div>
+								<div class="description">This class creates a link which can be used to receive onclick events.</div>
 							</td>
 						</tr>
 					</tbody>
@@ -343,10 +350,122 @@ This class creates a link which can be used to receive on click events.</div>
 			
 				
 				
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class bbq.gui.button.GUIButton.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#buttonClicked">buttonClicked</a></b>(event)
+									</div>
+									<div class="description">Button clicked handler function</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#clearDown">clearDown</a></b>()
+									</div>
+									<div class="description">Clears button down state.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#isDisabled">isDisabled</a></b>()
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#isDown">isDown</a></b>()
+									</div>
+									<div class="description">Checks if button is down.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#mouseDown">mouseDown</a></b>(event)
+									</div>
+									<div class="description">Mouse down handler function</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#mouseOut">mouseOut</a></b>(event)
+									</div>
+									<div class="description">Mouse out handler function</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#mouseOver">mouseOver</a></b>(event)
+									</div>
+									<div class="description">Mouse over handler function</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#mouseUp">mouseUp</a></b>(event)
+									</div>
+									<div class="description">Mouse up handler function</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#setDisabled">setDisabled</a></b>(disabled)
+									</div>
+									<div class="description">Button disabled status setter.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#setDown">setDown</a></b>(down)
+									</div>
+									<div class="description">Down state setter</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.button.GUIButton.html#setText">setText</a></b>(text)
+									</div>
+									<div class="description">Sets the text displayed on the button.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				
 				
 				
 					<dl class="inheritsList">
-					<dt>Methods borrowed from class <a href="../symbols/bbq.gui.GUIWidget.html">bbq.gui.GUIWidget</a>: </dt><dd><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a>, <a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#render">render</a>, <a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>: </dt><dd><a href="../symbols/bbq.lang.Watchable.html#deRegisterListener">deRegisterListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListener">notifyListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListeners">notifyListeners</a>, <a href="../symbols/bbq.lang.Watchable.html#registerListener">registerListener</a>, <a href="../symbols/bbq.lang.Watchable.html#registerOneTimeListener">registerOneTimeListener</a></dd>
+					<dt>Methods borrowed from class <a href="../symbols/bbq.gui.GUIWidget.html">bbq.gui.GUIWidget</a>: </dt><dd><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a>, <a href="../symbols/bbq.gui.GUIWidget.html#blur">blur</a>, <a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a>, <a href="../symbols/bbq.gui.GUIWidget.html#focus">focus</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#hide">hide</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#render">render</a>, <a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#show">show</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>: </dt><dd><a href="../symbols/bbq.lang.Watchable.html#deRegisterListener">deRegisterListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListener">notifyListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListeners">notifyListeners</a>, <a href="../symbols/bbq.lang.Watchable.html#registerListener">registerListener</a>, <a href="../symbols/bbq.lang.Watchable.html#registerOneTimeListener">registerOneTimeListener</a></dd>
 					</dl>
 				
 			
@@ -359,9 +478,107 @@ This class creates a link which can be used to receive on click events.</div>
 					<a name="constructor"></a>
 					<h2>Constructor Detail</h2>
 					<h3>
-							bbq.gui.button.GUIButton()
+							bbq.gui.button.GUIButton(options)
 					</h3>
 					
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options.text </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>This text will be displayed on the button.</td>
+				</tr>
+			
+				<tr>
+					<td>options.toolTip <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>Will be displayed as a tooltip when the user hovers their mouse over the button.</td>
+				</tr>
+			
+				<tr>
+					<td>options.anchor <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>The anchor will be set as the href value of the root node.</td>
+				</tr>
+			
+				<tr>
+					<td>options.startDisabled <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{boolean}</span> </td>
+					<td>If true the button will not respond to clicks.</td>
+				</tr>
+			
+				<tr>
+					<td>options.startDown <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{boolean}</span> </td>
+					<td>If true the button will start in the down state.</td>
+				</tr>
+			
+				<tr>
+					<td>options.rememberDownState <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{boolean}</span> </td>
+					<td>If true the button will toggle on and off.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onClick <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>Will be invoked when onclick events occur.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onMouseOut <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>Will be invoked when onmouseout events occur.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onMouseOver <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>Will be invoked when onmouseover events occur.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onMouseDown <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>Will be invoked when onmousedown events occur.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onMouseUp <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>Will be invoked when onmouseup events occur.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onButtonDown <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>Will be invoked when the button enters the down state.</td>
+				</tr>
+			
+				<tr>
+					<td>options.onButtonUp <br /><em>Optional</em></td>
+					<td><span class="light fixedFont">{Function}</span> </td>
+					<td>Will be invoked when the button enters the up state.</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
 				</article>
 			
 
@@ -370,13 +587,357 @@ This class creates a link which can be used to receive on click events.</div>
 
 <!-- ============================== method details ========================= -->		
 			
+				<article>
+					<h2>Method Detail</h2>
+					
+						<a name="buttonClicked"> </a>
+						<h3>
+
+							
+							<b>buttonClicked</b>(event)
+						</h3>
+
+						<div class="description">
+	Button clicked handler function
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>event </td>
+					<td><span class="light fixedFont">{Event}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="clearDown"> </a>
+						<h3>
+
+							
+							<b>clearDown</b>()
+						</h3>
+
+						<div class="description">
+	Clears button down state.
+	
+	
+</div>
+
+						<hr />
+					
+						<a name="isDisabled"> </a>
+						<h3>
+
+							<span class="light">{boolean}</span>
+							<b>isDisabled</b>()
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{boolean}</span> True if the button is in the disabled state.</dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name="isDown"> </a>
+						<h3>
+
+							<span class="light">{boolean}</span>
+							<b>isDown</b>()
+						</h3>
+
+						<div class="description">
+	Checks if button is down.
+	
+	
+</div>
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{boolean}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name="mouseDown"> </a>
+						<h3>
+
+							
+							<b>mouseDown</b>(event)
+						</h3>
+
+						<div class="description">
+	Mouse down handler function
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>event </td>
+					<td><span class="light fixedFont">{Event}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="mouseOut"> </a>
+						<h3>
+
+							
+							<b>mouseOut</b>(event)
+						</h3>
+
+						<div class="description">
+	Mouse out handler function
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>event </td>
+					<td><span class="light fixedFont">{Event}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="mouseOver"> </a>
+						<h3>
+
+							
+							<b>mouseOver</b>(event)
+						</h3>
+
+						<div class="description">
+	Mouse over handler function
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>event </td>
+					<td><span class="light fixedFont">{Event}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="mouseUp"> </a>
+						<h3>
+
+							
+							<b>mouseUp</b>(event)
+						</h3>
+
+						<div class="description">
+	Mouse up handler function
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>event </td>
+					<td><span class="light fixedFont">{Event}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="setDisabled"> </a>
+						<h3>
+
+							
+							<b>setDisabled</b>(disabled)
+						</h3>
+
+						<div class="description">
+	Button disabled status setter.
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>disabled </td>
+					<td><span class="light fixedFont">{boolean}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="setDown"> </a>
+						<h3>
+
+							
+							<b>setDown</b>(down)
+						</h3>
+
+						<div class="description">
+	Down state setter
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>down </td>
+					<td><span class="light fixedFont">{boolean}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="setText"> </a>
+						<h3>
+
+							
+							<b>setText</b>(text)
+						</h3>
+
+						<div class="description">
+	Sets the text displayed on the button.
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>text </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						
+					
+				</article>
+			
 
 <!-- ============================== event details ========================= -->		
 			
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:57 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Tue Jan 17 2012 18:02:25 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

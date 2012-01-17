@@ -294,7 +294,6 @@ ul.inheritsList
 				
 				<div class="description">
 	<p>This class is used as a base for all objects that have GUI representations.</p>
-
 <p>The constructor method of this class should always be called explicitly by child classes.</p>
 
 <p>The rootNode property is a DOM node that is attached to the DOM tree after the object is
@@ -302,16 +301,31 @@ created via the appendTo method.</p>
 
 <pre><code class="language-javascript">
 com.myapp.MyWidget = new Class.create(bbq.gui.GUIWidget, {
+     _greeting: null,
+
      initialize: function($super, options) {
          $super(options);
 
-         this.appendChild(DOMUtil.createElement("p", "Hello world!"));
+         this._greeting = DOMUtil.createElement("p", "Hello world!");
+     },
+
+     render: function() {
+         this.empty();
+
+         this.appendChild(this._greeting);
      }
 });
 
 ...
 
-var widget = new com.myapp.MyWidget({attributes: { className: "Foo" }});
+var widget = new com.myapp.MyWidget({
+    attributes: {
+        className: "Foo",
+        style: {
+            backgroundColour: "red"
+        }
+    }
+});
 widget.appendTo(document.body);
 </code></pre>
 	
@@ -408,9 +422,27 @@ widget.appendTo(document.body);
 							<tr>
 								<td class="attributes">&nbsp;</td>
 								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#blur">blur</a></b>()
+									</div>
+									<div class="description">Causes this GUIWidget to lose focus</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
 									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a></b>()
 									</div>
 									<div class="description">Removes all nodes attached to this GUIWidgets rootNode</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#focus">focus</a></b>()
+									</div>
+									<div class="description">Causes this GUIWidget to gain focus</div>
 								</td>
 							</tr>
 						
@@ -438,6 +470,15 @@ widget.appendTo(document.body);
 									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a></b>(styleName)
 									</div>
 									<div class="description">Returns the requested CSS style property</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#hide">hide</a></b>()
+									</div>
+									<div class="description">Hides this GUIWidget</div>
 								</td>
 							</tr>
 						
@@ -482,9 +523,9 @@ widget.appendTo(document.body);
 								<td class="nameDescription">
 									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a></b>(A)
 									</div>
-									<div class="description">Attempts to remove the passed node if it is a child of this._rootNode
+									<div class="description"><p>Attempts to remove the passed node if it is a child of this._rootNode</p>
 
-The passed argument can be either a DOM Node object, or a GUIWidget object.</div>
+<p>The passed argument can be either a DOM Node object, or a GUIWidget object.</div>
 								</td>
 							</tr>
 						
@@ -502,7 +543,7 @@ The passed argument can be either a DOM Node object, or a GUIWidget object.</div
 								<td class="nameDescription">
 									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#render">render</a></b>()
 									</div>
-									<div class="description">This method should be overridden by child classes and called explicitly by the overriding method if they make use of the 
+									<div class="description"><p>This method should be overridden by child classes and called explicitly by the overriding method if they make use of the
 childWidgets array, which they should, haha.</div>
 								</td>
 							</tr>
@@ -548,7 +589,7 @@ childWidgets array, which they should, haha.</div>
 								<td class="nameDescription">
 									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a></b>(rootNode)
 									</div>
-									<div class="description">Sets the root node and registers this object for retrieval from the root node.</div>
+									<div class="description"><p>Sets the root node and registers this object for retrieval from the root node.</div>
 								</td>
 							</tr>
 						
@@ -558,6 +599,15 @@ childWidgets array, which they should, haha.</div>
 									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a></b>(styleName, styleValue)
 									</div>
 									<div class="description">Sets a CSS style property to the passed value on the root node</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.gui.GUIWidget.html#show">show</a></b>()
+									</div>
+									<div class="description">Shows this GUIWidget if hidden</div>
 								</td>
 							</tr>
 						
@@ -760,6 +810,28 @@ childWidgets array, which they should, haha.</div>
 
 						<hr />
 					
+						<a name="blur"> </a>
+						<h3>
+
+							
+							<b>blur</b>()
+						</h3>
+
+						<div class="description">
+	Causes this GUIWidget to lose focus
+	
+	
+</div>
+	<dl class="detailList">
+		<dt class="heading">See:</dt>
+		
+			<dd><a href="../symbols/bbq.gui.GUIWidget.html#focus">bbq.gui.GUIWidget#focus</a></dd>
+		
+	</dl>
+
+
+						<hr />
+					
 						<a name="empty"> </a>
 						<h3>
 
@@ -772,6 +844,28 @@ childWidgets array, which they should, haha.</div>
 	
 	
 </div>
+
+						<hr />
+					
+						<a name="focus"> </a>
+						<h3>
+
+							
+							<b>focus</b>()
+						</h3>
+
+						<div class="description">
+	Causes this GUIWidget to gain focus
+	
+	
+</div>
+	<dl class="detailList">
+		<dt class="heading">See:</dt>
+		
+			<dd><a href="../symbols/bbq.gui.GUIWidget.html#blur">bbq.gui.GUIWidget#blur</a></dd>
+		
+	</dl>
+
 
 						<hr />
 					
@@ -875,6 +969,28 @@ childWidgets array, which they should, haha.</div>
 	<dt class="heading">Returns:</dt>
 		
 			<dd><span class="light fixedFont">{string}</span> </dd>
+		
+	</dl>
+
+
+						<hr />
+					
+						<a name="hide"> </a>
+						<h3>
+
+							
+							<b>hide</b>()
+						</h3>
+
+						<div class="description">
+	Hides this GUIWidget
+	
+	
+</div>
+	<dl class="detailList">
+		<dt class="heading">See:</dt>
+		
+			<dd><a href="../symbols/bbq.gui.GUIWidget.html#show">bbq.gui.GUIWidget#show</a></dd>
 		
 	</dl>
 
@@ -1030,9 +1146,9 @@ get the GUIWidget object of which it is the root node.
 						</h3>
 
 						<div class="description">
-	Attempts to remove the passed node if it is a child of this._rootNode
+	<p>Attempts to remove the passed node if it is a child of this._rootNode</p>
 
-The passed argument can be either a DOM Node object, or a GUIWidget object.
+<p>The passed argument can be either a DOM Node object, or a GUIWidget object.</p>
 	
 	
 </div>
@@ -1108,16 +1224,16 @@ The passed argument can be either a DOM Node object, or a GUIWidget object.
 						</h3>
 
 						<div class="description">
-	This method should be overridden by child classes and called explicitly by the overriding method if they make use of the 
-childWidgets array, which they should, haha.
+	<p>This method should be overridden by child classes and called explicitly by the overriding method if they make use of the
+childWidgets array, which they should, haha.</p>
 
-The idea of the method is to create a DOM node tree representation of the widget.  The root node of the tree should be 
-this._rootNode.  The presence of any other nodes in the DOM tree should not be relied upon.
+<p>The idea of the method is to create a DOM node tree representation of the widget.  The root node of the tree should be
+this._rootNode.  The presence of any other nodes in the DOM tree should not be relied upon.</p>
 
-This method will be called before the node tree is added to the main document tree (in a similar way to off-screen buffering
+<p>This method will be called before the node tree is added to the main document tree (in a similar way to off-screen buffering
 in graphics programming) and may be called at seeming arbitrary times.  Consequently it should always create a 
 representation of the widget/object in it's current state but at the same time, not rely on any other portion of the DOM tree 
-existing.
+existing.</p>
 	
 	
 </div>
@@ -1278,9 +1394,9 @@ existing.
 						</h3>
 
 						<div class="description">
-	Sets the root node and registers this object for retrieval from the root node.
+	<p>Sets the root node and registers this object for retrieval from the root node.</p>
 
-This object can then be retrieved by calling owner() on the dom node passed as the argument to this method.
+<p>This object can then be retrieved by calling owner() on the dom node passed as the argument to this method.</p>
 	
 	
 </div>
@@ -1370,6 +1486,28 @@ var foo = bar.owner();
 	</table>
 
 
+						<hr />
+					
+						<a name="show"> </a>
+						<h3>
+
+							
+							<b>show</b>()
+						</h3>
+
+						<div class="description">
+	Shows this GUIWidget if hidden
+	
+	
+</div>
+	<dl class="detailList">
+		<dt class="heading">See:</dt>
+		
+			<dd><a href="../symbols/bbq.gui.GUIWidget.html#hide">bbq.gui.GUIWidget#hide</a></dd>
+		
+	</dl>
+
+
 						
 					
 				</article>
@@ -1380,7 +1518,7 @@ var foo = bar.owner();
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:57 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Tue Jan 17 2012 18:02:25 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 

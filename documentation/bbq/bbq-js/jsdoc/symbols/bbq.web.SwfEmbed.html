@@ -290,13 +290,31 @@ ul.inheritsList
 					<em>Defined in: </em> <a href="../symbols/src/bbq_web_SwfEmbed.js.html">SwfEmbed.js</a>.<br />
 				
 				
-				bbq.web.SwfEmbed
+				
 				
 				<div class="description">
 	Uses the SWFObject library to wrapper an embedded flash movie.
 	
 	
 </div>
+	
+		Supports the following options:
+
+options {
+		swf: string							// Path to the flash movie
+		variables: {						// Variables to pass to the movie in key: value pairs
+			key: value,
+			...
+		},
+		nocache: boolean				// Whether or not to append a cache buster
+		wmode: string					// Specify the wmode to use
+}
+
+Supports the following events:
+
+onLoad
+	
+
 			</p>
 
 <!-- ============================== constructor summary ==================== -->			
@@ -314,7 +332,7 @@ ul.inheritsList
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription" >
 								<div class="fixedFont">
-									<b><a href="../symbols/bbq.web.SwfEmbed.html#constructor">bbq.web.SwfEmbed</a></b>()
+									<b><a href="../symbols/bbq.web.SwfEmbed.html#constructor">bbq.web.SwfEmbed</a></b>(options, variables, nocache, wmode)
 								</div>
 								<div class="description">Uses the SWFObject library to wrapper an embedded flash movie.</div>
 							</td>
@@ -339,10 +357,41 @@ ul.inheritsList
 			
 				
 				
+					<table class="summaryTable zebra-striped" cellspacing="0" summary="A summary of the methods documented in the class bbq.web.SwfEmbed.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.web.SwfEmbed.html#callFlashFunction">callFlashFunction</a></b>(methodName, args)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/bbq.web.SwfEmbed.html#render">render</a></b>(node)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				
 				
 				
 					<dl class="inheritsList">
-					<dt>Methods borrowed from class <a href="../symbols/bbq.gui.GUIWidget.html">bbq.gui.GUIWidget</a>: </dt><dd><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a>, <a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#render">render</a>, <a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>: </dt><dd><a href="../symbols/bbq.lang.Watchable.html#deRegisterListener">deRegisterListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListener">notifyListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListeners">notifyListeners</a>, <a href="../symbols/bbq.lang.Watchable.html#registerListener">registerListener</a>, <a href="../symbols/bbq.lang.Watchable.html#registerOneTimeListener">registerOneTimeListener</a></dd>
+					<dt>Methods borrowed from class <a href="../symbols/bbq.gui.GUIWidget.html">bbq.gui.GUIWidget</a>: </dt><dd><a href="../symbols/bbq.gui.GUIWidget.html#addClass">addClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendBefore">appendBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendChild">appendChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#appendTo">appendTo</a>, <a href="../symbols/bbq.gui.GUIWidget.html#blur">blur</a>, <a href="../symbols/bbq.gui.GUIWidget.html#empty">empty</a>, <a href="../symbols/bbq.gui.GUIWidget.html#focus">focus</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getAttribute">getAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getID">getID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#getStyle">getStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#hide">hide</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertAtTop">insertAtTop</a>, <a href="../symbols/bbq.gui.GUIWidget.html#insertBefore">insertBefore</a>, <a href="../symbols/bbq.gui.GUIWidget.html#isClass">isClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#registerObject">registerObject</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeChild">removeChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#removeClass">removeClass</a>, <a href="../symbols/bbq.gui.GUIWidget.html#replaceChild">replaceChild</a>, <a href="../symbols/bbq.gui.GUIWidget.html#resize">resize</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setAttribute">setAttribute</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setID">setID</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setRootNode">setRootNode</a>, <a href="../symbols/bbq.gui.GUIWidget.html#setStyle">setStyle</a>, <a href="../symbols/bbq.gui.GUIWidget.html#show">show</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Delegator.html">bbq.lang.Delegator</a>: </dt><dd><a href="../symbols/bbq.lang.Delegator.html#delegateMethod">delegateMethod</a></dd><dt>Methods borrowed from class <a href="../symbols/bbq.lang.Watchable.html">bbq.lang.Watchable</a>: </dt><dd><a href="../symbols/bbq.lang.Watchable.html#deRegisterListener">deRegisterListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListener">notifyListener</a>, <a href="../symbols/bbq.lang.Watchable.html#notifyListeners">notifyListeners</a>, <a href="../symbols/bbq.lang.Watchable.html#registerListener">registerListener</a>, <a href="../symbols/bbq.lang.Watchable.html#registerOneTimeListener">registerOneTimeListener</a></dd>
 					</dl>
 				
 			
@@ -355,9 +404,53 @@ ul.inheritsList
 					<a name="constructor"></a>
 					<h2>Constructor Detail</h2>
 					<h3>
-							bbq.web.SwfEmbed()
+							bbq.web.SwfEmbed(options, variables, nocache, wmode)
 					</h3>
 					
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>options </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>options.swf </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>Path to the flash movie</td>
+				</tr>
+			
+				<tr>
+					<td>variables </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>Variables to pass to the movie in key: value pairs</td>
+				</tr>
+			
+				<tr>
+					<td>nocache </td>
+					<td><span class="light fixedFont">{boolean}</span> </td>
+					<td>Whether or not to append a cache buster to the swf url</td>
+				</tr>
+			
+				<tr>
+					<td>wmode </td>
+					<td><span class="light fixedFont">{String}</span> </td>
+					<td>The wmode to use</td>
+				</tr>
+			
+		</tbody>
+	</table>
+
 				</article>
 			
 
@@ -366,13 +459,94 @@ ul.inheritsList
 
 <!-- ============================== method details ========================= -->		
 			
+				<article>
+					<h2>Method Detail</h2>
+					
+						<a name="callFlashFunction"> </a>
+						<h3>
+
+							
+							<b>callFlashFunction</b>(methodName, args)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>methodName </td>
+					<td><span class="light fixedFont">{string}</span> </td>
+					<td></td>
+				</tr>
+			
+				<tr>
+					<td>args </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						<hr />
+					
+						<a name="render"> </a>
+						<h3>
+
+							
+							<b>render</b>(node)
+						</h3>
+
+						<div class="description">
+	
+	
+	
+</div>
+	<table class="parameterlist zebra-striped">
+		<caption class="heading">Parameters:</caption>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Comment</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+				<tr>
+					<td>node </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td></td>
+				</tr>
+			
+		</tbody>
+	</table>
+
+
+						
+					
+				</article>
+			
 
 <!-- ============================== event details ========================= -->		
 			
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Mon Jan 16 2012 15:59:58 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Tue Jan 17 2012 18:02:26 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 
