@@ -5,62 +5,66 @@
 	.STRN {color: #393;}
 	.REGX {color: #339;}
 	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
-	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">/**
-<span class='line'>  2</span>  * For use while testing classes that make AJAX requests to a remote server.
-<span class='line'>  3</span>  *
-<span class='line'>  4</span>  * For example, if you are testing a bit of code that includes the following:
+	</style></head><body><pre><span class='line'>  1</span> <span class="NAME">include</span><span class="PUNC">(</span><span class="NAME">bbq.ajax.AJAXRequest</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  2</span> 
+<span class='line'>  3</span> </span><span class="COMM">/**
+<span class='line'>  4</span>  * For use while testing classes that make AJAX requests to a remote server.
 <span class='line'>  5</span>  *
-<span class='line'>  6</span>  * &lt;pre>
-<span class='line'>  7</span>  * &lt;code class="language-javascript">
-<span class='line'>  8</span>  * new bbq.ajax.JSONRequest({
-<span class='line'>  9</span>  *     url: "/foo/bar",
-<span class='line'> 10</span>  *     args: {
-<span class='line'> 11</span>  *          bar: "baz"
-<span class='line'> 12</span>  *     },
-<span class='line'> 13</span>  *     onSuccess: function(serverResponse, json) {
-<span class='line'> 14</span>  *          alert("server said: " + json.baz);
-<span class='line'> 15</span>  *     }
-<span class='line'> 16</span>  * });
-<span class='line'> 17</span>  * &lt;/code>
-<span class='line'> 18</span>  * &lt;/pre>
-<span class='line'> 19</span>  *
-<span class='line'> 20</span>  * To handle this sort of request, you'd do the following before the AJAX
-<span class='line'> 21</span>  * call is invoked:
-<span class='line'> 22</span>  *
-<span class='line'> 23</span>  * &lt;pre>
-<span class='line'> 24</span>  * &lt;code class="language-javascript">
-<span class='line'> 25</span>  * bbq.ajax.MockAJAXRequest["/foo/bar"] = function(args) {
-<span class='line'> 26</span>  *      return new bbq.ajax.MockJSONResponse({response: {
-<span class='line'> 27</span>  *          baz: "qux"
-<span class='line'> 28</span>  *      }});
-<span class='line'> 29</span>  * }
-<span class='line'> 30</span>  * &lt;/code>
-<span class='line'> 31</span>  * &lt;/pre>
-<span class='line'> 32</span>  *
-<span class='line'> 33</span>  * This will result in the onSuccess handler being called immediately.
+<span class='line'>  6</span>  * For example, if you are testing a bit of code that includes the following:
+<span class='line'>  7</span>  *
+<span class='line'>  8</span>  * &lt;pre>
+<span class='line'>  9</span>  * &lt;code class="language-javascript">
+<span class='line'> 10</span>  * new bbq.ajax.JSONRequest({
+<span class='line'> 11</span>  *     url: "/foo/bar",
+<span class='line'> 12</span>  *     args: {
+<span class='line'> 13</span>  *          bar: "baz"
+<span class='line'> 14</span>  *     },
+<span class='line'> 15</span>  *     onSuccess: function(serverResponse, json) {
+<span class='line'> 16</span>  *          alert("server said: " + json.baz);
+<span class='line'> 17</span>  *     }
+<span class='line'> 18</span>  * });
+<span class='line'> 19</span>  * &lt;/code>
+<span class='line'> 20</span>  * &lt;/pre>
+<span class='line'> 21</span>  *
+<span class='line'> 22</span>  * To handle this sort of request, you'd do the following before the AJAX
+<span class='line'> 23</span>  * call is invoked:
+<span class='line'> 24</span>  *
+<span class='line'> 25</span>  * &lt;pre>
+<span class='line'> 26</span>  * &lt;code class="language-javascript">
+<span class='line'> 27</span>  * bbq.ajax.MockAJAXRequest["/foo/bar"] = function(args) {
+<span class='line'> 28</span>  *      return new bbq.ajax.MockJSONResponse({response: {
+<span class='line'> 29</span>  *          baz: "qux"
+<span class='line'> 30</span>  *      }});
+<span class='line'> 31</span>  * }
+<span class='line'> 32</span>  * &lt;/code>
+<span class='line'> 33</span>  * &lt;/pre>
 <span class='line'> 34</span>  *
-<span class='line'> 35</span>  * @class bbq.ajax.MockAJAXRequest
-<span class='line'> 36</span>  */</span><span class="WHIT">
-<span class='line'> 37</span> </span><span class="NAME">bbq.ajax.MockAJAXRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 38</span> 
-<span class='line'> 39</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 35</span>  * This will result in the onSuccess handler being called immediately.
+<span class='line'> 36</span>  *
+<span class='line'> 37</span>  * @class bbq.ajax.MockAJAXRequest
+<span class='line'> 38</span>  */</span><span class="WHIT">
+<span class='line'> 39</span> </span><span class="NAME">bbq.ajax.MockAJAXRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'> 40</span> 
-<span class='line'> 41</span> </span><span class="COMM">// Overwrite method that sends the AJAX request</span><span class="WHIT">
-<span class='line'> 42</span> </span><span class="NAME">bbq.ajax.AJAXRequest.prototype._sendRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 43</span> </span><span class="WHIT">	</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">result</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 44</span> 
-<span class='line'> 45</span> </span><span class="WHIT">	</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 46</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">bbq.ajax.MockAJAXRequest</span><span class="PUNC">[</span><span class="NAME">this.options.url</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 47</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">handler</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">bbq.ajax.MockAJAXRequest</span><span class="PUNC">[</span><span class="NAME">this.options.url</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 48</span> 
-<span class='line'> 49</span> </span><span class="WHIT">			</span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">handler</span><span class="PUNC">(</span><span class="NAME">this.options.args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 41</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 42</span> 
+<span class='line'> 43</span> </span><span class="COMM">// Overwrite method that sends the AJAX request</span><span class="WHIT">
+<span class='line'> 44</span> </span><span class="NAME">bbq.ajax.AJAXRequest.prototype._sendRequest</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 45</span> </span><span class="WHIT">	</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">result</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 46</span> 
+<span class='line'> 47</span> </span><span class="WHIT">	</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 48</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">bbq.ajax.MockAJAXRequest</span><span class="PUNC">[</span><span class="NAME">this.options.url</span><span class="PUNC">]</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 49</span> </span><span class="WHIT">			</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">handler</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">bbq.ajax.MockAJAXRequest</span><span class="PUNC">[</span><span class="NAME">this.options.url</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 50</span> 
-<span class='line'> 51</span> </span><span class="WHIT">			</span><span class="NAME">this._onSuccess</span><span class="PUNC">(</span><span class="NAME">result</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 52</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 53</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 51</span> </span><span class="WHIT">			</span><span class="NAME">result</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">handler</span><span class="PUNC">(</span><span class="NAME">this.options.args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 52</span> 
+<span class='line'> 53</span> </span><span class="WHIT">			</span><span class="NAME">this._onSuccess</span><span class="PUNC">(</span><span class="NAME">result</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 54</span> 
-<span class='line'> 55</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 56</span> 
-<span class='line'> 57</span> </span><span class="WHIT">	</span><span class="NAME">this._onFailure</span><span class="PUNC">(</span><span class="NAME">result</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 58</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 59</span> </span></pre></body></html>
+<span class='line'> 55</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 56</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 57</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 58</span> 
+<span class='line'> 59</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 60</span> 
+<span class='line'> 61</span> </span><span class="WHIT">	</span><span class="NAME">this._onFailure</span><span class="PUNC">(</span><span class="NAME">result</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 62</span> </span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 63</span> </span></pre></body></html>

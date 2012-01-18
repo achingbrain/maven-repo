@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.7780612244897959" branch-rate="0.7661290322580645" lines-covered="305" lines-valid="392" branches-covered="95" branches-valid="124" complexity="2.1" version="1.9.4.1" timestamp="1326823224878">
+<coverage line-rate="0.7780612244897959" branch-rate="0.7661290322580645" lines-covered="305" lines-valid="392" branches-covered="95" branches-valid="124" complexity="2.1" version="1.9.4.1" timestamp="1326899853029">
 	<sources>
 		<source>/Users/alex/Sites/bbq/bbq-compiler/src/main/java</source>
 		<source>--source</source>
