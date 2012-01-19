@@ -8,38 +8,70 @@
 	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">/**
 <span class='line'>  2</span>  * @class bbq.gui.form.transformer.StringTokeniserTransformer
 <span class='line'>  3</span>  */</span><span class="WHIT">
-<span class='line'>  4</span> </span><span class="NAME">bbq.gui.form.transformer.StringTokeniserTransformer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Class.create</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="NAME">bbq.gui.form.transformer.StringTokeniserTransformer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Class.create</span><span class="PUNC">(</span><span class="COMM">/** @lends bbq.gui.form.transformer.StringTokeniserTransformer.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'>  5</span> </span><span class="WHIT">	</span><span class="NAME">_delimiter</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">","</span><span class="PUNC">,</span><span class="WHIT">
 <span class='line'>  6</span> </span><span class="WHIT">	</span><span class="NAME">_space</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">" "</span><span class="PUNC">,</span><span class="WHIT">
 <span class='line'>  7</span> 
-<span class='line'>  8</span> </span><span class="WHIT">	</span><span class="NAME">initialize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>  9</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 10</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">Object.isUndefined</span><span class="PUNC">(</span><span class="NAME">options.delimiter</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 11</span> </span><span class="WHIT">				</span><span class="NAME">this._delimiter</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options.delimiter</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 12</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 13</span> 
-<span class='line'> 14</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">Object.isUndefined</span><span class="PUNC">(</span><span class="NAME">options.space</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 15</span> </span><span class="WHIT">				</span><span class="NAME">this._space</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options.space</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 16</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 17</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 18</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'> 19</span> 
-<span class='line'> 20</span> </span><span class="WHIT">	</span><span class="NAME">transform</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 21</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">output</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 22</span> 
-<span class='line'> 23</span> </span><span class="WHIT">		</span><span class="NAME">value.split</span><span class="PUNC">(</span><span class="NAME">this._delimiter</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">part</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 24</span> </span><span class="WHIT">			</span><span class="NAME">part</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">part.strip</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 25</span> 
-<span class='line'> 26</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">part</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 27</span> </span><span class="WHIT">				</span><span class="NAME">output.push</span><span class="PUNC">(</span><span class="NAME">part</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 28</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 29</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 30</span> 
-<span class='line'> 31</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">output</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 32</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'> 33</span> 
-<span class='line'> 34</span> </span><span class="WHIT">	</span><span class="NAME">deTransform</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 35</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">value.join</span><span class="PUNC">(</span><span class="NAME">this._delimiter</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">this._space</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 36</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 37</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 38</span> </span></pre></body></html>
+<span class='line'>  8</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'>  9</span> 	 * Lets you take a string, "one, two, three" and return ["one", "two", "three"]
+<span class='line'> 10</span> 	 *
+<span class='line'> 11</span> 	 * @constructs
+<span class='line'> 12</span> 	 * @example
+<span class='line'> 13</span> 	 * &lt;pre>&lt;code class="language-javascript">
+<span class='line'> 14</span> 	 * var field = new bbq.gui.form.TextField();
+<span class='line'> 15</span> 	 * field.setTransformer(new bbq.gui.form.transformer.StringTokeniserTransformer());
+<span class='line'> 16</span> 	 * field.setValue("one, two, three");
+<span class='line'> 17</span> 	 *
+<span class='line'> 18</span> 	 * // returns ["one", "two", "three"]
+<span class='line'> 19</span> 	 * field.getValue();
+<span class='line'> 20</span> 	 * &lt;/code>&lt;/pre>
+<span class='line'> 21</span> 	 * @example
+<span class='line'> 22</span> 	 * &lt;pre>&lt;code class="language-javascript">
+<span class='line'> 23</span> 	 * var field = new bbq.gui.form.TextField();
+<span class='line'> 24</span> 	 * field.setTransformer(new bbq.gui.form.transformer.StringTokeniserTransformer({
+<span class='line'> 25</span> 	 *     delimiter: "-"
+<span class='line'> 26</span> 	 * }));
+<span class='line'> 27</span> 	 * field.setValue("one-two-three");
+<span class='line'> 28</span> 	 *
+<span class='line'> 29</span> 	 * // returns ["one", "two", "three"]
+<span class='line'> 30</span> 	 * field.getValue();
+<span class='line'> 31</span> 	 * &lt;/code>&lt;/pre>
+<span class='line'> 32</span> 	 * @param {Object} options
+<span class='line'> 33</span> 	 * @param {String} options.delimiter The delimiter to split the string by
+<span class='line'> 34</span> 	 * @param {String} options.space Used to join the split values back together along with the delimiter
+<span class='line'> 35</span> 	 */</span><span class="WHIT">
+<span class='line'> 36</span> </span><span class="WHIT">	</span><span class="NAME">initialize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 37</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 38</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">Object.isUndefined</span><span class="PUNC">(</span><span class="NAME">options.delimiter</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 39</span> </span><span class="WHIT">				</span><span class="NAME">this._delimiter</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options.delimiter</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 40</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 41</span> 
+<span class='line'> 42</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">Object.isUndefined</span><span class="PUNC">(</span><span class="NAME">options.space</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 43</span> </span><span class="WHIT">				</span><span class="NAME">this._space</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">options.space</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 44</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 45</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 46</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 47</span> 
+<span class='line'> 48</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'> 49</span> 	 * @param {Object} value
+<span class='line'> 50</span> 	 * @returns {Object} Returns the transformed value
+<span class='line'> 51</span> 	 */</span><span class="WHIT">
+<span class='line'> 52</span> </span><span class="WHIT">	</span><span class="NAME">transform</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 53</span> </span><span class="WHIT">		</span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">output</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="PUNC">[</span><span class="PUNC">]</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 54</span> 
+<span class='line'> 55</span> </span><span class="WHIT">		</span><span class="NAME">value.split</span><span class="PUNC">(</span><span class="NAME">this._delimiter</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">part</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 56</span> </span><span class="WHIT">			</span><span class="NAME">part</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">part.strip</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 57</span> 
+<span class='line'> 58</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">part</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 59</span> </span><span class="WHIT">				</span><span class="NAME">output.push</span><span class="PUNC">(</span><span class="NAME">part</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 60</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 61</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 62</span> 
+<span class='line'> 63</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">output</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 64</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 65</span> 
+<span class='line'> 66</span> </span><span class="WHIT">	</span><span class="NAME">deTransform</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 67</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">value.join</span><span class="PUNC">(</span><span class="NAME">this._delimiter</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">this._space</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 68</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 69</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 70</span> </span></pre></body></html>

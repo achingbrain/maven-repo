@@ -27,117 +27,115 @@
 <span class='line'> 20</span> </span><span class="WHIT">		</span><span class="COMM">//Log.info("Page constructor");</span><span class="WHIT">
 <span class='line'> 21</span> </span><span class="WHIT">		</span><span class="NAME">currentPage</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">this</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 22</span> </span><span class="WHIT">		</span><span class="NAME">this._options</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="NAME">args</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="PUNC">}</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 23</span> </span><span class="WHIT">		
-<span class='line'> 24</span> 		</span><span class="NAME">DOMUtil.checkDOM</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 25</span> </span><span class="WHIT">		
-<span class='line'> 26</span> 		</span><span class="NAME">Event.observe</span><span class="PUNC">(</span><span class="NAME">window</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"resize"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.resizePanels.bindAsEventListener</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 27</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'> 28</span> 
-<span class='line'> 29</span> </span><span class="WHIT">	</span><span class="COMM">/**
-<span class='line'> 30</span> 	 * Greys out the page and shows the passed element in the middle.  The passed element should
-<span class='line'> 31</span> 	 * extend bbq.gui.GUIWidget
-<span class='line'> 32</span> 	 * 
-<span class='line'> 33</span> 	 * @param	 bbq.gui.GUIWidget} guiWidget
-<span class='line'> 34</span> 	 */</span><span class="WHIT">
-<span class='line'> 35</span> </span><span class="WHIT">	</span><span class="NAME">addModalLayer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">guiWidget</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 36</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 37</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._modalLayer</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 38</span> </span><span class="WHIT">				</span><span class="NAME">this._modalLayer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">DOMUtil.createElement</span><span class="PUNC">(</span><span class="STRN">"div"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">className</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"modalLayer"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">style</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">display</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"none"</span><span class="PUNC">}</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 39</span> </span><span class="WHIT">				</span><span class="NAME">document.body.appendChild</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 40</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 41</span> 
-<span class='line'> 42</span> </span><span class="WHIT">			</span><span class="NAME">this._modalLayerContents</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">guiWidget</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 43</span> </span><span class="WHIT">			</span><span class="NAME">this._modalLayerContents.setStyle</span><span class="PUNC">(</span><span class="STRN">"display"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"none"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 44</span> </span><span class="WHIT">			</span><span class="NAME">this._modalLayerContents.appendTo</span><span class="PUNC">(</span><span class="NAME">document.body</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 45</span> 
-<span class='line'> 46</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">Browser.Mozilla</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">Browser.version</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">3</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="COMM">// stop scroll bars from showing through modal layer</span><span class="WHIT">
-<span class='line'> 47</span> </span><span class="WHIT">				</span><span class="NAME">$$</span><span class="PUNC">(</span><span class="STRN">".ScrollableHolder"</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">element</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 48</span> </span><span class="WHIT">					</span><span class="NAME">element.style.overflow</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"hidden"</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 49</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 50</span> 
-<span class='line'> 51</span> </span><span class="WHIT">				</span><span class="NAME">$$</span><span class="PUNC">(</span><span class="STRN">".FloatingWindow .ScrollableHolder"</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">element</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 52</span> </span><span class="WHIT">					</span><span class="NAME">element.style.overflow</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"auto"</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 53</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 54</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 55</span> 
-<span class='line'> 56</span> </span><span class="WHIT">			</span><span class="NAME">Effect.Appear</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 57</span> </span><span class="WHIT">				</span><span class="NAME">duration</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.25</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'> 58</span> </span><span class="WHIT">				</span><span class="NAME">to</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.8</span><span class="WHIT">
-<span class='line'> 59</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 60</span> </span><span class="WHIT">			
-<span class='line'> 61</span> 			</span><span class="NAME">Effect.Appear</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 62</span> </span><span class="WHIT">				</span><span class="NAME">duration</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.25</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'> 63</span> </span><span class="WHIT">				</span><span class="NAME">to</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="WHIT">
-<span class='line'> 64</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 65</span> 
-<span class='line'> 66</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents.appear</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this._modalLayerContents.disappear</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 67</span> </span><span class="WHIT">				</span><span class="COMM">// bbq.gui.FloatingWindow</span><span class="WHIT">
-<span class='line'> 68</span> </span><span class="WHIT">				</span><span class="NAME">this._modalLayerContents.appear</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 69</span> </span><span class="WHIT">				</span><span class="NAME">this._modalLayerContents.registerOneTimeListener</span><span class="PUNC">(</span><span class="STRN">"onDisppear"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.clearModalLayer.bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 70</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 71</span> 
-<span class='line'> 72</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">guiWidget</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 73</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 74</span> </span><span class="WHIT">			</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error adding modal layer"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 75</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 76</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'> 77</span> 
-<span class='line'> 78</span> </span><span class="WHIT">	</span><span class="COMM">/**
-<span class='line'> 79</span> 	 * Fades out the layers added by bbq.page.Page#addModalLayer
-<span class='line'> 80</span> 	 *
-<span class='line'> 81</span> 	 * @see bbq.page.Page#addModalLayer
-<span class='line'> 82</span> 	 */</span><span class="WHIT">
-<span class='line'> 83</span> </span><span class="WHIT">	</span><span class="NAME">clearModalLayer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 84</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._fatalError</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 85</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 86</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 87</span> </span><span class="WHIT">		
-<span class='line'> 88</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 89</span> </span><span class="WHIT">			</span><span class="NAME">Effect.Fade</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 90</span> </span><span class="WHIT">				</span><span class="NAME">duration</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.25</span><span class="WHIT">
-<span class='line'> 91</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 92</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 93</span> 
-<span class='line'> 94</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 95</span> </span><span class="WHIT">			</span><span class="NAME">Effect.Fade</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 96</span> </span><span class="WHIT">				</span><span class="NAME">duration</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.25</span><span class="WHIT">
-<span class='line'> 97</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 98</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 99</span> 
-<span class='line'>100</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">Browser.Mozilla</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">Browser.version</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">3</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="COMM">// re-enable scroll bars</span><span class="WHIT">
-<span class='line'>101</span> </span><span class="WHIT">			</span><span class="NAME">$$</span><span class="PUNC">(</span><span class="STRN">".ScrollableHolder"</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">element</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>102</span> </span><span class="WHIT">				</span><span class="NAME">element.style.overflow</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"auto"</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>103</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>104</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>105</span> 
-<span class='line'>106</span> </span><span class="WHIT">		</span><span class="NAME">setTimeout</span><span class="PUNC">(</span><span class="NAME">this._removeModalLayer.bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">600</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>107</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>108</span> 
-<span class='line'>109</span> </span><span class="WHIT">	</span><span class="COMM">/**
-<span class='line'>110</span> 	 * Removes the layers added by com.proxim.page.Page.addModalLayer from the document tree
-<span class='line'>111</span> 	 */</span><span class="WHIT">
-<span class='line'>112</span> </span><span class="WHIT">	</span><span class="NAME">_removeModalLayer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>113</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._fatalError</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>114</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>115</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>116</span> 
-<span class='line'>117</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._modalLayer</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this._modalLayer.parentNode</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">document.body</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>118</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>119</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>120</span> 
-<span class='line'>121</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._modalLayerContents</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">this._modalLayerContents.rootNode</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this._modalLayerContents.rootNode.parentNode</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">document.body</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>122</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>123</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>124</span> 
-<span class='line'>125</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>126</span> </span><span class="WHIT">			</span><span class="NAME">document.body.removeChild</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>127</span> </span><span class="WHIT">			</span><span class="NAME">document.body.removeChild</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents.rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>128</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>129</span> </span><span class="WHIT">			</span><span class="NAME">Log.warn</span><span class="PUNC">(</span><span class="STRN">"Exception thrown while removing modal layer - "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>130</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>131</span> 
-<span class='line'>132</span> </span><span class="WHIT">		</span><span class="NAME">this._modalLayer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>133</span> </span><span class="WHIT">		</span><span class="NAME">this._modalLayerContents</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>134</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'>135</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'>136</span> </span></pre></body></html>
+<span class='line'> 23</span> 
+<span class='line'> 24</span> </span><span class="WHIT">		</span><span class="NAME">DOMUtil.checkDOM</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 25</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 26</span> 
+<span class='line'> 27</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'> 28</span> 	 * Greys out the page and shows the passed element in the middle.  The passed element should
+<span class='line'> 29</span> 	 * extend bbq.gui.GUIWidget
+<span class='line'> 30</span> 	 * 
+<span class='line'> 31</span> 	 * @param	 bbq.gui.GUIWidget} guiWidget
+<span class='line'> 32</span> 	 */</span><span class="WHIT">
+<span class='line'> 33</span> </span><span class="WHIT">	</span><span class="NAME">addModalLayer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">guiWidget</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 34</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 35</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._modalLayer</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 36</span> </span><span class="WHIT">				</span><span class="NAME">this._modalLayer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">DOMUtil.createElement</span><span class="PUNC">(</span><span class="STRN">"div"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">className</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"modalLayer"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">style</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="NAME">display</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">"none"</span><span class="PUNC">}</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 37</span> </span><span class="WHIT">				</span><span class="NAME">document.body.appendChild</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 38</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 39</span> 
+<span class='line'> 40</span> </span><span class="WHIT">			</span><span class="NAME">this._modalLayerContents</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">guiWidget</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 41</span> </span><span class="WHIT">			</span><span class="NAME">this._modalLayerContents.setStyle</span><span class="PUNC">(</span><span class="STRN">"display"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">"none"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 42</span> </span><span class="WHIT">			</span><span class="NAME">this._modalLayerContents.appendTo</span><span class="PUNC">(</span><span class="NAME">document.body</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 43</span> 
+<span class='line'> 44</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">Browser.Mozilla</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">Browser.version</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">3</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="COMM">// stop scroll bars from showing through modal layer</span><span class="WHIT">
+<span class='line'> 45</span> </span><span class="WHIT">				</span><span class="NAME">$$</span><span class="PUNC">(</span><span class="STRN">".ScrollableHolder"</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">element</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 46</span> </span><span class="WHIT">					</span><span class="NAME">element.style.overflow</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"hidden"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 47</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 48</span> 
+<span class='line'> 49</span> </span><span class="WHIT">				</span><span class="NAME">$$</span><span class="PUNC">(</span><span class="STRN">".FloatingWindow .ScrollableHolder"</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">element</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 50</span> </span><span class="WHIT">					</span><span class="NAME">element.style.overflow</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"auto"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 51</span> </span><span class="WHIT">				</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 52</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 53</span> 
+<span class='line'> 54</span> </span><span class="WHIT">			</span><span class="NAME">Effect.Appear</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 55</span> </span><span class="WHIT">				</span><span class="NAME">duration</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.25</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 56</span> </span><span class="WHIT">				</span><span class="NAME">to</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.8</span><span class="WHIT">
+<span class='line'> 57</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 58</span> </span><span class="WHIT">			
+<span class='line'> 59</span> 			</span><span class="NAME">Effect.Appear</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 60</span> </span><span class="WHIT">				</span><span class="NAME">duration</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.25</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 61</span> </span><span class="WHIT">				</span><span class="NAME">to</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">1</span><span class="WHIT">
+<span class='line'> 62</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 63</span> 
+<span class='line'> 64</span> </span><span class="WHIT">			</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents.appear</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">this._modalLayerContents.disappear</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 65</span> </span><span class="WHIT">				</span><span class="COMM">// bbq.gui.FloatingWindow</span><span class="WHIT">
+<span class='line'> 66</span> </span><span class="WHIT">				</span><span class="NAME">this._modalLayerContents.appear</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 67</span> </span><span class="WHIT">				</span><span class="NAME">this._modalLayerContents.registerOneTimeListener</span><span class="PUNC">(</span><span class="STRN">"onDisppear"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">this.clearModalLayer.bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 68</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 69</span> 
+<span class='line'> 70</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">guiWidget</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 71</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 72</span> </span><span class="WHIT">			</span><span class="NAME">Log.error</span><span class="PUNC">(</span><span class="STRN">"Error adding modal layer"</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 73</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 74</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 75</span> 
+<span class='line'> 76</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'> 77</span> 	 * Fades out the layers added by bbq.page.Page#addModalLayer
+<span class='line'> 78</span> 	 *
+<span class='line'> 79</span> 	 * @see bbq.page.Page#addModalLayer
+<span class='line'> 80</span> 	 */</span><span class="WHIT">
+<span class='line'> 81</span> </span><span class="WHIT">	</span><span class="NAME">clearModalLayer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 82</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._fatalError</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 83</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 84</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 85</span> </span><span class="WHIT">		
+<span class='line'> 86</span> 		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 87</span> </span><span class="WHIT">			</span><span class="NAME">Effect.Fade</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 88</span> </span><span class="WHIT">				</span><span class="NAME">duration</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.25</span><span class="WHIT">
+<span class='line'> 89</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 90</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 91</span> 
+<span class='line'> 92</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 93</span> </span><span class="WHIT">			</span><span class="NAME">Effect.Fade</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents.getRootNode</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 94</span> </span><span class="WHIT">				</span><span class="NAME">duration</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="NUMB">0.25</span><span class="WHIT">
+<span class='line'> 95</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 96</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 97</span> 
+<span class='line'> 98</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">Browser.Mozilla</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">Browser.version</span><span class="WHIT"> </span><span class="PUNC">&lt;</span><span class="WHIT"> </span><span class="NUMB">3</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="COMM">// re-enable scroll bars</span><span class="WHIT">
+<span class='line'> 99</span> </span><span class="WHIT">			</span><span class="NAME">$$</span><span class="PUNC">(</span><span class="STRN">".ScrollableHolder"</span><span class="PUNC">)</span><span class="PUNC">.</span><span class="NAME">each</span><span class="PUNC">(</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">element</span><span class="PUNC">)</span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>100</span> </span><span class="WHIT">				</span><span class="NAME">element.style.overflow</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">"auto"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>101</span> </span><span class="WHIT">			</span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>102</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>103</span> 
+<span class='line'>104</span> </span><span class="WHIT">		</span><span class="NAME">setTimeout</span><span class="PUNC">(</span><span class="NAME">this._removeModalLayer.bind</span><span class="PUNC">(</span><span class="KEYW">this</span><span class="PUNC">)</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NUMB">600</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>105</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'>106</span> 
+<span class='line'>107</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'>108</span> 	 * Removes the layers added by com.proxim.page.Page.addModalLayer from the document tree
+<span class='line'>109</span> 	 */</span><span class="WHIT">
+<span class='line'>110</span> </span><span class="WHIT">	</span><span class="NAME">_removeModalLayer</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>111</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">this._fatalError</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>112</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>113</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>114</span> 
+<span class='line'>115</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._modalLayer</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this._modalLayer.parentNode</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">document.body</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>116</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>117</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>118</span> 
+<span class='line'>119</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="PUNC">!</span><span class="NAME">this._modalLayerContents</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="PUNC">!</span><span class="NAME">this._modalLayerContents.rootNode</span><span class="WHIT"> </span><span class="PUNC">||</span><span class="WHIT"> </span><span class="NAME">this._modalLayerContents.rootNode.parentNode</span><span class="WHIT"> </span><span class="PUNC">!=</span><span class="WHIT"> </span><span class="NAME">document.body</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>120</span> </span><span class="WHIT">			</span><span class="KEYW">return</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>121</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>122</span> 
+<span class='line'>123</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>124</span> </span><span class="WHIT">			</span><span class="NAME">document.body.removeChild</span><span class="PUNC">(</span><span class="NAME">this._modalLayer</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>125</span> </span><span class="WHIT">			</span><span class="NAME">document.body.removeChild</span><span class="PUNC">(</span><span class="NAME">this._modalLayerContents.rootNode</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>126</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT"> </span><span class="KEYW">catch</span><span class="PUNC">(</span><span class="NAME">e</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>127</span> </span><span class="WHIT">			</span><span class="NAME">Log.warn</span><span class="PUNC">(</span><span class="STRN">"Exception thrown while removing modal layer - "</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="NAME">e</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>128</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>129</span> 
+<span class='line'>130</span> </span><span class="WHIT">		</span><span class="NAME">this._modalLayer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>131</span> </span><span class="WHIT">		</span><span class="NAME">this._modalLayerContents</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">null</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>132</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>133</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>134</span> </span></pre></body></html>

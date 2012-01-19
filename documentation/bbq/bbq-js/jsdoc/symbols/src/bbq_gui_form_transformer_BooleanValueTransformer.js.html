@@ -5,21 +5,40 @@
 	.STRN {color: #393;}
 	.REGX {color: #339;}
 	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
-	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">/**
-<span class='line'>  2</span>  * @class bbq.gui.form.transformer.BooleanValueTransformer
-<span class='line'>  3</span>  */</span><span class="WHIT">
-<span class='line'>  4</span> </span><span class="NAME">bbq.gui.form.transformer.BooleanValueTransformer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Class.create</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>  5</span> 
-<span class='line'>  6</span> </span><span class="WHIT">	</span><span class="NAME">initialize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>  7</span> 
-<span class='line'>  8</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
-<span class='line'>  9</span> 
-<span class='line'> 10</span> </span><span class="WHIT">	</span><span class="NAME">transform</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 11</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">value.strip</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 12</span> </span><span class="WHIT">			</span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">value.strip</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 13</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 14</span> 
-<span class='line'> 15</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 16</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
-<span class='line'> 17</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
-<span class='line'> 18</span> </span></pre></body></html>
+	</style></head><body><pre><span class='line'>  1</span> <span class="WHIT">
+<span class='line'>  2</span> </span><span class="NAME">bbq.gui.form.transformer.BooleanValueTransformer</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Class.create</span><span class="PUNC">(</span><span class="COMM">/** @lends bbq.gui.form.transformer.BooleanValueTransformer.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  3</span> 
+<span class='line'>  4</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'>  5</span> 	 * This class prevents transmission of 0 as false, 1 as true, etc, instead constraining
+<span class='line'>  6</span> 	 * them to boolean true and false values.
+<span class='line'>  7</span> 	 *
+<span class='line'>  8</span> 	 * @constructs
+<span class='line'>  9</span> 	 * @example
+<span class='line'> 10</span> 	 * &lt;pre>&lt;code class="language-javascript">
+<span class='line'> 11</span> 	 * var field = new bbq.gui.form.TextField();
+<span class='line'> 12</span> 	 * field.setTransformer(new bbq.gui.form.transformer.BooleanValueTransformer());
+<span class='line'> 13</span> 	 * field.setValue("true");
+<span class='line'> 14</span> 	 *
+<span class='line'> 15</span> 	 * // returns true, not "true"
+<span class='line'> 16</span> 	 * field.getValue();
+<span class='line'> 17</span> 	 * &lt;/code>&lt;/pre>
+<span class='line'> 18</span> 	 */</span><span class="WHIT">
+<span class='line'> 19</span> </span><span class="WHIT">	</span><span class="NAME">initialize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 20</span> 
+<span class='line'> 21</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="PUNC">,</span><span class="WHIT">
+<span class='line'> 22</span> 
+<span class='line'> 23</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'> 24</span> 	 * Transforms the passed value into a boolean true or false.
+<span class='line'> 25</span> 	 *
+<span class='line'> 26</span> 	 * @param {Object} value
+<span class='line'> 27</span> 	 * @returns {Object} Returns the transformed value
+<span class='line'> 28</span> 	 */</span><span class="WHIT">
+<span class='line'> 29</span> </span><span class="WHIT">	</span><span class="NAME">transform</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">value</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 30</span> </span><span class="WHIT">		</span><span class="KEYW">if</span><span class="PUNC">(</span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">&&</span><span class="WHIT"> </span><span class="NAME">value.strip</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 31</span> </span><span class="WHIT">			</span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">value.strip</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 32</span> </span><span class="WHIT">		</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 33</span> 
+<span class='line'> 34</span> </span><span class="WHIT">		</span><span class="KEYW">return</span><span class="WHIT"> </span><span class="NAME">value</span><span class="WHIT"> </span><span class="PUNC">?</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 35</span> </span><span class="WHIT">	</span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 36</span> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 37</span> </span></pre></body></html>

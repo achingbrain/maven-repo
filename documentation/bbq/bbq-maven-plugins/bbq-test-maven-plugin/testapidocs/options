@@ -16,6 +16,8 @@
 'UTF-8'
 -doctitle
 'bbq-test-maven-plugin 1.1.4-SNAPSHOT Test API'
+-link
+'../apidocs'
 -linkoffline
 'http://download.oracle.com/javase/6/docs/api' '/Users/alex/Sites/bbq/bbq-maven-plugins/bbq-test-maven-plugin/target/javadoc-bundle-options'
 -linkoffline

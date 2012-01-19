@@ -8,14 +8,14 @@
 	</style></head><body><pre><span class='line'>  1</span> <span class="NAME">include</span><span class="PUNC">(</span><span class="NAME">bbq.gui.form.TextField</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>  2</span> </span><span class="NAME">include</span><span class="PUNC">(</span><span class="NAME">bbq.gui.form.validator.EmailValidator</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'>  3</span> 
-<span class='line'>  4</span> </span><span class="COMM">/**
-<span class='line'>  5</span>  * @class bbq.gui.form.EmailField
-<span class='line'>  6</span>  * @extends bbq.gui.form.TextField
-<span class='line'>  7</span>  */</span><span class="WHIT">
-<span class='line'>  8</span> </span><span class="NAME">bbq.gui.form.EmailField</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Class.create</span><span class="PUNC">(</span><span class="NAME">bbq.gui.form.TextField</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'>  9</span> </span><span class="WHIT">	</span><span class="NAME">initialize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">$super</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">args</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="NAME">bbq.gui.form.EmailField</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Class.create</span><span class="PUNC">(</span><span class="NAME">bbq.gui.form.TextField</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="COMM">/** @lends bbq.gui.form.EmailField.prototype */</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="WHIT">	</span><span class="COMM">/**
+<span class='line'>  6</span> 	 * @extends bbq.gui.form.TextField
+<span class='line'>  7</span> 	 * @param options
+<span class='line'>  8</span> 	 */</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="WHIT">	</span><span class="NAME">initialize</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">$super</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">options</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
 <span class='line'> 10</span> </span><span class="WHIT">		</span><span class="KEYW">try</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
-<span class='line'> 11</span> </span><span class="WHIT">			</span><span class="NAME">$super</span><span class="PUNC">(</span><span class="NAME">args</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 11</span> </span><span class="WHIT">			</span><span class="NAME">$super</span><span class="PUNC">(</span><span class="NAME">options</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 12</span> 
 <span class='line'> 13</span> </span><span class="WHIT">			</span><span class="NAME">this.addClass</span><span class="PUNC">(</span><span class="STRN">"EmailField"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
 <span class='line'> 14</span> 
