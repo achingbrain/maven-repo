@@ -85,123 +85,95 @@
       <div id="bodyColumn" class="content">
         <div id="contentBox">
                               
-          <h2>Unit testing JavaScript</h2>
+          <h2>DOMUtil</h2>
 
-<p>bbq includes a suite of <a href="http://en.wikipedia.org/wiki/Unit_testing">unit testing</a> tools for JavaScript.  Place your unit tests in src/test/javascript - see the <a href="guide-project-structure.html">project structure</a> page for more.</p>
+<p>Working with DOM nodes is a pain.  Code using <a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/core.html#ID-2141741547">document.createElement</a> tends to be incredibly verbose and just not much fun.</p>
 
-<pre><code>+- src/
-   +- test/
-      +- javascript/
-</code></pre>
-
-<h2>Setup</h2>
-
-<p>Declare the bbq-test-maven-plugin in the build section of your pom.xml</p>
-
-<pre><code>&lt;plugin&gt;
-    &lt;groupId&gt;org.bbqjs&lt;/groupId&gt;
-    &lt;artifactId&gt;bbq-test-maven-plugin&lt;/artifactId&gt;
-    &lt;version&gt;${currentVersion}&lt;/version&gt;
-    &lt;executions&gt;
-        &lt;execution&gt;
-            &lt;goals&gt;
-                &lt;goal&gt;test&lt;/goal&gt;
-            &lt;/goals&gt;
-        &lt;/execution&gt;
-    &lt;/executions&gt;
-    &lt;configuration&gt;
-        &lt;includes&gt;
-            &lt;include&gt;javascript/libs/unittest-1.8.0.js&lt;/include&gt;
-        &lt;/includes&gt;
-    &lt;/configuration&gt;
-&lt;/plugin&gt;
-</code></pre>
-
-<p>bbq supports headless JavaScript unit tests intended to be run as part of your <a href="http://en.wikipedia.org/wiki/Continuous_integration">CI</a> build.</p>
-
-<h2>Including libraries in the test environment</h2>
-
-<p>You can include arbitrary JavaScript files and/or libraries in your tests using the configuration > includes > include elements.</p>
-
-<p>N.B. you must include a unit test framework.</p>
-
-<h2>An example test</h2>
-
-<p>By default bbq uses the <a href="http://madrobby.github.com/scriptaculous/unit-testing/">unit testing framework supplied with Scriptaculous</a>.  A sample test would look like:</p>
+<p>Prototype provides some convenient shortcuts for creating DOM nodes:</p>
 
 <pre><code class="language-javascript">
-include(com.myapp.MyClass);
-
-test = new Test.Unit.Runner({
-    subject: null,
-
-    setup: function() {
-        with (this) {
-            this.subject = new com.myapp.MyClass();
-        }
-    },
-
-    teardown: function() {
-        with (this) {
-
-        }
-    },
-
-    testSomething: function() {
-        with (this) {
-            var expected = "foo";
-
-            this.assertEqual(expected, this.subject.bar());
-        }
-    }
-});
+var a = new Element("a", { "class": "foo", href: "/foo.html" }).update("Next page");
 </code></pre>
 
-<p>Tests are run headlessly under <a href="http://www.mozilla.org/rhino/">Mozilla Rhino</a> and include a pretty good DOM implementation courtesty of <a href="http://www.envjs.com/">env.js</a>.</p>
-
-<p>Each test file is compiled before it is run so you you can use</p>
+<p>The only problem here is if you are interacting with a bbq <a href="guide-guiwidget.html">GUIWidget</a>.</p>
 
 <pre><code class="language-javascript">
-    include()
+var button = new bbq.gui.button.GUIButton({text: "Next page", onClick: function() {
+    // some code here
+}});
+
+var div = new Element("div", { "class": "foo" });
+
+// kaboom!
+div.update(button);
+
+// kaboom!
+div.appendChild(button);
 </code></pre>
 
-<p>in your tests in the same way as your main JavaScript classes.</p>
+<p>Enter <a href="bbq-js/jsdoc/symbols/DOMUtil.html">DOMUtil</a>.  This class has some utility methods which know the difference between <a href="guide-guiwidget.html">GUIWidget</a>s DOM nodes and strings so it's safe to pass anything in.</p>
 
-<h2>Running individual tests</h2>
+<h2>DOMUtil#createElement</h2>
 
-<p>To run an individual test, specify the fully qualified test class name as the bbq.test environmental parameter.  ie.</p>
-
-<pre><code>mvn bbq-test:test -Dbbq.test=com.myapp.MyClassTest
-</code></pre>
-
-<h2>Mocking the server</h2>
-
-<p>See the <a href="bbq-js-test/jsdoc/symbols/bbq.ajax.MockAJAXRequest.html">bbq.ajax.MockAJAXRequest</a> JSDoc page for details on how to mock the server receiving AJAX requests in your unit tests.</p>
-
-<h2>Using your own test runner</h2>
-
-<p>To run with bbq-js a JavaScript unit test file should have a global variable named "test" which has a method named "summary"  This method should return an object like this:</p>
+<p>The first argument to <a href="bbq-js/jsdoc/symbols/DOMUtil.html#.createElement">DOMUtil#createElement</a> is the name of the element you wish to create as a string.  The last argument is a key/value object that will be applied to the returned element as attributes.  If you pass three arguments, the second argument becomes the contents of the element.  This can be a string, a GUIWidget, a node or an array containing any combination of the three.</p>
 
 <pre><code class="language-javascript">
-{
-    // The number of tests run
-    tests: 0,
+var button = new bbq.gui.button.GUIButton({text: "Next page", onClick: function() {
+    // some code here
+}});
 
-    // How many failed
-    failed: 0,
+// the button above is the contents of the div
+var div = DOMUtil.createElement("div", button, { className: "foo" });
 
-    // How many errors occured
-    errors: 0,
-
-    // Any error messages
-    messages: [
-        "A list of error messages",
-        "Another error message"
-    ]
-}
+// This time include an instruction as well
+var div2 = DOMUtil.createElement("div", ["Click this: ", button], { className: "foo" });
 </code></pre>
 
-<p>This is the format supported by Scriptaculous' test runner.  If you wish to use something different it should follow the rules above.</p>
+<p>Alternatively, with a DOM Node and a GUIWidget passed in:</p>
+
+<pre><code class="language-javascript">
+var button = new bbq.gui.button.GUIButton({text: "Next page", onClick: function() {
+    // some code here
+}});
+
+var div = DOMUtil.createElement("div", [
+    DOMUtil.createElement("label", "Click this:"),
+    button
+], { className: "foo", "style": {"border": "1px solid #F10"} });
+</code></pre>
+
+<h2>DOMUtil#emptyNode</h2>
+
+<p><a href="bbq-js/jsdoc/symbols/DOMUtil.html#.emptyNode">DOMUtil#emptyNode</a> takes a Node/GUIWidget as an argument and removes all of it's children.</p>
+
+<pre><code class="language-javascript">
+// create node that has markup &lt;span&gt;foo&lt;/span&gt;
+var node = DOMUtil.createElement("span", "foo");
+
+DOMUtil.emptyNode(node);
+
+// node is now &lt;span&gt;&lt;/span&gt;
+</code></pre>
+
+<h2>DOMUtil#isInDOM</h2>
+
+<p><a href="bbq-js/jsdoc/symbols/DOMUtil.html#.isInDOM">DOMUtil#isInDom</a> returns true if the passed node is in the DOM, false otherwise.</p>
+
+<pre><code class="language-javascript">
+// create node that has markup <span>foo</span>
+var node = DOMUtil.createElement("span", "foo");
+
+// false
+DOMUtil.isInDom(node);
+
+// add it to the DOM
+document.body.appendChild(node);
+
+// true
+DOMUtil.isInDOM(node);
+</code></pre>
+
+<p>See the <a href="bbq-js/jsdoc/symbols/DOMUtil.html">JSDocs</a> for further discussion.</p>
 
                   </div>
       </div>

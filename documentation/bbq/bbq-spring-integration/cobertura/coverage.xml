@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="329" branches-covered="0" branches-valid="84" complexity="2.0317460317460316" version="1.9.4.1" timestamp="1327079652020">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="329" branches-covered="0" branches-valid="84" complexity="2.0317460317460316" version="1.9.4.1" timestamp="1327510621471">
 	<sources>
 		<source>/Users/alex/Sites/bbq/bbq-spring-integration/src/main/java</source>
 		<source>--source</source>

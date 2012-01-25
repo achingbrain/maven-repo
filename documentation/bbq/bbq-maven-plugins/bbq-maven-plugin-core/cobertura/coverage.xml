@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="173" branches-covered="0" branches-valid="6" complexity="1.178082191780822" version="1.9.4.1" timestamp="1327079490961">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="173" branches-covered="0" branches-valid="6" complexity="1.178082191780822" version="1.9.4.1" timestamp="1327510494619">
 	<sources>
 		<source>/Users/alex/Sites/bbq/bbq-maven-plugins/bbq-maven-plugin-core/src/main/java</source>
 		<source>--source</source>

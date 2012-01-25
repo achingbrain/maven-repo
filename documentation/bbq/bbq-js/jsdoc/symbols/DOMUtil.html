@@ -386,7 +386,7 @@ ul.inheritsList
 							<tr>
 								<td class="attributes">&lt;static&gt; &nbsp;</td>
 								<td class="nameDescription">
-									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createElement">createElement</a></b>(tagName, attributes, arg3)
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.createElement">createElement</a></b>(Tag, The, Attributes)
 									</div>
 									<div class="description">Shortcut for creating a DOM node</div>
 								</td>
@@ -458,7 +458,7 @@ ul.inheritsList
 							<tr>
 								<td class="attributes">&lt;static&gt; &nbsp;</td>
 								<td class="nameDescription">
-									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.emptyNode">emptyNode</a></b>(node)
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.emptyNode">emptyNode</a></b>(The)
 									</div>
 									<div class="description">Removes all children of the passed node</div>
 								</td>
@@ -503,7 +503,7 @@ ul.inheritsList
 							<tr>
 								<td class="attributes">&lt;static&gt; &nbsp;</td>
 								<td class="nameDescription">
-									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.isInDOM">isInDOM</a></b>(node)
+									<div class="fixedFont">DOMUtil.<b><a href="../symbols/DOMUtil.html#.isInDOM">isInDOM</a></b>(a)
 									</div>
 									<div class="description">Returns true if the passed node is in the DOM</div>
 								</td>
@@ -760,7 +760,7 @@ ul.inheritsList
 						<h3>&lt;static&gt; 
 
 							<span class="light">{Node}</span>
-							<span class="light">DOMUtil.</span><b>createElement</b>(tagName, attributes, arg3)
+							<span class="light">DOMUtil.</span><b>createElement</b>(Tag, The, Attributes)
 						</h3>
 
 						<div class="description">
@@ -768,6 +768,19 @@ ul.inheritsList
 	
 	
 </div>
+	
+		<pre><code class="language-javascript">
+// &lt;p&gt;Hello world!&lt;/p&gt;
+DOMUtil.createElement("p", "Hello world!");
+
+// &lt;p class="foo" style="color: red" &gt;Hello world!&lt;/p&gt;
+DOMUtil.createElement("p", "Hello world!", {className: "foo", style: {color: "red"}});
+
+// &lt;p&gt;Contents as array&lt;/p&gt;
+DOMUtil.createElement("p", ["Contents", " ", "as", " ", "array"]);
+</code></pre>
+	
+
 	<table class="parameterlist zebra-striped">
 		<caption class="heading">Parameters:</caption>
 		<thead>
@@ -780,21 +793,21 @@ ul.inheritsList
 		<tbody>
 			
 				<tr>
-					<td>tagName </td>
+					<td>Tag </td>
 					<td><span class="light fixedFont">{string}</span> </td>
-					<td></td>
+					<td>name</td>
 				</tr>
 			
 				<tr>
-					<td>attributes </td>
+					<td>The </td>
 					<td><span class="light fixedFont">{Object}</span> </td>
-					<td></td>
+					<td>contents of the output node - a string, DOM Node or bbq.gui.GUIWidget</td>
 				</tr>
 			
 				<tr>
-					<td>arg3 </td>
-					<td></td>
-					<td></td>
+					<td>Attributes </td>
+					<td><span class="light fixedFont">{Object}</span> </td>
+					<td>that will be applied to the output of this function</td>
 				</tr>
 			
 		</tbody>
@@ -835,7 +848,7 @@ ul.inheritsList
 			
 				<tr>
 					<td>nodeValue </td>
-					<td><span class="light fixedFont">{string}</span> </td>
+					<td><span class="light fixedFont">{String}</span> </td>
 					<td></td>
 				</tr>
 			
@@ -883,7 +896,7 @@ ul.inheritsList
 			
 				<tr>
 					<td>nodeValue </td>
-					<td><span class="light fixedFont">{string}</span> </td>
+					<td><span class="light fixedFont">{String}</span> </td>
 					<td></td>
 				</tr>
 			
@@ -979,7 +992,7 @@ ul.inheritsList
 			
 				<tr>
 					<td>numCells </td>
-					<td><span class="light fixedFont">{integer}</span> </td>
+					<td><span class="light fixedFont">{Number}</span> </td>
 					<td></td>
 				</tr>
 			
@@ -999,7 +1012,7 @@ ul.inheritsList
 						<a name=".createTableRow"> </a>
 						<h3>&lt;static&gt; 
 
-							<span class="light">{void}</span>
+							<span class="light">{Node}</span>
 							<span class="light">DOMUtil.</span><b>createTableRow</b>(numCells, header)
 						</h3>
 
@@ -1021,7 +1034,7 @@ ul.inheritsList
 			
 				<tr>
 					<td>numCells </td>
-					<td><span class="light fixedFont">{integer}</span> </td>
+					<td><span class="light fixedFont">{Number}</span> </td>
 					<td></td>
 				</tr>
 			
@@ -1037,7 +1050,7 @@ ul.inheritsList
 	<dl class="detailList">
 	<dt class="heading">Returns:</dt>
 		
-			<dd><span class="light fixedFont">{void}</span> </dd>
+			<dd><span class="light fixedFont">{Node}</span> </dd>
 		
 	</dl>
 
@@ -1089,6 +1102,11 @@ ul.inheritsList
 	</table>
 
 	<dl class="detailList">
+		<dt class="heading">Deprecated:</dt>
+		<dt>Use DOMUtil#createElement instead</dt>
+	</dl>
+
+	<dl class="detailList">
 	<dt class="heading">Returns:</dt>
 		
 			<dd><span class="light fixedFont">{Node}</span> </dd>
@@ -1123,7 +1141,7 @@ ul.inheritsList
 			
 				<tr>
 					<td>nodeValue </td>
-					<td><span class="light fixedFont">{string}</span> </td>
+					<td><span class="light fixedFont">{String}</span> </td>
 					<td></td>
 				</tr>
 			
@@ -1149,8 +1167,8 @@ ul.inheritsList
 						<a name=".emptyNode"> </a>
 						<h3>&lt;static&gt; 
 
-							
-							<span class="light">DOMUtil.</span><b>emptyNode</b>(node)
+							<span class="light">{Node}</span>
+							<span class="light">DOMUtil.</span><b>emptyNode</b>(The)
 						</h3>
 
 						<div class="description">
@@ -1170,9 +1188,9 @@ ul.inheritsList
 		<tbody>
 			
 				<tr>
-					<td>node </td>
+					<td>The </td>
 					<td><span class="light fixedFont">{Node}</span> </td>
-					<td></td>
+					<td>node whose children to remove</td>
 				</tr>
 			
 		</tbody>
@@ -1181,7 +1199,7 @@ ul.inheritsList
 	<dl class="detailList">
 	<dt class="heading">Returns:</dt>
 		
-			<dd>void</dd>
+			<dd><span class="light fixedFont">{Node}</span> </dd>
 		
 	</dl>
 
@@ -1200,6 +1218,12 @@ ul.inheritsList
 	
 	
 </div>
+	
+		<pre><code class="language-javascript">
+DOMUtil.emptyNodes(node1, node2…);
+</code></pre>
+	
+
 
 						<hr />
 					
@@ -1337,8 +1361,8 @@ ul.inheritsList
 						<a name=".isInDOM"> </a>
 						<h3>&lt;static&gt; 
 
-							
-							<span class="light">DOMUtil.</span><b>isInDOM</b>(node)
+							<span class="light">{boolean}</span>
+							<span class="light">DOMUtil.</span><b>isInDOM</b>(a)
 						</h3>
 
 						<div class="description">
@@ -1358,13 +1382,20 @@ ul.inheritsList
 		<tbody>
 			
 				<tr>
-					<td>node </td>
-					<td></td>
-					<td></td>
+					<td>a </td>
+					<td><span class="light fixedFont">{Node}</span> </td>
+					<td>DOM Node</td>
 				</tr>
 			
 		</tbody>
 	</table>
+
+	<dl class="detailList">
+	<dt class="heading">Returns:</dt>
+		
+			<dd><span class="light fixedFont">{boolean}</span> </dd>
+		
+	</dl>
 
 
 						<hr />
@@ -1400,7 +1431,7 @@ ul.inheritsList
 			
 				<tr>
 					<td>oldClass </td>
-					<td><span class="light fixedFont">{string}</span> </td>
+					<td><span class="light fixedFont">{String}</span> </td>
 					<td></td>
 				</tr>
 			
@@ -1478,7 +1509,7 @@ ul.inheritsList
 		</div>
 		
 <!-- ============================== footer ================================= -->
-		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Fri Jan 20 2012 17:13:17 GMT-0000 (GMT)</footer>
+		<footer>Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.2 on Wed Jan 25 2012 16:56:11 GMT-0000 (GMT)</footer>
 		
 		<script type="text/javascript">
 
