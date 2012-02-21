@@ -6,5 +6,10 @@
       <prefix>less</prefix>
       <artifactId>maven-less-plugin</artifactId>
     </plugin>
+    <plugin>
+      <name>PHP5 Akismet</name>
+      <prefix>php5-akismet</prefix>
+      <artifactId>php5-akismet</artifactId>
+    </plugin>
   </plugins>
 </metadata>
