@@ -1,0 +1,322 @@
+<html>
+<head>
+<title>Docs For Class SocketWriteRead</title>
+<link rel="stylesheet" type="text/css" href="../media/style.css">
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+  <tr>
+    <td class="header_top">akismet</td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+  <tr>
+    <td class="header_menu">
+        
+                                    
+                              		  [ <a href="../classtrees_akismet.html" class="menu">class tree: akismet</a> ]
+		  [ <a href="../elementindex_akismet.html" class="menu">index: akismet</a> ]
+		  	    [ <a href="../elementindex.html" class="menu">all elements</a> ]
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="200" class="menu">
+      <b>Packages:</b><br />
+              <a href="../li_akismet.html">akismet</a><br />
+            <br /><br />
+                        <b>Files:</b><br />
+      	  <div class="package">
+			<a href="../akismet/_net---achingbrain---Akismet.class.php.html">		Akismet.class.php
+		</a><br>
+	  </div><br />
+      
+            <b>Interfaces:</b><br />
+        <div class="package">
+		    		<a href="../akismet/AkismetRequestFactory.html">AkismetRequestFactory</a><br />
+	    		<a href="../akismet/AkismetRequestSender.html">AkismetRequestSender</a><br />
+	  </div>
+      
+            <b>Classes:</b><br />
+        <div class="package">
+		    		<a href="../akismet/Akismet.html">Akismet</a><br />
+	    		<a href="../akismet/SocketWriteRead.html">SocketWriteRead</a><br />
+	    		<a href="../akismet/SocketWriteReadFactory.html">SocketWriteReadFactory</a><br />
+	  </div>
+                </td>
+    <td>
+      <table cellpadding="10" cellspacing="0" width="100%" border="0"><tr><td valign="top">
+
+<h1>Class: SocketWriteRead</h1>
+Source Location: /net/achingbrain/Akismet.class.php<br /><br />
+
+
+<table width="100%" border="0">
+<tr><td valign="top">
+
+<h3><a href="#class_details">Class Overview</a></h3>
+<pre></pre><br />
+<div class="description">Used internally by Akismet</div><br /><br />
+<h4>Author(s):</h4>
+<ul>
+          <li>Alex Potsides</li>
+                        </ul>
+
+
+
+
+        
+            
+<h4>Version:</h4>
+<ul>
+  <li>0.5</li>
+</ul>
+
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li><a href="../akismet/AkismetRequestSender.html">AkismetRequestSender</a></li>            </ul>
+        </p>
+        
+</td>
+
+
+
+<td valign="top">
+<h3><a href="#class_methods">Methods</a></h3>
+<ul>
+    <li><a href="../akismet/SocketWriteRead.html#method__construct">__construct</a></li>
+    <li><a href="../akismet/SocketWriteRead.html#methodgetErrorNumner">getErrorNumner</a></li>
+    <li><a href="../akismet/SocketWriteRead.html#methodgetErrorString">getErrorString</a></li>
+    <li><a href="../akismet/SocketWriteRead.html#methodgetResponse">getResponse</a></li>
+    <li><a href="../akismet/SocketWriteRead.html#methodsend">send</a></li>
+  </ul>
+</td>
+
+</tr></table>
+<hr />
+
+<table width="100%" border="0"><tr>
+
+
+
+
+
+
+</tr></table>
+<hr />
+
+<a name="class_details"></a>
+<h3>Class Details</h3>
+<div class="tags">
+[line 339]<br />
+Used internally by Akismet<br /><br /><p>This class is used by Akismet to do the actual sending and receiving of data.  It opens a connection to a remote host, sends some data and the reads the response and makes it available to the calling program.</p><p>The code that makes up this class originates in the Akismet WordPress plugin, which is <a href="http://akismet.com/download/">available on the Akismet website</a>.</p><p>N.B. It is not necessary to call this class directly to use the Akismet class.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>author:</b>&nbsp;&nbsp;</td><td>Alex Potsides</td>
+  </tr>
+  <tr>
+    <td><b>version:</b>&nbsp;&nbsp;</td><td>0.5</td>
+  </tr>
+  <tr>
+    <td><b>link:</b>&nbsp;&nbsp;</td><td><a href="http://www.achingbrain.net/">http://www.achingbrain.net/</a></td>
+  </tr>
+  <tr>
+    <td><b>name:</b>&nbsp;&nbsp;</td><td>SocketWriteRead</td>
+  </tr>
+</table>
+</div>
+</div><br /><br />
+<div class="top">[ <a href="#top">Top</a> ]</div><br />
+
+
+<hr />
+<a name="class_methods"></a>
+<h3>Class Methods</h3>
+<div class="tags">
+
+  <hr />
+	<a name="method__construct"></a>
+	<h3>constructor __construct <span class="smalllinenumber">[line 344]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>SocketWriteRead __construct(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		<br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetErrorNumner"></a>
+	<h3>method getErrorNumner <span class="smalllinenumber">[line 397]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>int getErrorNumner(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Returns the error number<br /><br /><p>If there was no error, 0 will be returned.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetErrorString"></a>
+	<h3>method getErrorString <span class="smalllinenumber">[line 408]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>string getErrorString(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Returns the error string<br /><br /><p>If there was no error, an empty string will be returned.</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetResponse"></a>
+	<h3>method getResponse <span class="smalllinenumber">[line 386]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>string getResponse(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Returns the server response text<br /><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodsend"></a>
+	<h3>method send <span class="smalllinenumber">[line 359]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>The send(
+string
+$host, int
+$port, string
+$request, [int
+$responseLength = 1160])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Sends the data to the remote host.<br /><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>server response</td>
+  </tr>
+  <tr>
+    <td><b>throws:</b>&nbsp;&nbsp;</td><td>An exception is thrown if a connection cannot be made to the remote host.</td>
+  </tr>
+  <tr>
+    <td><b>access:</b>&nbsp;&nbsp;</td><td>public</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+			<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt><a href="../akismet/AkismetRequestSender.html#methodsend">AkismetRequestSender::send()</a></dt>
+						<dd>Sends the data to the remote host.</dd>
+					</dl>
+		
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$host</b>&nbsp;&nbsp;</td>
+        <td>The host to send/receive data.</td>
+      </tr>
+          <tr>
+        <td class="type">int&nbsp;&nbsp;</td>
+        <td><b>$port</b>&nbsp;&nbsp;</td>
+        <td>The port on the remote host.</td>
+      </tr>
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$request</b>&nbsp;&nbsp;</td>
+        <td>The data to send.</td>
+      </tr>
+          <tr>
+        <td class="type">int&nbsp;&nbsp;</td>
+        <td><b>$responseLength</b>&nbsp;&nbsp;</td>
+        <td>The amount of data to read.  Defaults to 1160 bytes.</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+</div><br />
+
+
+        <div class="credit">
+		    <hr />
+		    Documentation generated on Tue, 21 Feb 2012 18:35:25 +0000 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.3</a>
+	      </div>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
